@@ -1,15 +1,34 @@
 // DOM tests only; no browser navigation, network, or real reviewer decisions.
-const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
+const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),assert=require('node:assert/strict');
+const {execFileSync}=require('node:child_process');
+const root=path.resolve(__dirname,'..');
+const dir=fs.mkdtempSync(path.join(os.tmpdir(),'reference-review-ui-'));
+try {
 const {JSDOM,VirtualConsole}=require('jsdom');
-const dir=process.argv[2];if(!dir)throw Error('Usage: node tests/ui.cjs ACCEPTANCE_OUTPUT_DIR');
-const raw=fs.readFileSync(path.join(dir,'small-reference-list.review.html'),'utf8');
+// Build temporary synthetic records with the actual audit renderer, independent of sample datasets.
+execFileSync('python3',['-c',`
+from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(sys.argv[1])/'scripts'))
+import audit as a
+run=a.new_audit('audit')
+for index in range(2):
+    record={'id':'fixture-'+str(index),'type':'article','title':'Synthetic bibliography fixture '+str(index),'author':[{'given':'Alice','family':'Example'}],'issued':{'date-parts':[[2024]]},'URL':'https://example.org/fixture'}
+    entry=a.base_entry(dict(record))
+    entry['candidates']=[{'csl':record,'source':{'provider':'Synthetic fixture','url':record['URL'],'retrieved_at':'2026-01-01T00:00:00Z'},'version':'Synthetic test only'}]
+    entry['selected']=0
+    entry['keywords']={'terms':['fixture topic'],'basis':'agent_title_abstract','source_url':record['URL'],'note':'Synthetic keyword fixture'}
+    run['entries'].append(a.stamp(entry))
+a.render(run, Path(sys.argv[2])/'review.html')
+`,root,dir],{stdio:'pipe'});
+const raw=fs.readFileSync(path.join(dir,'review.html'),'utf8');
 const errors=[],vc=new VirtualConsole();vc.on('jsdomError',e=>errors.push(e.message));
 const dom=new JSDOM(raw,{runScripts:'dangerously',url:'https://test.invalid/',virtualConsole:vc});const doc=dom.window.document;
-assert.equal(doc.querySelectorAll('#list button').length,5);
+assert.equal(doc.querySelectorAll('#list button').length,2);
 const audit=JSON.parse(doc.getElementById('auditData').textContent);
 assert.equal(audit.schema_version,2);
 assert.match(doc.getElementById('detail').textContent,/BibTeX preview/);
-assert.match(doc.getElementById('detail').textContent,/var-wrong-year/);
+assert.match(doc.getElementById('detail').textContent,/fixture-0/);
 assert.match(doc.getElementById('detail').textContent,/2024/);
 assert.match(doc.getElementById('detail').textContent,/AI-suggested from title/);
 assert.equal(doc.querySelector('#claimsChecked'),null);
@@ -28,3 +47,5 @@ doc.querySelectorAll('#list button')[1].click();doc.getElementById('action').val
 doc.getElementById('search').value='unmatched-synthetic-query';doc.getElementById('search').dispatchEvent(new dom.window.Event('input'));assert.equal(doc.querySelectorAll('#list button').length,0);
 assert.deepEqual(errors,[]);dom.window.close();
 console.log('DOM tests passed: citation/keyword preview, bibliography gate, decisions, draft persistence, correction request, search. No visual layout test.');
+
+} finally { fs.rmSync(dir,{recursive:true,force:true}); }

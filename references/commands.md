@@ -19,7 +19,7 @@ The parser accepts `.bib`, `.ris`, and CSL `.json`. Python accepts JSON or `.txt
 ## 2. Topic keywords
 
 ```sh
-python3 scripts/audit.py discover 'ti:"sparse attention"' --provider arxiv --limit 10 --cache "$RUN/evidence" --out "$RUN/audit.json"
+python3 scripts/audit.py discover 'your research topic' --provider crossref --limit 10 --cache "$RUN/evidence" --out "$RUN/audit.json"
 ```
 
 Crossref discovery accepts ordinary keyword strings with `--provider crossref`. Search records are candidates. The agent checks their relevance and primary-source identity, then enriches the results. Keep the query and limits; ten selected papers are not a systematic review.
@@ -37,7 +37,7 @@ Crossref discovery accepts ordinary keyword strings with `--provider crossref`. 
     "selected": 0,
     "identity": {"status": "evidence_matched", "reason": "Actual title, author, identifier, and version match observed on the primary page."},
     "keywords": {
-      "terms": ["sparse attention", "long-context inference"],
+      "terms": ["topic term", "related term"],
       "basis": "agent_title_abstract",
       "source_url": "ACTUAL_INSPECTED_SOURCE_URL",
       "note": "Inferred from the title/abstract; not author-supplied keywords. Explain differences from user-supplied terms here."

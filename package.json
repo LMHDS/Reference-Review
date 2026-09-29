@@ -11,7 +11,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "test": "python3 -m unittest discover -s scripts -p \"test_*.py\" -v"
+    "test": "python3 -m unittest discover -s scripts -p \"test_*.py\" -v && node tests/ui.cjs && node tests/citations.cjs"
   },
   "devDependencies": {
     "jsdom": "26.1.0"

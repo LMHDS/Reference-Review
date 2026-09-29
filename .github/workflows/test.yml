@@ -19,5 +19,5 @@ jobs:
           python-version: '3.12'
       - run: npm ci --ignore-scripts
       - run: python3 -m unittest discover -s scripts -p 'test_*.py' -v
-      - run: python3 scripts/run_acceptance.py --out runs/acceptance
-      - run: node tests/ui.cjs runs/acceptance
+      - run: node tests/ui.cjs
+      - run: node tests/citations.cjs
