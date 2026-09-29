@@ -41,23 +41,10 @@
         "DOI": "10.48550/arXiv.2404.02905"
       },
       "relevance": "Controlled demonstration input; not an actual user bibliography or an observed AI mistake.",
-      "claims": [
-        {
-          "id": "var-fid",
-          "text": "The 2B VAR model achieves an FID of 1.73 on ImageNet 256×256.",
-          "manuscript_locator": "Synthetic acceptance sentence; not a user manuscript",
-          "assessment": "partial",
-          "evidence": [
-            {
-              "url": "https://arxiv.org/html/2404.02905v2#S5",
-              "retrieved_at": "2026-09-29T00:14:16+00:00",
-              "source_version": "arXiv 2404.02905v2",
-              "locator": "Table 1: VAR-d30 / VAR-d30-re rows and caption",
-              "excerpt": "Table cells: VAR-d30 — FID 1.92; VAR-d30-re — FID 1.73. Caption: “Models with the suffix ‘-re’ used rejection sampling.”"
-            }
-          ],
-          "limitations": "The claim omits rejection sampling. Proposed wording: With rejection sampling, the 2B VAR model achieves an FID of 1.73 on ImageNet 256 x 256. A human must review the revision."
-        }
+      "keywords": [
+        "visual autoregressive modeling",
+        "next-scale prediction",
+        "image generation"
       ]
     },
     {
@@ -95,7 +82,11 @@
         "URL": "https://arxiv.org/abs/1904.10509v1",
         "DOI": "10.48550/arXiv.1904.10509"
       },
-      "relevance": "Controlled demonstration input; not an actual user bibliography or an observed AI mistake."
+      "relevance": "Controlled demonstration input; not an actual user bibliography or an observed AI mistake.",
+      "keywords": [
+        "sparse attention",
+        "autoregressive generation"
+      ]
     },
     {
       "source_key": "2402.02750",
@@ -114,7 +105,12 @@
         "URL": "https://arxiv.org/abs/2402.02750v2",
         "DOI": "10.48550/arXiv.2402.02750"
       },
-      "relevance": "Controlled demonstration input; not an actual user bibliography or an observed AI mistake."
+      "relevance": "Controlled demonstration input; not an actual user bibliography or an observed AI mistake.",
+      "keywords": [
+        "KV cache",
+        "asymmetric quantization",
+        "2-bit"
+      ]
     },
     {
       "source_key": "2402.02750",
@@ -167,7 +163,12 @@
         "URL": "https://arxiv.org/abs/2402.02750v2",
         "DOI": "10.48550/arXiv.2402.02750"
       },
-      "relevance": "Controlled demonstration input; not an actual user bibliography or an observed AI mistake."
+      "relevance": "Controlled demonstration input; not an actual user bibliography or an observed AI mistake.",
+      "keywords": [
+        "KV cache",
+        "asymmetric quantization",
+        "2-bit"
+      ]
     },
     {
       "source_key": "2004.05150",
@@ -200,7 +201,11 @@
         "URL": "https://arxiv.org/abs/2004.05150v2",
         "DOI": "10.48550/arXiv.2004.05150"
       },
-      "relevance": "Controlled demonstration input; not an actual user bibliography or an observed AI mistake."
+      "relevance": "Controlled demonstration input; not an actual user bibliography or an observed AI mistake.",
+      "keywords": [
+        "local attention",
+        "long documents"
+      ]
     }
   ]
 }

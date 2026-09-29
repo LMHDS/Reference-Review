@@ -1,7 +1,7 @@
 {
-  "schema_version": 1,
-  "run_id": "eb834141-cf39-421e-b1f6-6b6460989bf1",
-  "created_at": "2026-09-29T00:33:35+00:00",
+  "schema_version": 2,
+  "run_id": "f0e8caf8-06f9-4af0-9202-1a52595a7d4d",
+  "created_at": "2026-09-29T00:57:44+00:00",
   "mode": "acceptance-replay",
   "entries": [
     {
@@ -92,7 +92,15 @@
         "status": "not_checked",
         "scope": "No comprehensive retraction/correction search in this acceptance dataset. Inspect publisher and arXiv notices."
       },
-      "claims": [],
+      "keywords": {
+        "terms": [
+          "sparse attention",
+          "autoregressive generation"
+        ],
+        "basis": "agent_title_abstract",
+        "source_url": "https://arxiv.org/abs/1904.10509",
+        "note": "Curated topic tags inferred from the sourced title/abstract; not publisher-supplied keywords."
+      },
       "extra_sources": [],
       "duplicate_of": [],
       "errors": [],
@@ -188,7 +196,7 @@
         "missing_core_fields": [],
         "note": "Field presence only. CSL rendering and venue-specific requirements are separate."
       },
-      "evidence_hash": "dd9dcf08452f759fe121af514faf70a99151b043e6cc6b5c207d0da7ce5bbdf1",
+      "evidence_hash": "c0289536d75305378ee536fd2d25170abd0798bcb365d7457ed538e66ac9f401",
       "discovery": {
         "relevance": "Sparse factorized attention for long autoregressive sequences; an early reference for the topic.",
         "summary_basis": "agent selection note from title/abstract; not full-text claim verification",
@@ -275,7 +283,15 @@
         "status": "not_checked",
         "scope": "No comprehensive retraction/correction search in this acceptance dataset. Inspect publisher and arXiv notices."
       },
-      "claims": [],
+      "keywords": {
+        "terms": [
+          "local attention",
+          "long documents"
+        ],
+        "basis": "agent_title_abstract",
+        "source_url": "https://arxiv.org/abs/2004.05150",
+        "note": "Curated topic tags inferred from the sourced title/abstract; not publisher-supplied keywords."
+      },
       "extra_sources": [],
       "duplicate_of": [],
       "errors": [],
@@ -363,7 +379,7 @@
         "missing_core_fields": [],
         "note": "Field presence only. CSL rendering and venue-specific requirements are separate."
       },
-      "evidence_hash": "43dbdc3d432e6386c61d8d3e0c29662538937bcb795671a66985c4b5ea6d4c55",
+      "evidence_hash": "33bb60226747654f2602f4060837edebafe89a7a883e7d084eeeaa530eefa4f6",
       "discovery": {
         "relevance": "Local-window and global attention for long documents.",
         "summary_basis": "agent selection note from title/abstract; not full-text claim verification",
@@ -514,7 +530,15 @@
         "status": "not_checked",
         "scope": "No comprehensive retraction/correction search in this acceptance dataset. Inspect publisher and arXiv notices."
       },
-      "claims": [],
+      "keywords": {
+        "terms": [
+          "block-sparse attention",
+          "long sequences"
+        ],
+        "basis": "agent_title_abstract",
+        "source_url": "https://arxiv.org/abs/2007.14062",
+        "note": "Curated topic tags inferred from the sourced title/abstract; not publisher-supplied keywords."
+      },
       "extra_sources": [],
       "duplicate_of": [],
       "errors": [],
@@ -666,7 +690,7 @@
         "missing_core_fields": [],
         "note": "Field presence only. CSL rendering and venue-specific requirements are separate."
       },
-      "evidence_hash": "211a01abdab725660083b967546376015d169bce2b423c2a133696e9aa869552",
+      "evidence_hash": "873a376bcd0ff7cb7510f8eb3117a8900c1e2e664433632a7cbe639341edbdbf",
       "discovery": {
         "relevance": "Block-sparse attention combining local, global, and random connections.",
         "summary_basis": "agent selection note from title/abstract; not full-text claim verification",
@@ -753,7 +777,15 @@
         "status": "not_checked",
         "scope": "No comprehensive retraction/correction search in this acceptance dataset. Inspect publisher and arXiv notices."
       },
-      "claims": [],
+      "keywords": {
+        "terms": [
+          "locality-sensitive hashing",
+          "efficient attention"
+        ],
+        "basis": "agent_title_abstract",
+        "source_url": "https://arxiv.org/abs/2001.04451",
+        "note": "Curated topic tags inferred from the sourced title/abstract; not publisher-supplied keywords."
+      },
       "extra_sources": [],
       "duplicate_of": [],
       "errors": [],
@@ -841,7 +873,7 @@
         "missing_core_fields": [],
         "note": "Field presence only. CSL rendering and venue-specific requirements are separate."
       },
-      "evidence_hash": "add32abaee413d758afc3da1732cc893e917215cea4af2f6eed194d95fb15594",
+      "evidence_hash": "ccc68aaa69caf8f2d0eda93fd94bdf382d487b6e48f7348b8e80348619af5682",
       "discovery": {
         "relevance": "Locality-sensitive hashing provides a content-dependent sparse attention mechanism.",
         "summary_basis": "agent selection note from title/abstract; not full-text claim verification",
@@ -936,7 +968,15 @@
         "status": "not_checked",
         "scope": "No comprehensive retraction/correction search in this acceptance dataset. Inspect publisher and arXiv notices."
       },
-      "claims": [],
+      "keywords": {
+        "terms": [
+          "routing attention",
+          "content-based sparsity"
+        ],
+        "basis": "agent_title_abstract",
+        "source_url": "https://arxiv.org/abs/2003.05997",
+        "note": "Curated topic tags inferred from the sourced title/abstract; not publisher-supplied keywords."
+      },
       "extra_sources": [],
       "duplicate_of": [],
       "errors": [],
@@ -1032,7 +1072,7 @@
         "missing_core_fields": [],
         "note": "Field presence only. CSL rendering and venue-specific requirements are separate."
       },
-      "evidence_hash": "5578f75778aff16b73095e16eb421d0758381091eec319916dc88fb0ca699c76",
+      "evidence_hash": "19d969be191771c534a451c88acb9e450d19645f730c20cb14f64f3b6c1b8e71",
       "discovery": {
         "relevance": "Content-based routing offers another way to select sparse attention connections.",
         "summary_basis": "agent selection note from title/abstract; not full-text claim verification",
@@ -1159,7 +1199,15 @@
         "status": "not_checked",
         "scope": "No comprehensive retraction/correction search in this acceptance dataset. Inspect publisher and arXiv notices."
       },
-      "claims": [],
+      "keywords": {
+        "terms": [
+          "shifted windows",
+          "vision transformer"
+        ],
+        "basis": "agent_title_abstract",
+        "source_url": "https://arxiv.org/abs/2103.14030",
+        "note": "Curated topic tags inferred from the sourced title/abstract; not publisher-supplied keywords."
+      },
       "extra_sources": [],
       "duplicate_of": [],
       "errors": [],
@@ -1287,7 +1335,7 @@
         "missing_core_fields": [],
         "note": "Field presence only. CSL rendering and venue-specific requirements are separate."
       },
-      "evidence_hash": "3b7e6227fbf6838ef3de421f5847fab790ac61d3422faf1c9beb2d07567e31a5",
+      "evidence_hash": "dbbaedd7aabbea2782f69883914a24f8718bafa450ea49c6716617d054f77bda",
       "discovery": {
         "relevance": "Shifted local windows extend sparse attention ideas to hierarchical visual representations.",
         "summary_basis": "agent selection note from title/abstract; not full-text claim verification",
@@ -1470,7 +1518,15 @@
         "status": "not_checked",
         "scope": "No comprehensive retraction/correction search in this acceptance dataset. Inspect publisher and arXiv notices."
       },
-      "claims": [],
+      "keywords": {
+        "terms": [
+          "trainable sparse attention",
+          "hardware efficiency"
+        ],
+        "basis": "agent_title_abstract",
+        "source_url": "https://arxiv.org/abs/2502.11089",
+        "note": "Curated topic tags inferred from the sourced title/abstract; not publisher-supplied keywords."
+      },
       "extra_sources": [],
       "duplicate_of": [],
       "errors": [],
@@ -1654,7 +1710,7 @@
         "missing_core_fields": [],
         "note": "Field presence only. CSL rendering and venue-specific requirements are separate."
       },
-      "evidence_hash": "0e96e13592fdccb1da0c8df8530be81759b04d9b990fc7473f69536a8533cb65",
+      "evidence_hash": "573c5c799549b256d30a42aab11e1de4f6c7ccf8c7530071a3f4cf8de7cd9be7",
       "discovery": {
         "relevance": "An example of trainable sparse attention designed with hardware efficiency in mind.",
         "summary_basis": "agent selection note from title/abstract; not full-text claim verification",
@@ -1917,7 +1973,15 @@
         "status": "not_checked",
         "scope": "No comprehensive retraction/correction search in this acceptance dataset. Inspect publisher and arXiv notices."
       },
-      "claims": [],
+      "keywords": {
+        "terms": [
+          "block routing",
+          "long-context LLMs"
+        ],
+        "basis": "agent_title_abstract",
+        "source_url": "https://arxiv.org/abs/2502.13189",
+        "note": "Curated topic tags inferred from the sourced title/abstract; not publisher-supplied keywords."
+      },
       "extra_sources": [],
       "duplicate_of": [],
       "errors": [],
@@ -2181,7 +2245,7 @@
         "missing_core_fields": [],
         "note": "Field presence only. CSL rendering and venue-specific requirements are separate."
       },
-      "evidence_hash": "944d8137689f3f6bdb754b458f009bca4524de502f395028c230431400419632",
+      "evidence_hash": "cd3a8e33b430fdc1733aac78fcf8ca56e9e9886ec292d2671c7465b7395a09b0",
       "discovery": {
         "relevance": "Block-level routing offers a mixture-of-experts-inspired approach to sparse attention.",
         "summary_basis": "agent selection note from title/abstract; not full-text claim verification",
@@ -2338,7 +2402,15 @@
         "status": "not_checked",
         "scope": "No comprehensive retraction/correction search in this acceptance dataset. Inspect publisher and arXiv notices."
       },
-      "claims": [],
+      "keywords": {
+        "terms": [
+          "dynamic sparse attention",
+          "prefill acceleration"
+        ],
+        "basis": "agent_title_abstract",
+        "source_url": "https://arxiv.org/abs/2407.02490",
+        "note": "Curated topic tags inferred from the sourced title/abstract; not publisher-supplied keywords."
+      },
       "extra_sources": [],
       "duplicate_of": [],
       "errors": [],
@@ -2492,7 +2564,7 @@
         "missing_core_fields": [],
         "note": "Field presence only. CSL rendering and venue-specific requirements are separate."
       },
-      "evidence_hash": "0e3f7eec7a3f0741c2a540c99263487178f6c6a9daa9565d757e44d87c2b2db2",
+      "evidence_hash": "32eb504d40ad353979f059ec0c46851ace99c6a4d5eb34e1a717400b3d98cd92",
       "discovery": {
         "relevance": "Dynamic sparse attention targets long-context prefill acceleration.",
         "summary_basis": "agent selection note from title/abstract; not full-text claim verification",
@@ -2595,7 +2667,15 @@
         "status": "not_checked",
         "scope": "No comprehensive retraction/correction search in this acceptance dataset. Inspect publisher and arXiv notices."
       },
-      "claims": [],
+      "keywords": {
+        "terms": [
+          "context-aware sparsity",
+          "long-sequence inference"
+        ],
+        "basis": "agent_title_abstract",
+        "source_url": "https://arxiv.org/abs/2502.20766",
+        "note": "Curated topic tags inferred from the sourced title/abstract; not publisher-supplied keywords."
+      },
       "extra_sources": [],
       "duplicate_of": [],
       "errors": [],
@@ -2699,7 +2779,7 @@
         "missing_core_fields": [],
         "note": "Field presence only. CSL rendering and venue-specific requirements are separate."
       },
-      "evidence_hash": "1de0e483d586fdc9e046d420c378762a8f78c036a09aaecb4e6b5ffd75cada96",
+      "evidence_hash": "c564905346586db0134b206181adef49a90bcf43f42077f3beec49434c67d791",
       "discovery": {
         "relevance": "Context-aware sparse attention adapts the prefill computation to the input.",
         "summary_basis": "agent selection note from title/abstract; not full-text claim verification",

@@ -1,75 +1,75 @@
-# Execution
+# Two entry points
 
-Run commands with the skill directory as the working directory. Outputs are new files; commands refuse to overwrite them. Use a new filename for every audit/enrichment/review revision. Examples use `$RUN` as a task-specific run directory; choose a writable project directory.
+Run commands from the skill/repository directory. Python 3.10+ and Node.js 20+ are required. Outputs refuse to overwrite existing files; choose a fresh run directory.
 
 ```sh
 npm ci --ignore-scripts
-node scripts/citations.cjs parse references.bib "$RUN/input.json"
-python3 scripts/audit.py audit "$RUN/input.json" --cache "$RUN/evidence" --out "$RUN/reference_audit.json"
-python3 scripts/audit.py render "$RUN/reference_audit.json" --out "$RUN/human_review.html"
+RUN=runs/my-review
 ```
 
-The parser uses Citation.js; accepted extensions are `.bib`, `.ris`, `.json`. JSON can be a CSL array or the parser's `{entries, original_document}` wrapper. Python can directly read `.txt` / `.doi` with one full reference or identifier per line. Pasted references are searched as complete bibliographic strings; the helper never assumes a whole formatted citation is a title. Preserve raw text if the agent extracts individual fields.
-
-## Discovery
+## 1. Existing reference list
 
 ```sh
-python3 scripts/audit.py discover 'visual autoregressive next scale prediction' --provider crossref --limit 8 --cache "$RUN/evidence" --out "$RUN/candidates.json"
-python3 scripts/audit.py discover 'ti:"visual autoregressive"' --provider arxiv --limit 8 --cache "$RUN/evidence" --out "$RUN/arxiv_candidates.json"
+node scripts/citations.cjs parse references.bib "$RUN/input.json"
+python3 scripts/audit.py audit "$RUN/input.json" --cache "$RUN/evidence" --out "$RUN/audit.json"
 ```
 
-Discovery returns source records with summaries restricted to metadata/abstract. It does not claim relevance, corroboration, integrity checking, or full-text verification. The agent reviews candidates, searches follow-up sources, and uses enrichment for each selected record. To run the built-in integrity lookup on a discovered set, copy candidate original CSL fields into a new input file and run `audit`; retain the discovery query/provenance when enriching the resulting run.
+The parser accepts `.bib`, `.ris`, and CSL `.json`. Python accepts JSON or `.txt`/`.doi` with one reference/identifier per line. Agent extraction of wrapped text retains the exact original entry. A supplied `keyword` or `keywords` field remains in the original record; compare it with source-backed suggestions.
 
-Crossref lookup uses its registry only. For a DOI outside Crossref, use the DOI's registration agency/publisher in the agent workflow; this helper's lookup error is not a nonexistent DOI verdict. `REFCHECK_CONTACT` may optionally be set by the user for a contact User-Agent. Do not invent or expose a personal email.
+## 2. Topic keywords
 
-The cache contains raw API bytes and source hashes. `--offline` explicitly reuses cache and retains its original retrieval time. Online runs fetch anew. Keep different run directories to preserve historic snapshots. The helper uses bounded retries for short rate-limit delays and records other failures per reference.
+```sh
+python3 scripts/audit.py discover 'ti:"sparse attention"' --provider arxiv --limit 10 --cache "$RUN/evidence" --out "$RUN/audit.json"
+```
 
-## Add source evidence / select a candidate / attach claims
+Crossref discovery accepts ordinary keyword strings with `--provider crossref`. Search records are candidates. The agent checks their relevance and primary-source identity, then enriches the results. Keep the query and limits; ten selected papers are not a systematic review.
 
-Create a patch with the run ID and current entry hash. Only specified entries change. The `claims` array replaces the existing claims for that entry; preserve existing claims intentionally.
+## Resolve candidates and add keywords
+
+`enrich` accepts source-backed candidates, a selected index, identity reasoning, source notices, keywords, extra sources, and discovery notes. Values below are descriptive placeholders, not evidence:
 
 ```json
 {
-  "run_id": "COPY_FROM_AUDIT",
+  "run_id": "CURRENT_RUN_ID",
   "entries": [{
-    "id": "tian2024var",
-    "evidence_hash": "COPY_CURRENT_HASH",
+    "id": "existing-key",
+    "evidence_hash": "CURRENT_ENTRY_HASH",
     "selected": 0,
-    "identity": {"status": "evidence_matched", "reason": "Explain the actual observed match, not a similarity score."},
-    "extra_sources": [{"url": "ACTUAL_SOURCE_URL", "retrieved_at": "ACTUAL_UTC_TIMESTAMP", "label": "Publisher / proceedings page", "note": "Fields or version relationship actually confirmed here"}],
-    "claims": [{
-      "id": "claim-1",
-      "text": "Exact manuscript sentence",
-      "manuscript_locator": "Related Work paragraph 2",
-      "assessment": "partial",
-      "evidence": [{"url": "ACTUAL_FULL_TEXT_URL", "retrieved_at": "ACTUAL_UTC_TIMESTAMP", "source_version": "version actually read", "locator": "Table / page / section actually inspected", "excerpt": "Short exact source passage or faithful labeled table-cell transcription"}],
-      "limitations": "Explain the missing condition and propose a narrower claim separately."
-    }]
+    "identity": {"status": "evidence_matched", "reason": "Actual title, author, identifier, and version match observed on the primary page."},
+    "keywords": {
+      "terms": ["sparse attention", "long-context inference"],
+      "basis": "agent_title_abstract",
+      "source_url": "ACTUAL_INSPECTED_SOURCE_URL",
+      "note": "Inferred from the title/abstract; not author-supplied keywords. Explain differences from user-supplied terms here."
+    }
   }]
 }
 ```
 
-The example contains descriptive placeholders, not evidence. Substitute only actual inspected sources. Additional/custom providers can supply full `candidates` with CSL fields and a `source` object following the same contract; the agent must inspect each source before adding it.
-
 ```sh
-python3 scripts/audit.py enrich "$RUN/reference_audit.json" "$RUN/patch.json" --out "$RUN/audit-v2.json"
-python3 scripts/audit.py render "$RUN/audit-v2.json" --out "$RUN/review-v2.html"
+python3 scripts/audit.py enrich "$RUN/audit.json" "$RUN/patch.json" --out "$RUN/audit-v2.json"
+python3 scripts/audit.py render "$RUN/audit-v2.json" --out "$RUN/review.html"
 ```
 
-## Human check and export
+Rendering runs Citation.js locally and displays APA and BibTeX previews before review. Unselected records have no proposed citation. For API-only runs without an enrichment step, render `audit.json` instead.
 
-Open the HTML file. Reviewer writes a name, reads source links, checks the relevant attestations, chooses a decision, and clicks **Record decision** for each item. They then click **Download decisions JSON**. No server is needed. Browser draft persistence is optional and local; downloaded JSON is the portable record.
+## Human review and export
+
+Open the review HTML locally. Inspect identity evidence, bibliography differences, citation previews and keyword origin. Enter a reviewer name, choose a decision and click **Record decision**, then **Download decisions JSON**. Return corrections to the workflow for a new audit version; a correction request is not approval.
 
 ```sh
-python3 scripts/audit.py merge "$RUN/audit-v2.json" "$RUN/human_decisions.json" --out "$RUN/reviewed_audit.json"
-python3 scripts/audit.py export "$RUN/reviewed_audit.json" --out "$RUN/approved.csl.json"
+python3 scripts/audit.py merge "$RUN/audit-v2.json" bibliography_decisions.json --out "$RUN/reviewed.json"
+python3 scripts/audit.py export "$RUN/reviewed.json" --out "$RUN/approved.csl.json"
 node scripts/citations.cjs format "$RUN/approved.csl.json" "$RUN/approved.bib" --format bibtex
-node scripts/citations.cjs format "$RUN/approved.csl.json" "$RUN/approved-apa.txt" --format apa
-node scripts/citations.cjs format "$RUN/approved.csl.json" "$RUN/approved-style.txt" --format csl --style /path/to/independent-style.csl
+node scripts/citations.cjs format "$RUN/approved.csl.json" "$RUN/approved.ris" --format ris
 ```
 
-Bibliography style support means CSL rendering, not an automated judgment of venue submission rules. Use the user-specified style/version and inspect output for math, acronyms, article numbers, non-Latin names, or institutional requirements. For LaTeX, preserve citation keys and use the venue's actual BibTeX/BibLaTeX toolchain for the manuscript when available. Do not pretend APA output is IEEE or ACM.
+Use exactly the audit version behind the review page. Keyword lists and provenance remain in the audit. Citation keys are preserved; unsafe or duplicate keys cause an explicit formatting error.
 
-Claim statuses partial/not_found/contradicted/unavailable cannot pass claim approval. After a rewrite, inspect sources for the exact new wording, enrich to a new audit file, and ask the human to review the revised card. Selecting an alternate candidate similarly requires new metadata and integrity evidence. The UI's replacement note can name the candidate index; it does not silently switch the record.
+For another style, use `--format csl --style /path/to/independent-style.csl` and review that output before use. Standard page previews are explicitly APA/BibTeX, not proof of every venue's compliance.
 
-`python3 scripts/audit.py validate FILE.json` checks structural and approval invariants, not the truth of source passages.
+## Evidence and failures
+
+The API cache stores raw bytes and hashes. `--offline` explicitly reuses those records with their original retrieval times. Online runs retrieve again. Crossref is not the registry for all DOIs; failures or absent records require another primary source, not a fabrication verdict. Optional `REFCHECK_CONTACT` sets a user-provided contact for requests.
+
+`validate FILE.json` checks evidence hashes and workflow invariants. Schema v2 rejects older claim-review audits. Start a new run and preserve previous audit/decision files.

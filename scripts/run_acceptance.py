@@ -27,7 +27,7 @@ def main():
             csl={'type':'article','title':source['title'],'author':[{'given':' '.join(n.split()[:-1]),'family':n.split()[-1]} for n in source['authors']], 'issued':{'date-parts':[[source['year']]]},'publisher':'arXiv','URL':'https://arxiv.org/abs/'+source['arxiv_id']}
             if source.get('doi'):csl['DOI']=source['doi']
             candidate={'csl':csl,'arxiv_id':source['arxiv_id'],'version':source['version']+'; preprint, original submission year; not merged with a proceedings edition', 'source':{'provider':'arXiv primary page via agent web retrieval (saved snapshot)', 'url':source['source_url'],'retrieved_at':source['retrieved_at'],'retrieval_method':source['retrieval_method']}}
-            patch['entries'].append({'id':e['id'],'evidence_hash':e['evidence_hash'],'candidates':[candidate],'selected':0,'identity':{'status':'evidence_matched','reason':'Source title, full author order, arXiv ID, and original year were read from the primary page. This run replays that evidence; it is not a fresh API lookup.'},'integrity':{'status':'not_checked','scope':'No comprehensive retraction/correction search in this acceptance dataset. Inspect publisher and arXiv notices.'},'discovery':{'relevance':item['relevance'],'summary_basis':'agent selection note from title/abstract; not full-text claim verification','name_segmentation':'Given/family split inferred from source full names; human review required.'},'claims':item.get('claims',[])})
+            patch['entries'].append({'id':e['id'],'evidence_hash':e['evidence_hash'],'candidates':[candidate],'selected':0,'identity':{'status':'evidence_matched','reason':'Source title, full author order, arXiv ID, and original year were read from the primary page. This run replays that evidence; it is not a fresh API lookup.'},'integrity':{'status':'not_checked','scope':'No comprehensive retraction/correction search in this acceptance dataset. Inspect publisher and arXiv notices.'},'discovery':{'relevance':item['relevance'],'summary_basis':'agent selection note from title/abstract; not full-text claim verification','name_segmentation':'Given/family split inferred from source full names; human review required.'},'keywords':{'terms':item['keywords'],'basis':'agent_title_abstract','source_url':source['source_url'],'note':'Curated topic tags inferred from the sourced title/abstract; not publisher-supplied keywords.'}})
         initial_path=out/f'{topic}.initial.json';patch_path=out/f'{topic}.patch.json';final_path=out/f'{topic}.audit.json'
         audit.save(initial_path,initial);audit.save(patch_path,patch)
         run(sys.executable,'scripts/audit.py','enrich',str(initial_path),str(patch_path),'--out',str(final_path))
@@ -38,17 +38,17 @@ def main():
         export_path=out/f'{topic}.approved.json'
         run(sys.executable,'scripts/audit.py','export',str(final_path),'--out',str(export_path))
         assert audit.read(export_path)==[], 'Pending records leaked into reviewed export'
-        results[topic]={'records':count,'sourced_identity_records':count,'human_pending':count,'human_approved':0,'exported':0}
+        assert all(e['keywords']['terms'] and e['keywords']['source_url'] for e in result['entries'])
+        previews=audit.citation_previews(result)
+        assert len(previews)==count and all(v['apa'] and v['bibtex'] for v in previews.values())
+        results[topic]={'records':count,'sourced_identity_records':count,'human_pending':count,'human_approved':0,'exported':0,'keyword_sets':count,'citation_preview_pairs':count}
         if topic=='small-reference-list':
             by={e['id']:e for e in result['entries']}
             for key,field,status in [('var-wrong-year','issued','differs'),('sparse-wrong-title','title','differs'),('kivi-missing-author','author','missing_in_input')]:
                 assert any(d['field']==field and d['status']==status for d in by[key]['metadata_diff'])
             assert by['kivi-duplicate']['duplicate_of'][0]['id']=='kivi-missing-author'
             assert all(d['status']=='matches' for d in by['longformer-clean']['metadata_diff'])
-            e=by['var-wrong-year']
-            simulated={'decision':'approve','evidence_hash':e['evidence_hash'],'reviewer':'SYNTHETIC TEST ONLY','reviewed_at':audit.now(),'identity_checked':True,'metadata_checked':True,'limitations_acknowledged':True,'scope':'claims','claims_checked':True,'confirmed_claim_ids':['var-fid']}
-            assert any('claim needs supported' in s for s in audit.approval_errors(e,simulated))
-            results[topic]['checks']=['wrong year detected','wrong title detected','missing author detected','duplicate detected','clean control unchanged','partial claim approval blocked']
+            results[topic]['checks']=['wrong year detected','wrong title detected','missing author detected','duplicate detected','clean control unchanged']
     # Test parser/formatter behavior using a clearly synthetic record, never as human approval.
     fixture=out/'synthetic.bib';fixture.write_text('@misc{synthetic_key, title={{KV} Test: {Nested {Braces}}}, author={Example, Alice and Test, Bob}, year={2024}}\n')
     run('node','scripts/citations.cjs','parse',str(fixture),str(out/'synthetic.parsed.json'))

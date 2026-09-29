@@ -22,11 +22,9 @@ def entry():
 
 
 def approval(e):
-    return {'id': e['id'], 'decision': 'approve', 'evidence_hash': e['evidence_hash'], 'reviewer': 'SYNTHETIC TEST ONLY', 'reviewed_at': a.now(), 'scope': 'metadata', 'identity_checked': True, 'metadata_checked': True, 'limitations_acknowledged': True, 'note': '', 'confirmed_claim_ids': []}
+    return {'id': e['id'], 'decision': 'approve', 'evidence_hash': e['evidence_hash'], 'reviewer': 'SYNTHETIC TEST ONLY', 'reviewed_at': a.now(), 'scope': 'bibliography', 'identity_checked': True, 'metadata_checked': True, 'limitations_acknowledged': True, 'note': '', 'format_checked': True, 'keywords_checked': True}
 
 
-def claim(assessment='supported'):
-    return {'id': 'c1', 'text': 'A synthetic test claim.', 'assessment': assessment, 'evidence': [{**SOURCE, 'locator': 'Table 1', 'excerpt': 'Synthetic evidence.'}]}
 
 
 class AuditTests(unittest.TestCase):
@@ -43,7 +41,7 @@ class AuditTests(unittest.TestCase):
             subprocess.run([sys.executable, str(Path(a.__file__)), 'export', str(src), '--out', str(out)], check=True, capture_output=True)
             self.assertEqual(a.read(out), [])
 
-    def test_explicit_metadata_approval_allowed(self):
+    def test_explicit_bibliography_approval_allowed(self):
         e = entry()
         self.assertEqual(a.approval_errors(e, approval(e)), [])
 
@@ -59,26 +57,9 @@ class AuditTests(unittest.TestCase):
         e = entry(); d = approval(e); e['candidates'][0]['csl']['title'] = 'Other work'; a.stamp(e)
         self.assertIn('stale or changed evidence', a.approval_errors(e, d))
 
-    def test_partial_claim_cannot_be_approved(self):
-        e = entry(); e['claims'] = [claim('partial')]; a.stamp(e)
-        d = approval(e); d.update(scope='claims', claims_checked=True, confirmed_claim_ids=['c1'])
-        self.assertTrue(a.approval_errors(e, d))
 
-    def test_cannot_downgrade_claims_to_metadata(self):
-        e = entry(); e['claims'] = [claim()]; a.stamp(e)
-        self.assertTrue(a.approval_errors(e, approval(e)))
 
-    def test_supported_claim_needs_explicit_per_claim_review(self):
-        e = entry(); e['claims'] = [claim()]; a.stamp(e)
-        d = approval(e); d.update(scope='claims', claims_checked=True)
-        self.assertTrue(a.approval_errors(e, d))
-        d['confirmed_claim_ids'] = ['c1']
-        self.assertEqual(a.approval_errors(e, d), [])
 
-    def test_missing_claim_locator_blocked(self):
-        e = entry(); e['claims'] = [claim()]; del e['claims'][0]['evidence'][0]['locator']; a.stamp(e)
-        d = approval(e); d.update(scope='claims', claims_checked=True, confirmed_claim_ids=['c1'])
-        self.assertTrue(a.approval_errors(e, d))
 
     def test_integrity_notice_needs_disposition(self):
         e = entry(); e['integrity']['status'] = 'notice_found'; a.stamp(e)
@@ -143,17 +124,17 @@ class AuditTests(unittest.TestCase):
             self.assertEqual(values[1]['raw'],document.splitlines()[1])
             self.assertNotIn('title',values[1])
 
-    def test_review_round_trip_and_changed_claim_invalidates(self):
+    def test_review_round_trip_and_changed_keywords_invalidates(self):
         with tempfile.TemporaryDirectory() as td:
             folder=Path(td); run=a.new_audit('test'); e=entry(); run['entries']=[e]
             src=folder/'audit.json'; dec=folder/'decisions.json'; reviewed=folder/'reviewed.json'; out=folder/'approved.json'
-            a.save(src,run); a.save(dec,{'run_id':run['run_id'],'decisions':[approval(e)]})
+            a.save(src,run); a.save(dec,{'schema_version':2,'run_id':run['run_id'],'decisions':[approval(e)]})
             cmd=[sys.executable,str(Path(a.__file__))]
             subprocess.run(cmd+['merge',str(src),str(dec),'--out',str(reviewed)],check=True,capture_output=True)
             subprocess.run(cmd+['export',str(reviewed),'--out',str(out)],check=True,capture_output=True)
             self.assertEqual(a.read(out)[0]['id'],'test-key')
             patch=folder/'patch.json'; enriched=folder/'enriched.json'
-            a.save(patch,{'run_id':run['run_id'],'entries':[{'id':e['id'],'evidence_hash':e['evidence_hash'],'claims':[claim()]}]})
+            a.save(patch,{'run_id':run['run_id'],'entries':[{'id':e['id'],'evidence_hash':e['evidence_hash'],'keywords':{'terms':['new topic'],'basis':'agent_title_abstract','source_url':SOURCE['url'],'note':'Synthetic test'}}]})
             subprocess.run(cmd+['enrich',str(reviewed),str(patch),'--out',str(enriched)],check=True,capture_output=True)
             self.assertEqual(a.read(enriched)['entries'][0]['human']['decision'],'pending')
             bad=subprocess.run(cmd+['merge',str(enriched),str(dec),'--out',str(folder/'bad.json')],capture_output=True)
@@ -167,6 +148,32 @@ class AuditTests(unittest.TestCase):
         result=a.integrity(Notices(),entry()['candidates'][0])
         self.assertEqual(result['status'],'notice_found')
         self.assertEqual(result['evidence'][0]['notices'][0]['DOI'],'10.0000/notice')
+
+    def test_keyword_origin_is_explicit(self):
+        e = entry()
+        self.assertEqual(e['keywords']['basis'], 'title_terms')
+        self.assertEqual(e['keywords']['terms'], ['Fixture', 'title'])
+        self.assertEqual(e['keywords']['source_url'], SOURCE['url'])
+
+    def test_format_and_keyword_checks_required(self):
+        e = entry(); d = approval(e); d['format_checked'] = False
+        self.assertTrue(a.approval_errors(e, d))
+        d['format_checked'] = True; d['keywords_checked'] = False
+        self.assertTrue(a.approval_errors(e, d))
+
+    def test_previews_use_corrected_metadata_and_keep_keys(self):
+        e = entry(); run = a.new_audit('audit'); run['entries'] = [e]
+        preview = a.citation_previews(run)['test-key']
+        self.assertIn('2024', preview['apa'])
+        self.assertNotIn('2023', preview['apa'])
+        self.assertIn('test-key', preview['bibtex'])
+        self.assertEqual(e['human']['decision'], 'pending')
+
+    def test_old_schema_and_unknown_keywords_rejected(self):
+        run = a.new_audit('audit'); run['schema_version'] = 1
+        with self.assertRaises(ValueError): a.validate(run)
+        run = a.new_audit('audit'); e = entry(); e['keywords']['basis'] = 'verified_fact'; a.stamp(e); run['entries'] = [e]
+        with self.assertRaises(ValueError): a.validate(run)
 
     def test_no_overwrite(self):
         with tempfile.TemporaryDirectory() as td:

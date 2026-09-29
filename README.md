@@ -1,96 +1,75 @@
 # Reference Review
 
-**Tool-assisted reference verification with an explicit human review step.**
+**Two ways to build a trustworthy, well-formatted bibliography.**
 
-Turn a research topic or an existing reference list into an evidence-backed audit, a local review page, and a bibliography containing only explicitly approved entries. Use it as a Codex skill or run the command-line helpers yourself.
+| Input | What the workflow does | Output per paper |
+|---|---|---|
+| **An existing reference list** | Check existence/identity, compare metadata and editions, flag duplicates, review or suggest keywords | Source evidence + citation previews + keywords |
+| **Topic keywords** | Search for relevant papers and check their source records | Source evidence + citation previews + keywords |
 
-A plausible citation is a search lead. A source record establishes bibliographic evidence. Neither automatically proves a manuscript claim.
+Both routes lead to the same simple review page: **paper identity → citation format → keywords**. Preview APA and BibTeX before making a decision. Human review covers the bibliography only; it does not require reading full papers or assessing manuscript sentences.
 
-```text
-Research topic / existing references
-                ↓
-Search primary sources and resolve paper identity
-                ↓
-Compare metadata, versions, duplicates, and claim evidence
-                ↓
-Local human review: approve · rewrite · replace · reject
-                ↓
-Merge decisions tied to the evidence version
-                ↓
-Export approved references in BibTeX, RIS, or CSL styles
-```
+## Quick start
 
-## What it does
-
-- Accepts BibTeX, RIS, CSL JSON, DOI/arXiv lists, and agent-assisted extraction from pasted text or manuscripts.
-- Uses open-source [Citation.js](https://citation.js.org/) for parsing and formatting, plus Crossref and arXiv public APIs for discovery and identifier lookup.
-- Retains original entries, candidate records, source links, retrieval times, metadata differences, and limited integrity-check coverage.
-- Separates paper existence/identity, citation metadata, source support for claims, formatting, and human decisions.
-- Produces a self-contained English HTML review page. Decisions can be downloaded as JSON; optional drafts stay in the browser.
-- Blocks reviewed export until explicit human approval. Partial or unsupported claims cannot pass. Evidence changes invalidate earlier approvals.
-
-The helpers do **not** autonomously read and interpret every PDF. An agent or reviewer must inspect the relevant full text, attach located evidence, and state remaining uncertainty. No API key or paid LLM service is required by the helpers.
-
-## Setup
-
-Requirements: Python 3.10+ and Node.js 20+.
+Requires Python 3.10+ and Node.js 20+.
 
 ```sh
 git clone https://github.com/LMHDS/Reference-Review.git
 cd Reference-Review
 npm ci --ignore-scripts
-```
-
-For use as a skill, place or clone this repository in your skill directory under the folder name `reference-verification`, then install its Node dependencies. [SKILL.md](SKILL.md) is the agent entry point. The helpers are otherwise independent of a specific assistant.
-
-Example requests:
-
-> Use reference-verification to find candidate papers on sparse attention. Explain why each is relevant, inspect primary sources, and prepare a human review page. Keep unverified claims explicit.
-
-> Audit my references.bib and these manuscript sentences. Check identity, metadata, duplicates, and whether each exact sentence is supported. Produce a review page before exporting approved references.
-
-## Try the included examples
-
-```sh
 python3 scripts/run_acceptance.py --out runs/demo
 ```
 
-Open `runs/demo/small-reference-list.review.html` locally. Read the source links, enter your reviewer name, record each decision, and download the decisions JSON. The VAR example deliberately omits a rejection-sampling condition, so it requires a rewrite and renewed evidence review before approval.
+Open `runs/demo/sparse-attention.review.html`, `kv-cache-quantization.review.html`, or `small-reference-list.review.html` locally. All examples include source links, citation previews and keywords. They remain pending until a human explicitly records a decision.
 
-There are also review pages for ten sparse-attention papers and ten KV-cache-quantization papers. These are curated examples, not an exhaustive literature review or a ranking of the best papers. Their selected edition is the recorded arXiv preprint; original submission year is kept separate from revision history and proceedings publication.
+To use as a Codex skill, place this repository in your skill directory under `reference-verification` and install the Node dependencies. [SKILL.md](SKILL.md) is the agent entry point. The helpers also run independently of an assistant.
 
-The acceptance command replays metadata previously retrieved from primary pages. It does **not** perform a fresh online verification. See [the acceptance report](reports/acceptance.md) and [source records](examples/source-records.json).
+## 1. Audit an existing reference list
 
-## Audit your own list
+Example request:
 
-Use a new output directory for each run; output files are never silently overwritten.
+> Check this reference list for real paper identities, correct bibliography fields and citation formatting. Review the supplied keywords or suggest keywords with their sources. Prepare a bibliography review page.
 
 ```sh
-RUN=runs/my-review
+RUN=runs/my-list
 node scripts/citations.cjs parse references.bib "$RUN/input.json"
 python3 scripts/audit.py audit "$RUN/input.json" --cache "$RUN/evidence" --out "$RUN/audit.json"
 python3 scripts/audit.py render "$RUN/audit.json" --out "$RUN/review.html"
 ```
 
-For discovery:
+Supports BibTeX, RIS, CSL JSON, DOI/arXiv lists, and agent-extracted pasted references. Original entries and citation keys are retained. Ambiguous candidates require source matching before a citation can be proposed.
+
+## 2. Discover papers from topic keywords
+
+Example request:
+
+> Find ten representative papers on KV-cache quantization. Check primary-source identity, provide citation previews and keywords, and briefly explain topic relevance.
 
 ```sh
-python3 scripts/audit.py discover 'ti:"sparse attention"' --provider arxiv --limit 10 --cache runs/search/evidence --out runs/search/candidates.json
+RUN=runs/topic-search
+python3 scripts/audit.py discover 'ti:"KV cache" AND all:quantization' --provider arxiv --limit 10 --cache "$RUN/evidence" --out "$RUN/candidates.json"
+python3 scripts/audit.py render "$RUN/candidates.json" --out "$RUN/review.html"
 ```
 
-Discovery results are candidates. Inspect sources and use `enrich` to add identity reasoning, full-text claim evidence, or alternate records. [Execution instructions](references/commands.md) describe the patch format, source provenance, API errors, and custom CSL styles; [evidence guidance](references/evidence.md) explains assessment boundaries.
+The agent inspects results for relevance and corroborates identities on primary pages. CLI search results alone are candidates. Crossref is also supported. These searches do not guarantee exhaustive coverage or rank papers by quality.
 
-After the human records and downloads decisions:
+## Shared output and review
+
+Each card displays identity evidence and source links, edition/version details, metadata differences, APA/BibTeX previews, and keywords with provenance. Source-provided keywords are distinguished from AI title/abstract suggestions and automatic title-term extraction. Keywords supplied in your list remain available for comparison.
+
+Choose **Approve bibliography**, **Request correction**, **Choose another paper**, or **Exclude**. Click **Record decision**, then **Download decisions JSON**. A correction request returns to the workflow for a new review; it never silently approves unseen changes.
 
 ```sh
-python3 scripts/audit.py merge "$RUN/audit.json" human_decisions.json --out "$RUN/reviewed.json"
+python3 scripts/audit.py merge "$RUN/audit.json" bibliography_decisions.json --out "$RUN/reviewed.json"
 python3 scripts/audit.py export "$RUN/reviewed.json" --out "$RUN/approved.csl.json"
 node scripts/citations.cjs format "$RUN/approved.csl.json" "$RUN/approved.bib" --format bibtex
 ```
 
-Use the exact audit version displayed by the review page. For revised claims, add evidence for the revised wording, render a new page, and obtain a new human decision. Metadata-only approval never establishes support for a manuscript claim.
+Use the exact audit filename behind your review page (`candidates.json` for the discovery example). Only approved references enter the reviewed export. Keyword provenance remains in the accompanying audit. [Detailed commands](references/commands.md) cover enrichment, other formats and independent CSL styles.
 
-## Acceptance and tests
+## Acceptance
+
+[The report](reports/acceptance.md) includes 10 sparse-attention papers, 10 KV-cache-quantization papers and 5 controlled list entries. All 25 records have keyword sets and citation previews. Controlled errors cover year, title, missing authors and duplicates. The source metadata was retrieved separately from primary pages; automated acceptance replays the saved records and is not a new online search.
 
 ```sh
 python3 -m unittest discover -s scripts -p 'test_*.py' -v
@@ -98,17 +77,16 @@ python3 scripts/run_acceptance.py --out runs/acceptance
 node tests/ui.cjs runs/acceptance
 ```
 
-The test suite covers stale approvals, identity selection, API failures, metadata differences, duplicates, claim evidence, reviewed export, citation roundtrips, and the review interface. API unit tests use fixtures. The report distinguishes those tests from the separate primary-page retrieval used to curate the 20-paper datasets.
+## Scope, sources and privacy
 
-## Limits and privacy
+The workflow uses open-source [Citation.js](https://citation.js.org/) and public Crossref/arXiv APIs. No API key or paid model service is required by the helpers. The agent provides source matching and useful title/abstract keyword suggestions; the standalone CLI offers conservative lexical keywords.
 
-- A lookup failure means unresolved evidence, not a fabricated paper. Title search does not automatically select a match.
-- Crossref update checks are limited to linked notices in that registry. No notice found is not an integrity guarantee. arXiv records and other registries need their own checks.
-- Exact claim support requires the relevant full text, conditions, tables, and version. Abstracts alone are insufficient for specific experimental claims.
-- Correct formatting is not proof of compliance with every venue policy. Review the actual submission style and author instructions. Check inferred name segmentation and capitalization.
-- Review decisions are self-reported, editable local records, not authenticated signatures. This is a workflow aid, not a tamper-proof certification system. The formatter can format arbitrary input; use the reviewed export path for final references.
-- The local HTML page makes no uploads or model calls. Source links open external sites. CLI searches send identifiers/query strings to the chosen provider; the audit and its raw references can contain sensitive manuscript text. Keep your own runs out of public repositories.
+A lookup failure does not prove fabrication. An existing record does not certify research quality. Limited registry notice checks do not establish comprehensive integrity. Preprint and proceedings metadata stay separate. Check inferred author-name segmentation and the actual required style; APA/BibTeX previews are not a venue-policy certification.
+
+The local HTML page uploads nothing; source links open external sites. CLI requests send identifiers or search terms to the selected provider. Local review decisions are self-reported records, not signatures. Keep private bibliography runs out of public repositories.
+
+Version 0.2 uses schema 2. Preserve older files and start a new run; old claim-review decisions are intentionally not migrated. Manuscript-content verification is outside this focused workflow.
 
 ## License
 
-MIT for the project code and documentation. Bibliographic facts and short source excerpts retain their source attribution; this repository does not redistribute full papers. Dependencies retain their own licenses.
+MIT for project code and documentation. Bibliographic facts retain source attribution; full papers are not redistributed. Dependencies retain their own licenses.

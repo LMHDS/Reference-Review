@@ -36,7 +36,11 @@
         "URL": "https://arxiv.org/abs/1904.10509v1",
         "DOI": "10.48550/arXiv.1904.10509"
       },
-      "relevance": "Sparse factorized attention for long autoregressive sequences; an early reference for the topic."
+      "relevance": "Sparse factorized attention for long autoregressive sequences; an early reference for the topic.",
+      "keywords": [
+        "sparse attention",
+        "autoregressive generation"
+      ]
     },
     {
       "source_key": "2004.05150",
@@ -69,7 +73,11 @@
         "URL": "https://arxiv.org/abs/2004.05150v2",
         "DOI": "10.48550/arXiv.2004.05150"
       },
-      "relevance": "Local-window and global attention for long documents."
+      "relevance": "Local-window and global attention for long documents.",
+      "keywords": [
+        "local attention",
+        "long documents"
+      ]
     },
     {
       "source_key": "2007.14062",
@@ -134,7 +142,11 @@
         "URL": "https://arxiv.org/abs/2007.14062v2",
         "DOI": "10.48550/arXiv.2007.14062"
       },
-      "relevance": "Block-sparse attention combining local, global, and random connections."
+      "relevance": "Block-sparse attention combining local, global, and random connections.",
+      "keywords": [
+        "block-sparse attention",
+        "long sequences"
+      ]
     },
     {
       "source_key": "2001.04451",
@@ -167,7 +179,11 @@
         "URL": "https://arxiv.org/abs/2001.04451v2",
         "DOI": "10.48550/arXiv.2001.04451"
       },
-      "relevance": "Locality-sensitive hashing provides a content-dependent sparse attention mechanism."
+      "relevance": "Locality-sensitive hashing provides a content-dependent sparse attention mechanism.",
+      "keywords": [
+        "locality-sensitive hashing",
+        "efficient attention"
+      ]
     },
     {
       "source_key": "2003.05997",
@@ -204,7 +220,11 @@
         "URL": "https://arxiv.org/abs/2003.05997v5",
         "DOI": "10.48550/arXiv.2003.05997"
       },
-      "relevance": "Content-based routing offers another way to select sparse attention connections."
+      "relevance": "Content-based routing offers another way to select sparse attention connections.",
+      "keywords": [
+        "routing attention",
+        "content-based sparsity"
+      ]
     },
     {
       "source_key": "2103.14030",
@@ -257,7 +277,11 @@
         "URL": "https://arxiv.org/abs/2103.14030v2",
         "DOI": "10.48550/arXiv.2103.14030"
       },
-      "relevance": "Shifted local windows extend sparse attention ideas to hierarchical visual representations."
+      "relevance": "Shifted local windows extend sparse attention ideas to hierarchical visual representations.",
+      "keywords": [
+        "shifted windows",
+        "vision transformer"
+      ]
     },
     {
       "source_key": "2502.11089",
@@ -338,7 +362,11 @@
         "URL": "https://arxiv.org/abs/2502.11089v2",
         "DOI": "10.48550/arXiv.2502.11089"
       },
-      "relevance": "An example of trainable sparse attention designed with hardware efficiency in mind."
+      "relevance": "An example of trainable sparse attention designed with hardware efficiency in mind.",
+      "keywords": [
+        "trainable sparse attention",
+        "hardware efficiency"
+      ]
     },
     {
       "source_key": "2502.13189",
@@ -459,7 +487,11 @@
         "URL": "https://arxiv.org/abs/2502.13189v1",
         "DOI": "10.48550/arXiv.2502.13189"
       },
-      "relevance": "Block-level routing offers a mixture-of-experts-inspired approach to sparse attention."
+      "relevance": "Block-level routing offers a mixture-of-experts-inspired approach to sparse attention.",
+      "keywords": [
+        "block routing",
+        "long-context LLMs"
+      ]
     },
     {
       "source_key": "2407.02490",
@@ -527,7 +559,11 @@
         "publisher": "arXiv",
         "URL": "https://arxiv.org/abs/2407.02490v2"
       },
-      "relevance": "Dynamic sparse attention targets long-context prefill acceleration."
+      "relevance": "Dynamic sparse attention targets long-context prefill acceleration.",
+      "keywords": [
+        "dynamic sparse attention",
+        "prefill acceleration"
+      ]
     },
     {
       "source_key": "2502.20766",
@@ -568,7 +604,11 @@
         "URL": "https://arxiv.org/abs/2502.20766v1",
         "DOI": "10.48550/arXiv.2502.20766"
       },
-      "relevance": "Context-aware sparse attention adapts the prefill computation to the input."
+      "relevance": "Context-aware sparse attention adapts the prefill computation to the input.",
+      "keywords": [
+        "context-aware sparsity",
+        "long-sequence inference"
+      ]
     }
   ]
 }

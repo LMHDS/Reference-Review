@@ -1,49 +1,52 @@
-# Acceptance report
+# Acceptance report: focused bibliography workflow
 
-Executed: 2026-09-29T00:33:36+00:00
+Version: 0.2.0 · Schema: 2 · Executed: 2026-09-29T00:57:46+00:00
 
-## Result
+## Scope and result
 
-All three acceptance datasets passed the implemented workflow checks. The 25 entries cover 21 distinct papers. All 25 actual reference records remain **pending human review**, and reviewed exports contain **zero** entries. Synthetic approval tests exercise the gate only; they are not real reviewer decisions.
+Exactly two entry points: audit an existing reference list, or discover papers from topic keywords. Both produce identity evidence, citation-format previews and keywords. Manuscript-sentence verification has been removed.
 
-| Dataset | Entries | Primary-source identities | Human pending | Reviewed export |
-|---|---:|---:|---:|---:|
-| Sparse attention | 10 | 10 | 10 | 0 |
-| KV-cache quantization | 10 | 10 | 10 | 0 |
-| Controlled reference list | 5 | 5 | 5 | 0 |
+| Dataset | Records | Source identities | Keyword sets | APA + BibTeX previews | Human pending |
+|---|---:|---:|---:|---:|---:|
+| Sparse attention | 10 | 10 | 10 | 10 pairs | 10 |
+| KV-cache quantization | 10 | 10 | 10 | 10 pairs | 10 |
+| Controlled reference list | 5 | 5 | 5 | 5 pairs | 5 |
 
-## What was checked
+All checks passed locally. The 25 records represent 21 distinct papers. All real references remain pending; approved exports contain zero entries. Synthetic decisions exercise review behavior without creating real approvals.
 
-- Live primary arXiv landing pages were read separately with a web retrieval tool. Titles, ordered author names, identifiers, initial submission years, and available version history were recorded in [source-records.json](../examples/source-records.json). The manifest records actual retrieval times. It is a structured transcription, not a raw API-response archive.
-- The automated acceptance run used those saved records through the real enrichment, comparison, duplicate detection, rendering, and export commands. Replaying these records is **not** a new online lookup or an independent confirmation of their transcription.
-- The controlled list detected an incorrect year, an incorrect title, a missing author list, and a duplicate. The clean control had no metadata differences. A VAR claim omitting rejection sampling remained partial and could not receive claim approval.
-- Twenty-one Python unit tests passed. API behavior in these tests uses fixtures. BibTeX key/nested-brace parsing, BibTeX/RIS author-year roundtrips, and APA rendering passed.
-- DOM interface tests passed: five-card rendering, blocked partial-claim approval, explicit rewrite and metadata-only decisions, local draft persistence, and search. Skill structure validation passed.
+## Evidence and limits
 
-## Coverage limits
+Primary arXiv pages were read separately with a web retrieval tool. The [source manifest](../examples/source-records.json) records titles, author order, identifiers, original submission years, versions and retrieval times. It is a structured transcription, not a raw API archive. This acceptance run replays those saved source records through enrichment, metadata comparison, preview generation, review rendering and export. It is not a fresh online search or independent proof of the transcription.
 
-The topic sets are curated representative examples, not a systematic search, citation-count ranking, or full-text verification of all methods. Topic relevance notes are provisional title/abstract-level summaries. Author full strings/order are sourced; given/family segmentation is inferred. Years refer to original arXiv submission, not a claim about proceedings publication. No comprehensive integrity-notice search or venue-specific manuscript compliance audit was performed. Native Crossref/arXiv API acceptance could not be run in the local network environment; primary pages were accessible through the separate web tool. Browser visual layout was not inspected; DOM testing is the interface evidence. GitHub Actions is configured separately and its status must be read on GitHub.
+The two topic lists are curated examples, not exhaustive or ranked searches. Keywords are explicitly labeled as title/abstract-based suggestions, not author-provided keywords. Years refer to the original arXiv submission; preprint editions are not merged with proceedings editions. Author-name segmentation remains a review item. Native API connectivity and comprehensive integrity checks were not part of this local acceptance. No full-text reading is required by this version. Browser visuals were not inspected; interface checks use the DOM.
 
-## Review the examples
+## Tests
 
-Download the repository to open the self-contained review pages locally. GitHub normally displays HTML source rather than executing it.
+- 21 Python tests passed, including keyword provenance, stale approval rejection, bibliography-only approval scope, missing review checks, old-schema rejection and preview generation from corrected metadata.
+- Citation-key preservation is checked in a real Citation.js preview. A discovered automatic-key-rewriting issue was fixed by explicitly retaining the input key; unsafe or duplicate keys fail clearly.
+- BibTeX nested-brace parsing, BibTeX/RIS author-year roundtrips and APA rendering passed.
+- DOM tests passed: citation and keyword previews before approval, blocked incomplete review, explicit approval/correction decisions, local drafts and search.
+- Skill structure validation passed. GitHub Actions runs the same behavioral checks; see its live status for the published commit.
 
-- [Small list: review page](examples/small-reference-list.review.html) · [audit JSON](examples/small-reference-list.audit.json)
-- [Sparse attention: review page](examples/sparse-attention.review.html) · [audit JSON](examples/sparse-attention.audit.json)
-- [KV-cache quantization: review page](examples/kv-cache-quantization.review.html) · [audit JSON](examples/kv-cache-quantization.audit.json)
+## Controlled list
 
-## Controlled input cases
+These are deliberately constructed inputs using real papers, not private references or an observed AI failure log.
 
-These are intentionally constructed inputs using real papers. They are not a private bibliography or a claim that an AI produced these particular mistakes.
+| Input | Expected and observed |
+|---|---|
+| VAR year changed to 2023 | Source year 2024 flagged as different |
+| Sparse Transformers title changed | Source title flagged as different |
+| KIVI author field removed | Missing authors flagged |
+| Second KIVI entry | Duplicate candidate flagged |
+| Longformer clean control | All compared fields match |
 
-| Input | Intended finding | Observed |
-|---|---|---|
-| VAR, year changed to 2023 | Source year is 2024 | Difference flagged |
-| Sparse Transformers, title changed to Infinite Sequences | Source says Long Sequences | Difference flagged |
-| KIVI, author field removed | Source author list available | Missing field flagged |
-| Second KIVI entry | Same underlying paper | Duplicate candidate flagged |
-| Longformer, clean metadata | No injected error | All compared fields match |
-| VAR, FID 1.73 without sampling condition | Table 1 distinguishes rejection sampling | Partial; approval blocked |
+## Open the review pages
+
+Download the repository and open HTML locally. Each page displays source identity, APA/BibTeX previews and keyword origin before the reviewer makes a decision.
+
+- [Reference-list review](examples/small-reference-list.review.html)
+- [Sparse-attention review](examples/sparse-attention.review.html)
+- [KV-cache-quantization review](examples/kv-cache-quantization.review.html)
 
 ## Sparse attention: ten selected papers
 
@@ -84,4 +87,4 @@ python3 scripts/run_acceptance.py --out runs/acceptance
 node tests/ui.cjs runs/acceptance
 ```
 
-Use a fresh output directory. Audit IDs and timestamps will differ between runs; assertions and datasets remain the same.
+Use a fresh output directory. Old schema-1 audits remain in repository history; start a new schema-2 run rather than reusing earlier decisions.

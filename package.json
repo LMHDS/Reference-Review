@@ -1,8 +1,8 @@
 {
   "name": "reference-verification-skill",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
-  "description": "Evidence-backed reference audit and local human review",
+  "description": "Reference-list auditing and topic discovery with paper identity evidence, citation previews, and keywords",
   "dependencies": {
     "@citation-js/core": "0.7.21",
     "@citation-js/plugin-bibtex": "0.7.21",

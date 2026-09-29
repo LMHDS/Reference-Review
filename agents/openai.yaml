@@ -1,4 +1,4 @@
 interface:
-  display_name: "Reference Verification"
-  short_description: "Audit references and claims with traceable human review"
-  default_prompt: "Use $reference-verification to discover or audit references, collect source evidence, and prepare a human review queue."
+  display_name: "Reference Review"
+  short_description: "Check references or find papers with formats and keywords"
+  default_prompt: "Use $reference-verification to audit my reference list or discover papers from topic keywords, with identity evidence, citation previews, and keyword provenance."

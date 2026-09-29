@@ -10,6 +10,8 @@ import os
 from pathlib import Path
 import re
 import sys
+import subprocess
+import tempfile
 import time
 import unicodedata
 import urllib.error
@@ -20,7 +22,7 @@ import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 CSL_FIELDS = ('type', 'title', 'author', 'issued', 'container-title', 'volume', 'issue', 'page', 'DOI', 'URL', 'publisher', 'article-number')
-DECISIONS = {'pending', 'approve', 'rewrite', 'replace', 'reject'}
+DECISIONS = {'pending', 'approve', 'revise', 'replace', 'reject'}
 
 
 def now():
@@ -210,7 +212,23 @@ def fingerprint(entry):
     return digest({k: v for k, v in entry.items() if k not in ('human', 'evidence_hash')})
 
 
+def keyword_terms(entry):
+    selected = canonical(entry)
+    if not selected:
+        return {'terms': [], 'basis': 'unavailable', 'source_url': '', 'note': 'Resolve paper identity before suggesting keywords.'}
+    stop = set('a an the for of and or to with via in on using from by towards based efficient scalable modeling model models generation transformer transformers'.split())
+    terms = []
+    for term in re.findall(r"[\w]+(?:[-.][\w]+)*", selected.get('title', ''), re.UNICODE):
+        if len(term) > 2 and term.casefold() not in stop and term.casefold() not in [v.casefold() for v in terms]:
+            terms.append(term)
+    candidate = entry['candidates'][entry['selected']]
+    return {'terms': terms[:8], 'basis': 'title_terms', 'source_url': candidate['source'].get('url', ''),
+            'note': 'Automatically extracted title terms, not author-supplied keywords or a relevance verdict. Agent enrichment can add sourced topical phrases.'}
+
+
 def stamp(entry):
+    if entry.get('keywords') is None:
+        entry['keywords'] = keyword_terms(entry)
     entry['metadata_diff'] = comparison(entry['original'], canonical(entry))
     csl = canonical(entry) or {}
     entry['formatting'] = {'status': 'not_rendered', 'missing_core_fields': [k for k in ('title', 'author', 'issued', 'type') if not csl.get(k)],
@@ -243,7 +261,7 @@ def base_entry(original):
     return {'id': str(original['id']), 'original': original, 'candidates': [], 'selected': None,
             'identity': {'status': 'unresolved', 'reason': 'No matching record retrieved yet.'},
             'integrity': {'status': 'not_checked', 'scope': 'No source checked'},
-            'claims': [], 'extra_sources': [], 'duplicate_of': [], 'errors': [],
+            'keywords': None, 'extra_sources': [], 'duplicate_of': [], 'errors': [],
             'human': {'decision': 'pending'}}
 
 
@@ -267,7 +285,7 @@ def load_input(path):
                 record['arxiv_id'] = arxiv(text)
             entries.append(record)
     else:
-        raise ValueError('Parse BibTeX/RIS using citations.cjs first. PDF/manuscript extraction is agent-assisted; see SKILL.md.')
+        raise ValueError('Parse BibTeX/RIS using citations.cjs first. For pasted references, retain the original text; see SKILL.md.')
     ids = set()
     for i, entry in enumerate(entries):
         entry['id'] = str(entry.get('id', f'ref-{i + 1}'))
@@ -333,7 +351,7 @@ def duplicates(entries):
 
 
 def new_audit(mode):
-    return {'schema_version': 1, 'run_id': str(uuid.uuid4()), 'created_at': now(), 'mode': mode, 'entries': [],
+    return {'schema_version': 2, 'run_id': str(uuid.uuid4()), 'created_at': now(), 'mode': mode, 'entries': [],
             'notice': 'Machine evidence is provisional. Only explicit human decisions can enter the reviewed export. Integrity coverage is limited.'}
 
 
@@ -349,7 +367,7 @@ def approval_errors(entry, decision):
         errors.append('reviewer and review time required')
     if decision.get('decision') != 'approve':
         if not decision.get('note', '').strip():
-            errors.append('reason required for rewrite/replace/reject')
+            errors.append('reason required for revise/replace/reject')
         return errors
     if canonical(entry) is None:
         errors.append('select an evidenced candidate before approval')
@@ -367,28 +385,16 @@ def approval_errors(entry, decision):
         errors.append('missing bibliographic fields require explicit written disposition')
     if entry.get('duplicate_of') and not decision.get('note', '').strip():
         errors.append('duplicate/version candidate requires written disposition')
-    if decision.get('scope') not in ('metadata', 'claims'):
-        errors.append('approval scope must be metadata or claims')
-    if entry.get('claims') and decision.get('scope') != 'claims':
-        errors.append('attached manuscript claims must be reviewed; cannot downgrade to metadata-only')
-    if decision.get('scope') == 'claims':
-        if not entry.get('claims'):
-            errors.append('no claims supplied')
-        if not decision.get('claims_checked'):
-            errors.append('claim review attestation missing')
-        confirmed = set(decision.get('confirmed_claim_ids', []))
-        for claim in entry.get('claims', []):
-            if claim['id'] not in confirmed:
-                errors.append('unconfirmed claim: ' + claim['id'])
-            ev = claim.get('evidence', [])
-            if claim.get('assessment') not in ('supported', 'human_supported') or not any(x.get('url') and x.get('locator') and x.get('excerpt') and x.get('retrieved_at') for x in ev):
-                errors.append('claim needs supported assessment and located source evidence: ' + claim['id'])
+    if decision.get('scope') != 'bibliography':
+        errors.append('approval scope must be bibliography')
+    if not decision.get('format_checked') or not decision.get('keywords_checked'):
+        errors.append('review citation previews and keyword provenance')
     return errors
 
 
 def validate(audit):
-    if audit.get('schema_version') != 1:
-        raise ValueError('Unsupported audit schema.')
+    if audit.get('schema_version') != 2:
+        raise ValueError('Use a new version-2 audit. Older claim-review audits and decisions are not migrated automatically.')
     ids = set()
     for entry in audit['entries']:
         if entry['id'] in ids:
@@ -398,6 +404,13 @@ def validate(audit):
             raise ValueError('Changed evidence for ' + entry['id'] + '; use enrich to update and invalidate approvals.')
         if entry.get('selected') is not None and canonical(entry) is None:
             raise ValueError('Invalid candidate selection.')
+        keywords = entry.get('keywords', {})
+        if not isinstance(keywords, dict) or not isinstance(keywords.get('terms'), list) or not all(isinstance(t, str) and t.strip() for t in keywords['terms']):
+            raise ValueError('Keywords must contain a list of nonempty terms.')
+        if keywords.get('basis') not in ('title_terms', 'source_keywords', 'agent_title_abstract', 'unavailable'):
+            raise ValueError('Unknown keyword provenance.')
+        if keywords['terms'] and not keywords.get('source_url'):
+            raise ValueError('Keyword suggestions need a source URL.')
         human = entry.get('human', {})
         if human.get('decision') != 'pending':
             problems = approval_errors(entry, human)
@@ -405,10 +418,28 @@ def validate(audit):
                 raise ValueError(entry['id'] + ': ' + '; '.join(problems))
 
 
+def citation_previews(audit):
+    records = []
+    for entry in audit['entries']:
+        if canonical(entry):
+            record = copy.deepcopy(canonical(entry))
+            record['id'] = entry['id']
+            records.append(record)
+    with tempfile.TemporaryDirectory() as td:
+        src, dest = Path(td)/'records.json', Path(td)/'previews.json'
+        save(src, records)
+        result = subprocess.run(['node', str(ROOT/'scripts/citations.cjs'), 'preview', str(src), str(dest)], capture_output=True, text=True)
+        if result.returncode:
+            raise ValueError('Citation preview failed. Install Node dependencies with npm ci --ignore-scripts. ' + result.stderr[:300])
+        return read(dest)
+
+
 def render(audit, output):
     validate(audit)
     # JSON cannot terminate the script element; UI inserts all external strings with textContent.
-    payload = json.dumps(audit, ensure_ascii=False).replace('&', '\\u0026').replace('<', '\\u003c').replace('>', '\\u003e')
+    snapshot = copy.deepcopy(audit)
+    snapshot['previews'] = citation_previews(audit)
+    payload = json.dumps(snapshot, ensure_ascii=False).replace('&', '\\u0026').replace('<', '\\u003c').replace('>', '\\u003e')
     template = (ROOT / 'assets/review.html').read_text(encoding='utf-8')
     p = Path(output)
     p.parent.mkdir(parents=True, exist_ok=True)
@@ -463,7 +494,7 @@ def main():
                 if candidate.get('arxiv_id'):
                     original['arxiv_id'] = candidate['arxiv_id']
                 entry = base_entry(original)
-                entry.update(candidates=[candidate], selected=0, identity={'status': 'source_record', 'reason': 'Returned by discovery source. Relevance, identity corroboration, and full-text claims still require review.'})
+                entry.update(candidates=[candidate], selected=0, identity={'status': 'source_record', 'reason': 'Returned by discovery source. Check title/authors against a primary page and assess topic relevance before retaining.'})
                 entry['discovery'] = {'query': args.input, 'summary_basis': 'abstract_only' if candidate.get('abstract') else 'metadata_only'}
                 audit['entries'].append(stamp(entry))
         duplicates(audit['entries'])
@@ -473,7 +504,7 @@ def main():
     audit = read(args.audit)
     validate(audit)
     if args.cmd == 'validate':
-        print('Audit structure, evidence hashes, and approval gates valid. This does not independently verify scholarly claims.')
+        print('Audit structure, evidence hashes, and approval gates valid. This checks the bibliography workflow, not the truth of source metadata.')
     elif args.cmd == 'render':
         render(audit, args.out)
     elif args.cmd == 'enrich':
@@ -489,22 +520,15 @@ def main():
             for k, v in item.items():
                 if k in ('id', 'evidence_hash'):
                     continue
-                if k not in ('candidates', 'selected', 'identity', 'integrity', 'claims', 'extra_sources', 'discovery'):
+                if k not in ('candidates', 'selected', 'identity', 'integrity', 'keywords', 'extra_sources', 'discovery'):
                     raise ValueError('Unsupported patch field: ' + k)
                 entry[k] = v
             if canonical(entry) != old_record:
                 # Never transfer findings about one record to an alternate candidate.
                 if 'integrity' not in item:
                     entry['integrity'] = {'status': 'not_checked', 'scope': 'Selected record changed; check notices again.'}
-                if 'claims' not in item:
-                    for c in entry['claims']:
-                        c.update(assessment='not_checked', evidence=[], limitations='Selected record changed; inspect the new source.')
-            claim_ids = [c['id'] for c in entry['claims']]
-            if len(claim_ids) != len(set(claim_ids)):
-                raise ValueError('Duplicate claim IDs.')
-            for c in entry['claims']:
-                if not c.get('text') or c.get('assessment') not in ('supported', 'human_supported', 'partial', 'not_found', 'contradicted', 'full_text_unavailable', 'not_checked'):
-                    raise ValueError('Invalid claim assessment or empty claim text.')
+                if 'keywords' not in item:
+                    entry['keywords'] = None
             entry['human'] = {'decision': 'pending'}
             stamp(entry)
         duplicates(audit['entries'])
@@ -516,6 +540,8 @@ def main():
         save(args.out, audit)
     elif args.cmd == 'merge':
         decisions = read(args.input)
+        if decisions.get('schema_version') != 2:
+            raise ValueError('Use version-2 bibliography decisions.')
         if decisions.get('run_id') != audit['run_id']:
             raise ValueError('Human decisions belong to another run.')
         by_id = {e['id']: e for e in audit['entries']}
@@ -539,7 +565,7 @@ def main():
                 csl['id'] = entry['id']
                 accepted.append(csl)
         save(args.out, accepted)
-        print(f'Exported {len(accepted)} human-approved references; {len(audit["entries"]) - len(accepted)} withheld. See audit for metadata-only vs claim-reviewed scope.')
+        print(f'Exported {len(accepted)} human-approved references; {len(audit["entries"]) - len(accepted)} withheld. Approval covers bibliography metadata, citation previews, and keywords only.')
 
 
 if __name__ == '__main__':

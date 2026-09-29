@@ -7,6 +7,12 @@ const { Cite, plugins } = require('@citation-js/core');
 require('@citation-js/plugin-bibtex');
 require('@citation-js/plugin-csl');
 require('@citation-js/plugin-ris');
+plugins.config.get('@bibtex').format.checkLabel = false;
+plugins.config.get('@bibtex').format.useIdAsLabel = true;
+function withKeys(records) {
+  const seen=new Set();
+  return records.map(record=>{const key=String(record.id||'');if(!key||/[\s{},#%\\"]/.test(key)||seen.has(key))throw Error('Missing, unsafe, or duplicate citation key: '+key);seen.add(key);return {...record,'citation-key':key};});
+}
 
 const [command, input, output, ...args] = process.argv.slice(2);
 function write(file, value) {
@@ -29,11 +35,19 @@ try {
     });
     write(output, JSON.stringify({ entries: records, original_document: raw, parser: 'Citation.js', source_file: path.basename(input) }, null, 2));
     console.log(`Parsed ${records.length} references. This does not verify them.`);
+  } else if (command === 'preview') {
+    const records=withKeys(JSON.parse(raw)), previews=Object.create(null);
+    for(const record of records){
+      const cite=new Cite([record]);
+      previews[record.id]={bibtex:cite.format('bibtex'),apa:cite.format('bibliography',{format:'text',template:'apa',lang:'en-US'})};
+    }
+    write(output,JSON.stringify(previews,null,2));
+    console.log(`Prepared ${records.length} citation previews. These are not approved exports.`);
   } else if (command === 'format') {
     const fmt = args.includes('--format') ? args[args.indexOf('--format') + 1] : 'bibtex';
     const entries = JSON.parse(raw);
     if (!Array.isArray(entries)) throw new Error('Expected CSL array exported by audit.py export.');
-    const cite = new Cite(entries);
+    const cite = new Cite(withKeys(entries));
     let result;
     if (['bibtex', 'ris'].includes(fmt)) result = cite.format(fmt);
     else {
@@ -49,6 +63,6 @@ try {
       result = cite.format('bibliography', { format: 'text', template, lang: 'en-US' });
     }
     write(output, result);
-    console.log(`Formatted ${entries.length} records with Citation.js (${fmt}). Formatting does not verify claims.`);
+    console.log(`Formatted ${entries.length} records with Citation.js (${fmt}). Formatting does not establish paper identity.`);
   } else throw new Error('Unknown command.');
 } catch (error) { console.error(error.message); process.exitCode = 1; }

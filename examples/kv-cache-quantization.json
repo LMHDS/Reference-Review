@@ -52,7 +52,12 @@
         "URL": "https://arxiv.org/abs/2402.02750v2",
         "DOI": "10.48550/arXiv.2402.02750"
       },
-      "relevance": "Asymmetric low-bit quantization treats keys and values differently."
+      "relevance": "Asymmetric low-bit quantization treats keys and values differently.",
+      "keywords": [
+        "KV cache",
+        "asymmetric quantization",
+        "2-bit"
+      ]
     },
     {
       "source_key": "2401.18079",
@@ -101,7 +106,12 @@
         "URL": "https://arxiv.org/abs/2401.18079v6",
         "DOI": "10.48550/arXiv.2401.18079"
       },
-      "relevance": "KV-cache quantization for very long-context inference."
+      "relevance": "KV-cache quantization for very long-context inference.",
+      "keywords": [
+        "KV cache",
+        "long-context inference",
+        "quantization"
+      ]
     },
     {
       "source_key": "2403.05527",
@@ -150,7 +160,12 @@
         "URL": "https://arxiv.org/abs/2403.05527v4",
         "DOI": "10.48550/arXiv.2403.05527"
       },
-      "relevance": "Combines KV-cache compression techniques to reduce quantization error."
+      "relevance": "Combines KV-cache compression techniques to reduce quantization error.",
+      "keywords": [
+        "KV cache",
+        "compression",
+        "error reduction"
+      ]
     },
     {
       "source_key": "2402.18096",
@@ -202,7 +217,12 @@
         "publisher": "arXiv",
         "URL": "https://arxiv.org/abs/2402.18096v1"
       },
-      "relevance": "Importance-aware mixed precision aims to retain information from all tokens."
+      "relevance": "Importance-aware mixed precision aims to retain information from all tokens.",
+      "keywords": [
+        "KV cache",
+        "mixed precision",
+        "token importance"
+      ]
     },
     {
       "source_key": "2405.04532",
@@ -251,7 +271,12 @@
         "URL": "https://arxiv.org/abs/2405.04532v3",
         "DOI": "10.48550/arXiv.2405.04532"
       },
-      "relevance": "A serving system that co-designs weight, activation, and KV-cache quantization."
+      "relevance": "A serving system that co-designs weight, activation, and KV-cache quantization.",
+      "keywords": [
+        "LLM serving",
+        "W4A8KV4",
+        "system co-design"
+      ]
     },
     {
       "source_key": "2405.06219",
@@ -296,7 +321,12 @@
         "URL": "https://arxiv.org/abs/2405.06219v3",
         "DOI": "10.48550/arXiv.2405.06219"
       },
-      "relevance": "Sliding-window KV-cache quantization balances recent tokens and compressed history."
+      "relevance": "Sliding-window KV-cache quantization balances recent tokens and compressed history.",
+      "keywords": [
+        "KV cache",
+        "sliding window",
+        "quantization"
+      ]
     },
     {
       "source_key": "2501.16383",
@@ -345,7 +375,12 @@
         "URL": "https://arxiv.org/abs/2501.16383v2",
         "DOI": "10.48550/arXiv.2501.16383"
       },
-      "relevance": "Rotations address outliers in low-bit KV-cache quantization."
+      "relevance": "Rotations address outliers in low-bit KV-cache quantization.",
+      "keywords": [
+        "KV cache",
+        "rotation",
+        "2-bit quantization"
+      ]
     },
     {
       "source_key": "2410.13212",
@@ -378,7 +413,12 @@
         "URL": "https://arxiv.org/abs/2410.13212v1",
         "DOI": "10.48550/arXiv.2410.13212"
       },
-      "relevance": "Layer-wise asymmetric configurations explore very low-bit KV-cache storage."
+      "relevance": "Layer-wise asymmetric configurations explore very low-bit KV-cache storage.",
+      "keywords": [
+        "KV cache",
+        "asymmetric quantization",
+        "1-bit"
+      ]
     },
     {
       "source_key": "2504.19874",
@@ -415,7 +455,11 @@
         "URL": "https://arxiv.org/abs/2504.19874v1",
         "DOI": "10.48550/arXiv.2504.19874"
       },
-      "relevance": "Online vector quantization is relevant to KV-cache compression; broader than KV-only methods."
+      "relevance": "Online vector quantization is relevant to KV-cache compression; broader than KV-only methods.",
+      "keywords": [
+        "online vector quantization",
+        "KV cache"
+      ]
     },
     {
       "source_key": "2411.18077",
@@ -456,7 +500,12 @@
         "URL": "https://arxiv.org/abs/2411.18077v3",
         "DOI": "10.48550/arXiv.2411.18077"
       },
-      "relevance": "Layer-discriminative two-bit KV-cache compression explores memory reduction."
+      "relevance": "Layer-discriminative two-bit KV-cache compression explores memory reduction.",
+      "keywords": [
+        "KV cache",
+        "layer-wise compression",
+        "2-bit"
+      ]
     }
   ]
 }

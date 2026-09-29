@@ -1,7 +1,7 @@
 {
-  "schema_version": 1,
-  "run_id": "fdd44beb-c346-41a9-886d-f52b83a20d16",
-  "created_at": "2026-09-29T00:33:35+00:00",
+  "schema_version": 2,
+  "run_id": "e2021b39-c758-4651-aa55-3f5dd29f6bd4",
+  "created_at": "2026-09-29T00:57:45+00:00",
   "mode": "acceptance-replay",
   "entries": [
     {
@@ -124,7 +124,16 @@
         "status": "not_checked",
         "scope": "No comprehensive retraction/correction search in this acceptance dataset. Inspect publisher and arXiv notices."
       },
-      "claims": [],
+      "keywords": {
+        "terms": [
+          "KV cache",
+          "asymmetric quantization",
+          "2-bit"
+        ],
+        "basis": "agent_title_abstract",
+        "source_url": "https://arxiv.org/abs/2402.02750",
+        "note": "Curated topic tags inferred from the sourced title/abstract; not publisher-supplied keywords."
+      },
       "extra_sources": [],
       "duplicate_of": [],
       "errors": [],
@@ -252,7 +261,7 @@
         "missing_core_fields": [],
         "note": "Field presence only. CSL rendering and venue-specific requirements are separate."
       },
-      "evidence_hash": "f9d2af7ed43f795d6e8de28cf312b840eac515d1b8ae94c754c9e543776f321a",
+      "evidence_hash": "3fbc8d4767e86e5b040c19ca04c7334f82ffb8ec21a423cfa8fcbe13f37bcbbf",
       "discovery": {
         "relevance": "Asymmetric low-bit quantization treats keys and values differently.",
         "summary_basis": "agent selection note from title/abstract; not full-text claim verification",
@@ -371,7 +380,16 @@
         "status": "not_checked",
         "scope": "No comprehensive retraction/correction search in this acceptance dataset. Inspect publisher and arXiv notices."
       },
-      "claims": [],
+      "keywords": {
+        "terms": [
+          "KV cache",
+          "long-context inference",
+          "quantization"
+        ],
+        "basis": "agent_title_abstract",
+        "source_url": "https://arxiv.org/abs/2401.18079",
+        "note": "Curated topic tags inferred from the sourced title/abstract; not publisher-supplied keywords."
+      },
       "extra_sources": [],
       "duplicate_of": [],
       "errors": [],
@@ -491,7 +509,7 @@
         "missing_core_fields": [],
         "note": "Field presence only. CSL rendering and venue-specific requirements are separate."
       },
-      "evidence_hash": "9b98c07133f4be5209e1b3024888618ca32a15fc6765a90dd502b9756e3acaba",
+      "evidence_hash": "086c2d5ece17200f0f178ef1360a2f3ac51fd9fb460236cfabd820e830f66cdf",
       "discovery": {
         "relevance": "KV-cache quantization for very long-context inference.",
         "summary_basis": "agent selection note from title/abstract; not full-text claim verification",
@@ -610,7 +628,16 @@
         "status": "not_checked",
         "scope": "No comprehensive retraction/correction search in this acceptance dataset. Inspect publisher and arXiv notices."
       },
-      "claims": [],
+      "keywords": {
+        "terms": [
+          "KV cache",
+          "compression",
+          "error reduction"
+        ],
+        "basis": "agent_title_abstract",
+        "source_url": "https://arxiv.org/abs/2403.05527",
+        "note": "Curated topic tags inferred from the sourced title/abstract; not publisher-supplied keywords."
+      },
       "extra_sources": [],
       "duplicate_of": [],
       "errors": [],
@@ -730,7 +757,7 @@
         "missing_core_fields": [],
         "note": "Field presence only. CSL rendering and venue-specific requirements are separate."
       },
-      "evidence_hash": "031530548d76fe3d42915121a5ac4fd170b955a653ac66677ce7c67731814f56",
+      "evidence_hash": "42e5b656b5067dc9a8582d3462e9d310a5328d2283a1b8d78de55e8cd3b42f37",
       "discovery": {
         "relevance": "Combines KV-cache compression techniques to reduce quantization error.",
         "summary_basis": "agent selection note from title/abstract; not full-text claim verification",
@@ -855,7 +882,16 @@
         "status": "not_checked",
         "scope": "No comprehensive retraction/correction search in this acceptance dataset. Inspect publisher and arXiv notices."
       },
-      "claims": [],
+      "keywords": {
+        "terms": [
+          "KV cache",
+          "mixed precision",
+          "token importance"
+        ],
+        "basis": "agent_title_abstract",
+        "source_url": "https://arxiv.org/abs/2402.18096",
+        "note": "Curated topic tags inferred from the sourced title/abstract; not publisher-supplied keywords."
+      },
       "extra_sources": [],
       "duplicate_of": [],
       "errors": [],
@@ -977,7 +1013,7 @@
         "missing_core_fields": [],
         "note": "Field presence only. CSL rendering and venue-specific requirements are separate."
       },
-      "evidence_hash": "d883010b53a9b5d6a54dedc92ea9534a0dd80e6fce35b1a5a9ecd7f0efcb4721",
+      "evidence_hash": "ef5415730f9e1c386e0ca3a4d7be46e00384c158c76e05a13d06ad5a1add3b5c",
       "discovery": {
         "relevance": "Importance-aware mixed precision aims to retain information from all tokens.",
         "summary_basis": "agent selection note from title/abstract; not full-text claim verification",
@@ -1096,7 +1132,16 @@
         "status": "not_checked",
         "scope": "No comprehensive retraction/correction search in this acceptance dataset. Inspect publisher and arXiv notices."
       },
-      "claims": [],
+      "keywords": {
+        "terms": [
+          "LLM serving",
+          "W4A8KV4",
+          "system co-design"
+        ],
+        "basis": "agent_title_abstract",
+        "source_url": "https://arxiv.org/abs/2405.04532",
+        "note": "Curated topic tags inferred from the sourced title/abstract; not publisher-supplied keywords."
+      },
       "extra_sources": [],
       "duplicate_of": [],
       "errors": [],
@@ -1216,7 +1261,7 @@
         "missing_core_fields": [],
         "note": "Field presence only. CSL rendering and venue-specific requirements are separate."
       },
-      "evidence_hash": "b68bcefdd2f24174a4ccd45faa1e98e12d501e5c165e1da6a25a01faee4376c3",
+      "evidence_hash": "bd2d5b59373dcf4857a0eae894d7770e9e6b1f4917fb3d77544d590bebeac459",
       "discovery": {
         "relevance": "A serving system that co-designs weight, activation, and KV-cache quantization.",
         "summary_basis": "agent selection note from title/abstract; not full-text claim verification",
@@ -1327,7 +1372,16 @@
         "status": "not_checked",
         "scope": "No comprehensive retraction/correction search in this acceptance dataset. Inspect publisher and arXiv notices."
       },
-      "claims": [],
+      "keywords": {
+        "terms": [
+          "KV cache",
+          "sliding window",
+          "quantization"
+        ],
+        "basis": "agent_title_abstract",
+        "source_url": "https://arxiv.org/abs/2405.06219",
+        "note": "Curated topic tags inferred from the sourced title/abstract; not publisher-supplied keywords."
+      },
       "extra_sources": [],
       "duplicate_of": [],
       "errors": [],
@@ -1439,7 +1493,7 @@
         "missing_core_fields": [],
         "note": "Field presence only. CSL rendering and venue-specific requirements are separate."
       },
-      "evidence_hash": "32bbf735d85f682944cc542e5d68edd27de4716e45776e060a53fab27f479bf3",
+      "evidence_hash": "824ecd1c3e29aab3e9eda607f96576097dd2bb89cb7e7a830a35ff8b1f97e63e",
       "discovery": {
         "relevance": "Sliding-window KV-cache quantization balances recent tokens and compressed history.",
         "summary_basis": "agent selection note from title/abstract; not full-text claim verification",
@@ -1558,7 +1612,16 @@
         "status": "not_checked",
         "scope": "No comprehensive retraction/correction search in this acceptance dataset. Inspect publisher and arXiv notices."
       },
-      "claims": [],
+      "keywords": {
+        "terms": [
+          "KV cache",
+          "rotation",
+          "2-bit quantization"
+        ],
+        "basis": "agent_title_abstract",
+        "source_url": "https://arxiv.org/abs/2501.16383",
+        "note": "Curated topic tags inferred from the sourced title/abstract; not publisher-supplied keywords."
+      },
       "extra_sources": [],
       "duplicate_of": [],
       "errors": [],
@@ -1678,7 +1741,7 @@
         "missing_core_fields": [],
         "note": "Field presence only. CSL rendering and venue-specific requirements are separate."
       },
-      "evidence_hash": "e8f4a832b6609471094559a1d83a83c2f5263324a7b214dfa3cfc49c92c9c52e",
+      "evidence_hash": "3cb1da5fa537476e515aa4892ea4a09570cd4d1f54d8706428a169c789859ba8",
       "discovery": {
         "relevance": "Rotations address outliers in low-bit KV-cache quantization.",
         "summary_basis": "agent selection note from title/abstract; not full-text claim verification",
@@ -1765,7 +1828,16 @@
         "status": "not_checked",
         "scope": "No comprehensive retraction/correction search in this acceptance dataset. Inspect publisher and arXiv notices."
       },
-      "claims": [],
+      "keywords": {
+        "terms": [
+          "KV cache",
+          "asymmetric quantization",
+          "1-bit"
+        ],
+        "basis": "agent_title_abstract",
+        "source_url": "https://arxiv.org/abs/2410.13212",
+        "note": "Curated topic tags inferred from the sourced title/abstract; not publisher-supplied keywords."
+      },
       "extra_sources": [],
       "duplicate_of": [],
       "errors": [],
@@ -1853,7 +1925,7 @@
         "missing_core_fields": [],
         "note": "Field presence only. CSL rendering and venue-specific requirements are separate."
       },
-      "evidence_hash": "ea51a56e1767fc6556c764d501377360d6ac46e3cfee389c9dbb7f1affe05ce0",
+      "evidence_hash": "d63ff990271224b29157ed64ccefe9d1ceb6dee94bad71fd509ec801b44e14fa",
       "discovery": {
         "relevance": "Layer-wise asymmetric configurations explore very low-bit KV-cache storage.",
         "summary_basis": "agent selection note from title/abstract; not full-text claim verification",
@@ -1948,7 +2020,15 @@
         "status": "not_checked",
         "scope": "No comprehensive retraction/correction search in this acceptance dataset. Inspect publisher and arXiv notices."
       },
-      "claims": [],
+      "keywords": {
+        "terms": [
+          "online vector quantization",
+          "KV cache"
+        ],
+        "basis": "agent_title_abstract",
+        "source_url": "https://arxiv.org/abs/2504.19874",
+        "note": "Curated topic tags inferred from the sourced title/abstract; not publisher-supplied keywords."
+      },
       "extra_sources": [],
       "duplicate_of": [],
       "errors": [],
@@ -2044,7 +2124,7 @@
         "missing_core_fields": [],
         "note": "Field presence only. CSL rendering and venue-specific requirements are separate."
       },
-      "evidence_hash": "42d34353ef2239d093f6c1f5d125b8536da4ab698ee12ddfeea990d2b4cdc994",
+      "evidence_hash": "0e4618735f1abc318bb266f1c7400807a1830b86f1aed4ff6500e301fec4c8f5",
       "discovery": {
         "relevance": "Online vector quantization is relevant to KV-cache compression; broader than KV-only methods.",
         "summary_basis": "agent selection note from title/abstract; not full-text claim verification",
@@ -2147,7 +2227,16 @@
         "status": "not_checked",
         "scope": "No comprehensive retraction/correction search in this acceptance dataset. Inspect publisher and arXiv notices."
       },
-      "claims": [],
+      "keywords": {
+        "terms": [
+          "KV cache",
+          "layer-wise compression",
+          "2-bit"
+        ],
+        "basis": "agent_title_abstract",
+        "source_url": "https://arxiv.org/abs/2411.18077",
+        "note": "Curated topic tags inferred from the sourced title/abstract; not publisher-supplied keywords."
+      },
       "extra_sources": [],
       "duplicate_of": [],
       "errors": [],
@@ -2251,7 +2340,7 @@
         "missing_core_fields": [],
         "note": "Field presence only. CSL rendering and venue-specific requirements are separate."
       },
-      "evidence_hash": "3e911ab37dd76edbf8a2271ca007ee98844ef2871e95ff7761c86038286fa76c",
+      "evidence_hash": "51d6a1f0b1da653fb80d48d078c27ce41c3c23d96b1c80f49a5c9fd99ce4017f",
       "discovery": {
         "relevance": "Layer-discriminative two-bit KV-cache compression explores memory reduction.",
         "summary_basis": "agent selection note from title/abstract; not full-text claim verification",
