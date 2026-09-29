@@ -1,0 +1,47 @@
+{
+  "status": "passed",
+  "tested_at": "2026-09-29T00:33:36+00:00",
+  "mode": "offline replay of separately retrieved primary-page metadata",
+  "datasets": {
+    "sparse-attention": {
+      "records": 10,
+      "sourced_identity_records": 10,
+      "human_pending": 10,
+      "human_approved": 0,
+      "exported": 0
+    },
+    "kv-cache-quantization": {
+      "records": 10,
+      "sourced_identity_records": 10,
+      "human_pending": 10,
+      "human_approved": 0,
+      "exported": 0
+    },
+    "small-reference-list": {
+      "records": 5,
+      "sourced_identity_records": 5,
+      "human_pending": 5,
+      "human_approved": 0,
+      "exported": 0,
+      "checks": [
+        "wrong year detected",
+        "wrong title detected",
+        "missing author detected",
+        "duplicate detected",
+        "clean control unchanged",
+        "partial claim approval blocked"
+      ]
+    }
+  },
+  "format_checks": [
+    "BibTeX nested braces and key",
+    "BibTeX/RIS author/year roundtrip",
+    "APA rendered"
+  ],
+  "limits": [
+    "No human approval supplied",
+    "No live native API acceptance in this environment",
+    "No comprehensive integrity search",
+    "DOM tests do not establish visual layout quality"
+  ]
+}

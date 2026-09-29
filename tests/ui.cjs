@@ -1,0 +1,31 @@
+// DOM tests: no browser navigation or network access.
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
+const {JSDOM,VirtualConsole}=require('jsdom');
+const dir=process.argv[2];if(!dir)throw Error('Usage: node tests/ui.cjs ACCEPTANCE_OUTPUT_DIR');
+const raw=fs.readFileSync(path.join(dir,'small-reference-list.review.html'),'utf8');
+const errors=[],vc=new VirtualConsole();vc.on('jsdomError',e=>errors.push(e.message));
+const dom=new JSDOM(raw,{runScripts:'dangerously',url:'https://test.invalid/',virtualConsole:vc});
+const doc=dom.window.document;
+assert.equal(doc.querySelectorAll('#list button').length,5);
+assert.match(doc.querySelector('#detail').textContent,/1\.92/);
+assert.match(doc.querySelector('#detail').textContent,/partially supported/);
+doc.querySelector('#reviewer').value='SYNTHETIC UI TEST';
+for(const id of ['identity','metadata','limitations','claimsChecked','claim-0'])doc.getElementById(id).checked=true;
+doc.getElementById('action').value='approve';doc.getElementById('record').click();
+assert.match(doc.getElementById('feedback').textContent,/insufficient evidence/);
+assert.match(doc.getElementById('summary').textContent,/Human approved 0/);
+doc.getElementById('action').value='rewrite';doc.getElementById('note').value='Synthetic test: add rejection sampling qualifier.';doc.getElementById('record').click();
+assert.match(doc.getElementById('feedback').textContent,/Decision recorded/);
+assert.match(doc.getElementById('summary').textContent,/Decisions 1/);
+doc.getElementById('saveDraft').click();
+const audit=JSON.parse(doc.getElementById('auditData').textContent);
+const saved=JSON.parse(dom.window.localStorage.getItem('reference-review:'+audit.run_id));
+assert.equal(saved.decisions[0].decision,'rewrite');assert.equal(saved.decisions[0].evidence_hash,audit.entries[0].evidence_hash);
+// A clean metadata-only item can be recorded in memory. This synthetic decision is never shipped.
+doc.querySelectorAll('#list button')[4].click();
+for(const id of ['identity','metadata','limitations'])doc.getElementById(id).checked=true;
+doc.getElementById('action').value='approve';doc.getElementById('record').click();
+assert.match(doc.getElementById('summary').textContent,/Human approved 1/);
+doc.querySelector('#search').value='unmatched-synthetic-query';doc.querySelector('#search').dispatchEvent(new dom.window.Event('input'));
+assert.equal(doc.querySelectorAll('#list button').length,0);assert.deepEqual(errors,[]);dom.window.close();
+console.log('DOM tests passed: rendering, partial-claim gate, explicit decisions, draft persistence, metadata scope, search. Visual layout not tested.');

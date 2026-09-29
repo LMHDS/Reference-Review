@@ -1,0 +1,430 @@
+{
+  "1904.10509": {
+    "arxiv_id": "1904.10509v1",
+    "title": "Generating Long Sequences with Sparse Transformers",
+    "authors": [
+      "Rewon Child",
+      "Scott Gray",
+      "Alec Radford",
+      "Ilya Sutskever"
+    ],
+    "year": 2019,
+    "version": "v1",
+    "source_url": "https://arxiv.org/abs/1904.10509",
+    "retrieved_at": "2026-09-29T00:24:27.314Z",
+    "retrieval_method": "Live primary arXiv page read using web tool; structured fields extracted from returned page text.",
+    "doi": "10.48550/arXiv.1904.10509",
+    "version_history_note": "23 Apr 2019]"
+  },
+  "2004.05150": {
+    "arxiv_id": "2004.05150v2",
+    "title": "Longformer: The Long-Document Transformer",
+    "authors": [
+      "Iz Beltagy",
+      "Matthew E. Peters",
+      "Arman Cohan"
+    ],
+    "year": 2020,
+    "version": "v2",
+    "source_url": "https://arxiv.org/abs/2004.05150",
+    "retrieved_at": "2026-09-29T00:24:27.320Z",
+    "retrieval_method": "Live primary arXiv page read using web tool; structured fields extracted from returned page text.",
+    "doi": "10.48550/arXiv.2004.05150",
+    "version_history_note": "10 Apr 2020 (v1 ), last revised 2 Dec 2020 (this version, v2)]"
+  },
+  "2007.14062": {
+    "arxiv_id": "2007.14062v2",
+    "title": "Big Bird: Transformers for Longer Sequences",
+    "authors": [
+      "Manzil Zaheer",
+      "Guru Guruganesh",
+      "Avinava Dubey",
+      "Joshua Ainslie",
+      "Chris Alberti",
+      "Santiago Ontanon",
+      "Philip Pham",
+      "Anirudh Ravula",
+      "Qifan Wang",
+      "Li Yang",
+      "Amr Ahmed"
+    ],
+    "year": 2020,
+    "version": "v2",
+    "source_url": "https://arxiv.org/abs/2007.14062",
+    "retrieved_at": "2026-09-29T00:24:27.320Z",
+    "retrieval_method": "Live primary arXiv page read using web tool; structured fields extracted from returned page text.",
+    "doi": "10.48550/arXiv.2007.14062",
+    "version_history_note": "28 Jul 2020 (v1 ), last revised 8 Jan 2021 (this version, v2)]"
+  },
+  "2001.04451": {
+    "arxiv_id": "2001.04451v2",
+    "title": "Reformer: The Efficient Transformer",
+    "authors": [
+      "Nikita Kitaev",
+      "Łukasz Kaiser",
+      "Anselm Levskaya"
+    ],
+    "year": 2020,
+    "version": "v2",
+    "source_url": "https://arxiv.org/abs/2001.04451",
+    "retrieved_at": "2026-09-29T00:24:27.320Z",
+    "retrieval_method": "Live primary arXiv page read using web tool; structured fields extracted from returned page text.",
+    "doi": "10.48550/arXiv.2001.04451",
+    "version_history_note": "13 Jan 2020 (v1 ), last revised 18 Feb 2020 (this version, v2)]"
+  },
+  "2103.14030": {
+    "arxiv_id": "2103.14030v2",
+    "title": "Swin Transformer: Hierarchical Vision Transformer using Shifted Windows",
+    "authors": [
+      "Ze Liu",
+      "Yutong Lin",
+      "Yue Cao",
+      "Han Hu",
+      "Yixuan Wei",
+      "Zheng Zhang",
+      "Stephen Lin",
+      "Baining Guo"
+    ],
+    "year": 2021,
+    "version": "v2",
+    "source_url": "https://arxiv.org/abs/2103.14030",
+    "retrieved_at": "2026-09-29T00:24:27.321Z",
+    "retrieval_method": "Live primary arXiv page read using web tool; structured fields extracted from returned page text.",
+    "doi": "10.48550/arXiv.2103.14030",
+    "version_history_note": "25 Mar 2021 (v1 ), last revised 17 Aug 2021 (this version, v2)]"
+  },
+  "2502.11089": {
+    "arxiv_id": "2502.11089v2",
+    "title": "Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention",
+    "authors": [
+      "Jingyang Yuan",
+      "Huazuo Gao",
+      "Damai Dai",
+      "Junyu Luo",
+      "Liang Zhao",
+      "Zhengyan Zhang",
+      "Zhenda Xie",
+      "Y. X. Wei",
+      "Lean Wang",
+      "Zhiping Xiao",
+      "Yuqing Wang",
+      "Chong Ruan",
+      "Ming Zhang",
+      "Wenfeng Liang",
+      "Wangding Zeng"
+    ],
+    "year": 2025,
+    "version": "v2",
+    "source_url": "https://arxiv.org/abs/2502.11089",
+    "retrieved_at": "2026-09-29T00:24:27.321Z",
+    "retrieval_method": "Live primary arXiv page read using web tool; structured fields extracted from returned page text.",
+    "doi": "10.48550/arXiv.2502.11089",
+    "version_history_note": "16 Feb 2025 (v1 ), last revised 27 Feb 2025 (this version, v2)]"
+  },
+  "2502.13189": {
+    "arxiv_id": "2502.13189v1",
+    "title": "MoBA: Mixture of Block Attention for Long-Context LLMs",
+    "authors": [
+      "Enzhe Lu",
+      "Zhejun Jiang",
+      "Jingyuan Liu",
+      "Yulun Du",
+      "Tao Jiang",
+      "Chao Hong",
+      "Shaowei Liu",
+      "Weiran He",
+      "Enming Yuan",
+      "Yuzhi Wang",
+      "Zhiqi Huang",
+      "Huan Yuan",
+      "Suting Xu",
+      "Xinran Xu",
+      "Guokun Lai",
+      "Yanru Chen",
+      "Huabin Zheng",
+      "Junjie Yan",
+      "Jianlin Su",
+      "Yuxin Wu",
+      "Neo Y. Zhang",
+      "Zhilin Yang",
+      "Xinyu Zhou",
+      "Mingxing Zhang",
+      "Jiezhong Qiu"
+    ],
+    "year": 2025,
+    "version": "v1",
+    "source_url": "https://arxiv.org/abs/2502.13189",
+    "retrieved_at": "2026-09-29T00:24:27.321Z",
+    "retrieval_method": "Live primary arXiv page read using web tool; structured fields extracted from returned page text.",
+    "doi": "10.48550/arXiv.2502.13189",
+    "version_history_note": "18 Feb 2025]"
+  },
+  "2407.02490": {
+    "arxiv_id": "2407.02490v2",
+    "title": "MInference 1.0: Accelerating Pre-filling for Long-Context LLMs via Dynamic Sparse Attention",
+    "authors": [
+      "Huiqiang Jiang",
+      "Yucheng Li",
+      "Chengruidong Zhang",
+      "Qianhui Wu",
+      "Xufang Luo",
+      "Surin Ahn",
+      "Zhenhua Han",
+      "Amir H. Abdi",
+      "Dongsheng Li",
+      "Chin-Yew Lin",
+      "Yuqing Yang",
+      "Lili Qiu"
+    ],
+    "year": 2024,
+    "version": "v2",
+    "source_url": "https://arxiv.org/abs/2407.02490",
+    "retrieved_at": "2026-09-29T00:24:27.321Z",
+    "retrieval_method": "Live primary arXiv page read using web tool; structured fields extracted from returned page text.",
+    "version_history_note": "2 Jul 2024 (v1 ), last revised 30 Oct 2024 (this version, v2)]"
+  },
+  "2402.02750": {
+    "arxiv_id": "2402.02750v2",
+    "title": "KIVI: A Tuning-Free Asymmetric 2bit Quantization for KV Cache",
+    "authors": [
+      "Zirui Liu",
+      "Jiayi Yuan",
+      "Hongye Jin",
+      "Shaochen Zhong",
+      "Zhaozhuo Xu",
+      "Vladimir Braverman",
+      "Beidi Chen",
+      "Xia Hu"
+    ],
+    "year": 2024,
+    "version": "v2",
+    "source_url": "https://arxiv.org/abs/2402.02750",
+    "retrieved_at": "2026-09-29T00:24:27.321Z",
+    "retrieval_method": "Live primary arXiv page read using web tool; structured fields extracted from returned page text.",
+    "doi": "10.48550/arXiv.2402.02750",
+    "version_history_note": "5 Feb 2024 (v1 ), last revised 25 Jul 2024 (this version, v2)]"
+  },
+  "2401.18079": {
+    "arxiv_id": "2401.18079v6",
+    "title": "KVQuant: Towards 10 Million Context Length LLM Inference with KV Cache Quantization",
+    "authors": [
+      "Coleman Hooper",
+      "Sehoon Kim",
+      "Hiva Mohammadzadeh",
+      "Michael W. Mahoney",
+      "Yakun Sophia Shao",
+      "Kurt Keutzer",
+      "Amir Gholami"
+    ],
+    "year": 2024,
+    "version": "v6",
+    "source_url": "https://arxiv.org/abs/2401.18079",
+    "retrieved_at": "2026-09-29T00:24:27.321Z",
+    "retrieval_method": "Live primary arXiv page read using web tool; structured fields extracted from returned page text.",
+    "doi": "10.48550/arXiv.2401.18079",
+    "version_history_note": "31 Jan 2024 (v1 ), last revised 28 May 2025 (this version, v6)]"
+  },
+  "2403.05527": {
+    "arxiv_id": "2403.05527v4",
+    "title": "GEAR: An Efficient KV Cache Compression Recipe for Near-Lossless Generative Inference of LLM",
+    "authors": [
+      "Hao Kang",
+      "Qingru Zhang",
+      "Souvik Kundu",
+      "Geonhwa Jeong",
+      "Zaoxing Liu",
+      "Tushar Krishna",
+      "Tuo Zhao"
+    ],
+    "year": 2024,
+    "version": "v4",
+    "source_url": "https://arxiv.org/abs/2403.05527",
+    "retrieved_at": "2026-09-29T00:24:27.321Z",
+    "retrieval_method": "Live primary arXiv page read using web tool; structured fields extracted from returned page text.",
+    "doi": "10.48550/arXiv.2403.05527",
+    "version_history_note": "8 Mar 2024 (v1 ), last revised 30 Sep 2024 (this version, v4)]"
+  },
+  "2402.18096": {
+    "arxiv_id": "2402.18096v1",
+    "title": "No Token Left Behind: Reliable KV Cache Compression via Importance-Aware Mixed Precision Quantization",
+    "authors": [
+      "June Yong Yang",
+      "Byeongwook Kim",
+      "Jeongin Bae",
+      "Beomseok Kwon",
+      "Gunho Park",
+      "Eunho Yang",
+      "Se Jung Kwon",
+      "Dongsoo Lee"
+    ],
+    "year": 2024,
+    "version": "v1",
+    "source_url": "https://arxiv.org/abs/2402.18096",
+    "retrieved_at": "2026-09-29T00:24:27.321Z",
+    "retrieval_method": "Live primary arXiv page read using web tool; structured fields extracted from returned page text.",
+    "version_history_note": "28 Feb 2024]"
+  },
+  "2411.18077": {
+    "arxiv_id": "2411.18077v3",
+    "title": "MiniKV: Pushing the Limits of LLM Inference via 2-Bit Layer-Discriminative KV Cache",
+    "authors": [
+      "Akshat Sharma",
+      "Hangliang Ding",
+      "Jianping Li",
+      "Neel Dani",
+      "Minjia Zhang"
+    ],
+    "year": 2024,
+    "version": "v3",
+    "source_url": "https://arxiv.org/abs/2411.18077",
+    "retrieved_at": "2026-09-29T00:24:27.321Z",
+    "retrieval_method": "Live primary arXiv page read using web tool; structured fields extracted from returned page text.",
+    "doi": "10.48550/arXiv.2411.18077",
+    "version_history_note": "27 Nov 2024 (v1 ), last revised 8 Jun 2025 (this version, v3)]"
+  },
+  "2404.02905": {
+    "arxiv_id": "2404.02905v2",
+    "title": "Visual Autoregressive Modeling: Scalable Image Generation via Next-Scale Prediction",
+    "authors": [
+      "Keyu Tian",
+      "Yi Jiang",
+      "Zehuan Yuan",
+      "Bingyue Peng",
+      "Liwei Wang"
+    ],
+    "year": 2024,
+    "version": "v2",
+    "source_url": "https://arxiv.org/abs/2404.02905",
+    "retrieved_at": "2026-09-29T00:24:27.321Z",
+    "retrieval_method": "Live primary arXiv page read using web tool; structured fields extracted from returned page text.",
+    "doi": "10.48550/arXiv.2404.02905",
+    "version_history_note": "3 Apr 2024 (v1 ), last revised 10 Jun 2024 (this version, v2)]"
+  },
+  "2003.05997": {
+    "arxiv_id": "2003.05997v5",
+    "title": "Efficient Content-Based Sparse Attention with Routing Transformers",
+    "authors": [
+      "Aurko Roy",
+      "Mohammad Saffar",
+      "Ashish Vaswani",
+      "David Grangier"
+    ],
+    "year": 2020,
+    "version": "v5",
+    "source_url": "https://arxiv.org/abs/2003.05997",
+    "retrieved_at": "2026-09-29T00:24:27.321Z",
+    "retrieval_method": "Live primary arXiv page read using web tool; structured fields extracted from returned page text.",
+    "doi": "10.48550/arXiv.2003.05997",
+    "version_history_note": "12 Mar 2020 (v1 ), last revised 24 Oct 2020 (this version, v5)]"
+  },
+  "2502.20766": {
+    "arxiv_id": "2502.20766v1",
+    "title": "FlexPrefill: A Context-Aware Sparse Attention Mechanism for Efficient Long-Sequence Inference",
+    "authors": [
+      "Xunhao Lai",
+      "Jianqiao Lu",
+      "Yao Luo",
+      "Yiyuan Ma",
+      "Xun Zhou"
+    ],
+    "year": 2025,
+    "version": "v1",
+    "source_url": "https://arxiv.org/abs/2502.20766",
+    "retrieved_at": "2026-09-29T00:24:27.321Z",
+    "retrieval_method": "Live primary arXiv page read using web tool; structured fields extracted from returned page text.",
+    "doi": "10.48550/arXiv.2502.20766",
+    "version_history_note": "28 Feb 2025]"
+  },
+  "2405.04532": {
+    "arxiv_id": "2405.04532v3",
+    "title": "QServe: W4A8KV4 Quantization and System Co-design for Efficient LLM Serving",
+    "authors": [
+      "Yujun Lin",
+      "Haotian Tang",
+      "Shang Yang",
+      "Zhekai Zhang",
+      "Guangxuan Xiao",
+      "Chuang Gan",
+      "Song Han"
+    ],
+    "year": 2024,
+    "version": "v3",
+    "source_url": "https://arxiv.org/abs/2405.04532",
+    "retrieved_at": "2026-09-29T00:24:27.321Z",
+    "retrieval_method": "Live primary arXiv page read using web tool; structured fields extracted from returned page text.",
+    "doi": "10.48550/arXiv.2405.04532",
+    "version_history_note": "7 May 2024 (v1 ), last revised 1 May 2025 (this version, v3)]"
+  },
+  "2405.06219": {
+    "arxiv_id": "2405.06219v3",
+    "title": "SKVQ: Sliding-window Key and Value Cache Quantization for Large Language Models",
+    "authors": [
+      "Haojie Duanmu",
+      "Zhihang Yuan",
+      "Xiuhong Li",
+      "Jiangfei Duan",
+      "Xingcheng Zhang",
+      "Dahua Lin"
+    ],
+    "year": 2024,
+    "version": "v3",
+    "source_url": "https://arxiv.org/abs/2405.06219",
+    "retrieved_at": "2026-09-29T00:24:27.321Z",
+    "retrieval_method": "Live primary arXiv page read using web tool; structured fields extracted from returned page text.",
+    "doi": "10.48550/arXiv.2405.06219",
+    "version_history_note": "10 May 2024 (v1 ), last revised 12 Nov 2024 (this version, v3)]"
+  },
+  "2501.16383": {
+    "arxiv_id": "2501.16383v2",
+    "title": "RotateKV: Accurate and Robust 2-Bit KV Cache Quantization for LLMs via Outlier-Aware Adaptive Rotations",
+    "authors": [
+      "Zunhai Su",
+      "Zhe Chen",
+      "Wang Shen",
+      "Hanyu Wei",
+      "Linge Li",
+      "Huangqi Yu",
+      "Kehong Yuan"
+    ],
+    "year": 2025,
+    "version": "v2",
+    "source_url": "https://arxiv.org/abs/2501.16383",
+    "retrieved_at": "2026-09-29T00:24:27.323Z",
+    "retrieval_method": "Live primary arXiv page read using web tool; structured fields extracted from returned page text.",
+    "doi": "10.48550/arXiv.2501.16383",
+    "version_history_note": "25 Jan 2025 (v1 ), last revised 2 Feb 2025 (this version, v2)]"
+  },
+  "2410.13212": {
+    "arxiv_id": "2410.13212v1",
+    "title": "AsymKV: Enabling 1-Bit Quantization of KV Cache with Layer-Wise Asymmetric Quantization Configurations",
+    "authors": [
+      "Qian Tao",
+      "Wenyuan Yu",
+      "Jingren Zhou"
+    ],
+    "year": 2024,
+    "version": "v1",
+    "source_url": "https://arxiv.org/abs/2410.13212",
+    "retrieved_at": "2026-09-29T00:24:27.323Z",
+    "retrieval_method": "Live primary arXiv page read using web tool; structured fields extracted from returned page text.",
+    "doi": "10.48550/arXiv.2410.13212",
+    "version_history_note": "17 Oct 2024]"
+  },
+  "2504.19874": {
+    "arxiv_id": "2504.19874v1",
+    "title": "TurboQuant: Online Vector Quantization with Near-optimal Distortion Rate",
+    "authors": [
+      "Amir Zandieh",
+      "Majid Daliri",
+      "Majid Hadian",
+      "Vahab Mirrokni"
+    ],
+    "year": 2025,
+    "version": "v1",
+    "source_url": "https://arxiv.org/abs/2504.19874",
+    "retrieved_at": "2026-09-29T00:24:27.323Z",
+    "retrieval_method": "Live primary arXiv page read using web tool; structured fields extracted from returned page text.",
+    "doi": "10.48550/arXiv.2504.19874",
+    "version_history_note": "28 Apr 2025]"
+  }
+}

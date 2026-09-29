@@ -1,0 +1,462 @@
+{
+  "notice": "Curated acceptance dataset; all references require human review. Preprint metadata uses original submission year and the recorded version. Name segmentation is inferred and requires review.",
+  "entries": [
+    {
+      "source_key": "2402.02750",
+      "original": {
+        "id": "kv-cache-quantization-1",
+        "type": "article",
+        "title": "KIVI: A Tuning-Free Asymmetric 2bit Quantization for KV Cache",
+        "author": [
+          {
+            "given": "Zirui",
+            "family": "Liu"
+          },
+          {
+            "given": "Jiayi",
+            "family": "Yuan"
+          },
+          {
+            "given": "Hongye",
+            "family": "Jin"
+          },
+          {
+            "given": "Shaochen",
+            "family": "Zhong"
+          },
+          {
+            "given": "Zhaozhuo",
+            "family": "Xu"
+          },
+          {
+            "given": "Vladimir",
+            "family": "Braverman"
+          },
+          {
+            "given": "Beidi",
+            "family": "Chen"
+          },
+          {
+            "given": "Xia",
+            "family": "Hu"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2024
+            ]
+          ]
+        },
+        "publisher": "arXiv",
+        "URL": "https://arxiv.org/abs/2402.02750v2",
+        "DOI": "10.48550/arXiv.2402.02750"
+      },
+      "relevance": "Asymmetric low-bit quantization treats keys and values differently."
+    },
+    {
+      "source_key": "2401.18079",
+      "original": {
+        "id": "kv-cache-quantization-2",
+        "type": "article",
+        "title": "KVQuant: Towards 10 Million Context Length LLM Inference with KV Cache Quantization",
+        "author": [
+          {
+            "given": "Coleman",
+            "family": "Hooper"
+          },
+          {
+            "given": "Sehoon",
+            "family": "Kim"
+          },
+          {
+            "given": "Hiva",
+            "family": "Mohammadzadeh"
+          },
+          {
+            "given": "Michael W.",
+            "family": "Mahoney"
+          },
+          {
+            "given": "Yakun Sophia",
+            "family": "Shao"
+          },
+          {
+            "given": "Kurt",
+            "family": "Keutzer"
+          },
+          {
+            "given": "Amir",
+            "family": "Gholami"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2024
+            ]
+          ]
+        },
+        "publisher": "arXiv",
+        "URL": "https://arxiv.org/abs/2401.18079v6",
+        "DOI": "10.48550/arXiv.2401.18079"
+      },
+      "relevance": "KV-cache quantization for very long-context inference."
+    },
+    {
+      "source_key": "2403.05527",
+      "original": {
+        "id": "kv-cache-quantization-3",
+        "type": "article",
+        "title": "GEAR: An Efficient KV Cache Compression Recipe for Near-Lossless Generative Inference of LLM",
+        "author": [
+          {
+            "given": "Hao",
+            "family": "Kang"
+          },
+          {
+            "given": "Qingru",
+            "family": "Zhang"
+          },
+          {
+            "given": "Souvik",
+            "family": "Kundu"
+          },
+          {
+            "given": "Geonhwa",
+            "family": "Jeong"
+          },
+          {
+            "given": "Zaoxing",
+            "family": "Liu"
+          },
+          {
+            "given": "Tushar",
+            "family": "Krishna"
+          },
+          {
+            "given": "Tuo",
+            "family": "Zhao"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2024
+            ]
+          ]
+        },
+        "publisher": "arXiv",
+        "URL": "https://arxiv.org/abs/2403.05527v4",
+        "DOI": "10.48550/arXiv.2403.05527"
+      },
+      "relevance": "Combines KV-cache compression techniques to reduce quantization error."
+    },
+    {
+      "source_key": "2402.18096",
+      "original": {
+        "id": "kv-cache-quantization-4",
+        "type": "article",
+        "title": "No Token Left Behind: Reliable KV Cache Compression via Importance-Aware Mixed Precision Quantization",
+        "author": [
+          {
+            "given": "June Yong",
+            "family": "Yang"
+          },
+          {
+            "given": "Byeongwook",
+            "family": "Kim"
+          },
+          {
+            "given": "Jeongin",
+            "family": "Bae"
+          },
+          {
+            "given": "Beomseok",
+            "family": "Kwon"
+          },
+          {
+            "given": "Gunho",
+            "family": "Park"
+          },
+          {
+            "given": "Eunho",
+            "family": "Yang"
+          },
+          {
+            "given": "Se Jung",
+            "family": "Kwon"
+          },
+          {
+            "given": "Dongsoo",
+            "family": "Lee"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2024
+            ]
+          ]
+        },
+        "publisher": "arXiv",
+        "URL": "https://arxiv.org/abs/2402.18096v1"
+      },
+      "relevance": "Importance-aware mixed precision aims to retain information from all tokens."
+    },
+    {
+      "source_key": "2405.04532",
+      "original": {
+        "id": "kv-cache-quantization-5",
+        "type": "article",
+        "title": "QServe: W4A8KV4 Quantization and System Co-design for Efficient LLM Serving",
+        "author": [
+          {
+            "given": "Yujun",
+            "family": "Lin"
+          },
+          {
+            "given": "Haotian",
+            "family": "Tang"
+          },
+          {
+            "given": "Shang",
+            "family": "Yang"
+          },
+          {
+            "given": "Zhekai",
+            "family": "Zhang"
+          },
+          {
+            "given": "Guangxuan",
+            "family": "Xiao"
+          },
+          {
+            "given": "Chuang",
+            "family": "Gan"
+          },
+          {
+            "given": "Song",
+            "family": "Han"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2024
+            ]
+          ]
+        },
+        "publisher": "arXiv",
+        "URL": "https://arxiv.org/abs/2405.04532v3",
+        "DOI": "10.48550/arXiv.2405.04532"
+      },
+      "relevance": "A serving system that co-designs weight, activation, and KV-cache quantization."
+    },
+    {
+      "source_key": "2405.06219",
+      "original": {
+        "id": "kv-cache-quantization-6",
+        "type": "article",
+        "title": "SKVQ: Sliding-window Key and Value Cache Quantization for Large Language Models",
+        "author": [
+          {
+            "given": "Haojie",
+            "family": "Duanmu"
+          },
+          {
+            "given": "Zhihang",
+            "family": "Yuan"
+          },
+          {
+            "given": "Xiuhong",
+            "family": "Li"
+          },
+          {
+            "given": "Jiangfei",
+            "family": "Duan"
+          },
+          {
+            "given": "Xingcheng",
+            "family": "Zhang"
+          },
+          {
+            "given": "Dahua",
+            "family": "Lin"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2024
+            ]
+          ]
+        },
+        "publisher": "arXiv",
+        "URL": "https://arxiv.org/abs/2405.06219v3",
+        "DOI": "10.48550/arXiv.2405.06219"
+      },
+      "relevance": "Sliding-window KV-cache quantization balances recent tokens and compressed history."
+    },
+    {
+      "source_key": "2501.16383",
+      "original": {
+        "id": "kv-cache-quantization-7",
+        "type": "article",
+        "title": "RotateKV: Accurate and Robust 2-Bit KV Cache Quantization for LLMs via Outlier-Aware Adaptive Rotations",
+        "author": [
+          {
+            "given": "Zunhai",
+            "family": "Su"
+          },
+          {
+            "given": "Zhe",
+            "family": "Chen"
+          },
+          {
+            "given": "Wang",
+            "family": "Shen"
+          },
+          {
+            "given": "Hanyu",
+            "family": "Wei"
+          },
+          {
+            "given": "Linge",
+            "family": "Li"
+          },
+          {
+            "given": "Huangqi",
+            "family": "Yu"
+          },
+          {
+            "given": "Kehong",
+            "family": "Yuan"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2025
+            ]
+          ]
+        },
+        "publisher": "arXiv",
+        "URL": "https://arxiv.org/abs/2501.16383v2",
+        "DOI": "10.48550/arXiv.2501.16383"
+      },
+      "relevance": "Rotations address outliers in low-bit KV-cache quantization."
+    },
+    {
+      "source_key": "2410.13212",
+      "original": {
+        "id": "kv-cache-quantization-8",
+        "type": "article",
+        "title": "AsymKV: Enabling 1-Bit Quantization of KV Cache with Layer-Wise Asymmetric Quantization Configurations",
+        "author": [
+          {
+            "given": "Qian",
+            "family": "Tao"
+          },
+          {
+            "given": "Wenyuan",
+            "family": "Yu"
+          },
+          {
+            "given": "Jingren",
+            "family": "Zhou"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2024
+            ]
+          ]
+        },
+        "publisher": "arXiv",
+        "URL": "https://arxiv.org/abs/2410.13212v1",
+        "DOI": "10.48550/arXiv.2410.13212"
+      },
+      "relevance": "Layer-wise asymmetric configurations explore very low-bit KV-cache storage."
+    },
+    {
+      "source_key": "2504.19874",
+      "original": {
+        "id": "kv-cache-quantization-9",
+        "type": "article",
+        "title": "TurboQuant: Online Vector Quantization with Near-optimal Distortion Rate",
+        "author": [
+          {
+            "given": "Amir",
+            "family": "Zandieh"
+          },
+          {
+            "given": "Majid",
+            "family": "Daliri"
+          },
+          {
+            "given": "Majid",
+            "family": "Hadian"
+          },
+          {
+            "given": "Vahab",
+            "family": "Mirrokni"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2025
+            ]
+          ]
+        },
+        "publisher": "arXiv",
+        "URL": "https://arxiv.org/abs/2504.19874v1",
+        "DOI": "10.48550/arXiv.2504.19874"
+      },
+      "relevance": "Online vector quantization is relevant to KV-cache compression; broader than KV-only methods."
+    },
+    {
+      "source_key": "2411.18077",
+      "original": {
+        "id": "kv-cache-quantization-10",
+        "type": "article",
+        "title": "MiniKV: Pushing the Limits of LLM Inference via 2-Bit Layer-Discriminative KV Cache",
+        "author": [
+          {
+            "given": "Akshat",
+            "family": "Sharma"
+          },
+          {
+            "given": "Hangliang",
+            "family": "Ding"
+          },
+          {
+            "given": "Jianping",
+            "family": "Li"
+          },
+          {
+            "given": "Neel",
+            "family": "Dani"
+          },
+          {
+            "given": "Minjia",
+            "family": "Zhang"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2024
+            ]
+          ]
+        },
+        "publisher": "arXiv",
+        "URL": "https://arxiv.org/abs/2411.18077v3",
+        "DOI": "10.48550/arXiv.2411.18077"
+      },
+      "relevance": "Layer-discriminative two-bit KV-cache compression explores memory reduction."
+    }
+  ]
+}

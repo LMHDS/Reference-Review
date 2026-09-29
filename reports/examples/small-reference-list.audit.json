@@ -1,0 +1,1047 @@
+{
+  "schema_version": 1,
+  "run_id": "366c13a0-dd7b-46a7-8aed-d26a73201e00",
+  "created_at": "2026-09-29T00:33:35+00:00",
+  "mode": "acceptance-replay",
+  "entries": [
+    {
+      "id": "var-wrong-year",
+      "original": {
+        "id": "var-wrong-year",
+        "type": "article",
+        "title": "Visual Autoregressive Modeling: Scalable Image Generation via Next-Scale Prediction",
+        "author": [
+          {
+            "given": "Keyu",
+            "family": "Tian"
+          },
+          {
+            "given": "Yi",
+            "family": "Jiang"
+          },
+          {
+            "given": "Zehuan",
+            "family": "Yuan"
+          },
+          {
+            "given": "Bingyue",
+            "family": "Peng"
+          },
+          {
+            "given": "Liwei",
+            "family": "Wang"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2023
+            ]
+          ]
+        },
+        "publisher": "arXiv",
+        "URL": "https://arxiv.org/abs/2404.02905v2",
+        "DOI": "10.48550/arXiv.2404.02905"
+      },
+      "candidates": [
+        {
+          "csl": {
+            "type": "article",
+            "title": "Visual Autoregressive Modeling: Scalable Image Generation via Next-Scale Prediction",
+            "author": [
+              {
+                "given": "Keyu",
+                "family": "Tian"
+              },
+              {
+                "given": "Yi",
+                "family": "Jiang"
+              },
+              {
+                "given": "Zehuan",
+                "family": "Yuan"
+              },
+              {
+                "given": "Bingyue",
+                "family": "Peng"
+              },
+              {
+                "given": "Liwei",
+                "family": "Wang"
+              }
+            ],
+            "issued": {
+              "date-parts": [
+                [
+                  2024
+                ]
+              ]
+            },
+            "publisher": "arXiv",
+            "URL": "https://arxiv.org/abs/2404.02905v2",
+            "DOI": "10.48550/arXiv.2404.02905"
+          },
+          "arxiv_id": "2404.02905v2",
+          "version": "v2; preprint, original submission year; not merged with a proceedings edition",
+          "source": {
+            "provider": "arXiv primary page via agent web retrieval (saved snapshot)",
+            "url": "https://arxiv.org/abs/2404.02905",
+            "retrieved_at": "2026-09-29T00:24:27.321Z",
+            "retrieval_method": "Live primary arXiv page read using web tool; structured fields extracted from returned page text."
+          }
+        }
+      ],
+      "selected": 0,
+      "identity": {
+        "status": "evidence_matched",
+        "reason": "Source title, full author order, arXiv ID, and original year were read from the primary page. This run replays that evidence; it is not a fresh API lookup."
+      },
+      "integrity": {
+        "status": "not_checked",
+        "scope": "No comprehensive retraction/correction search in this acceptance dataset. Inspect publisher and arXiv notices."
+      },
+      "claims": [
+        {
+          "id": "var-fid",
+          "text": "The 2B VAR model achieves an FID of 1.73 on ImageNet 256×256.",
+          "manuscript_locator": "Synthetic acceptance sentence; not a user manuscript",
+          "assessment": "partial",
+          "evidence": [
+            {
+              "url": "https://arxiv.org/html/2404.02905v2#S5",
+              "retrieved_at": "2026-09-29T00:14:16+00:00",
+              "source_version": "arXiv 2404.02905v2",
+              "locator": "Table 1: VAR-d30 / VAR-d30-re rows and caption",
+              "excerpt": "Table cells: VAR-d30 — FID 1.92; VAR-d30-re — FID 1.73. Caption: “Models with the suffix ‘-re’ used rejection sampling.”"
+            }
+          ],
+          "limitations": "The claim omits rejection sampling. Proposed wording: With rejection sampling, the 2B VAR model achieves an FID of 1.73 on ImageNet 256 x 256. A human must review the revision."
+        }
+      ],
+      "extra_sources": [],
+      "duplicate_of": [],
+      "errors": [],
+      "human": {
+        "decision": "pending"
+      },
+      "metadata_diff": [
+        {
+          "field": "type",
+          "input": "article",
+          "source": "article",
+          "status": "matches"
+        },
+        {
+          "field": "title",
+          "input": "Visual Autoregressive Modeling: Scalable Image Generation via Next-Scale Prediction",
+          "source": "Visual Autoregressive Modeling: Scalable Image Generation via Next-Scale Prediction",
+          "status": "matches"
+        },
+        {
+          "field": "author",
+          "input": [
+            {
+              "given": "Keyu",
+              "family": "Tian"
+            },
+            {
+              "given": "Yi",
+              "family": "Jiang"
+            },
+            {
+              "given": "Zehuan",
+              "family": "Yuan"
+            },
+            {
+              "given": "Bingyue",
+              "family": "Peng"
+            },
+            {
+              "given": "Liwei",
+              "family": "Wang"
+            }
+          ],
+          "source": [
+            {
+              "given": "Keyu",
+              "family": "Tian"
+            },
+            {
+              "given": "Yi",
+              "family": "Jiang"
+            },
+            {
+              "given": "Zehuan",
+              "family": "Yuan"
+            },
+            {
+              "given": "Bingyue",
+              "family": "Peng"
+            },
+            {
+              "given": "Liwei",
+              "family": "Wang"
+            }
+          ],
+          "status": "matches"
+        },
+        {
+          "field": "issued",
+          "input": {
+            "date-parts": [
+              [
+                2023
+              ]
+            ]
+          },
+          "source": {
+            "date-parts": [
+              [
+                2024
+              ]
+            ]
+          },
+          "status": "differs"
+        },
+        {
+          "field": "DOI",
+          "input": "10.48550/arXiv.2404.02905",
+          "source": "10.48550/arXiv.2404.02905",
+          "status": "matches"
+        },
+        {
+          "field": "publisher",
+          "input": "arXiv",
+          "source": "arXiv",
+          "status": "matches"
+        }
+      ],
+      "formatting": {
+        "status": "not_rendered",
+        "missing_core_fields": [],
+        "note": "Field presence only. CSL rendering and venue-specific requirements are separate."
+      },
+      "evidence_hash": "191f165b7de43c396e107fa54318a651ff460b992897c1911fd09d7d803ea9c0",
+      "discovery": {
+        "relevance": "Controlled demonstration input; not an actual user bibliography or an observed AI mistake.",
+        "summary_basis": "agent selection note from title/abstract; not full-text claim verification",
+        "name_segmentation": "Given/family split inferred from source full names; human review required."
+      }
+    },
+    {
+      "id": "sparse-wrong-title",
+      "original": {
+        "id": "sparse-wrong-title",
+        "type": "article",
+        "title": "Generating Infinite Sequences with Sparse Transformers",
+        "author": [
+          {
+            "given": "Rewon",
+            "family": "Child"
+          },
+          {
+            "given": "Scott",
+            "family": "Gray"
+          },
+          {
+            "given": "Alec",
+            "family": "Radford"
+          },
+          {
+            "given": "Ilya",
+            "family": "Sutskever"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2019
+            ]
+          ]
+        },
+        "publisher": "arXiv",
+        "URL": "https://arxiv.org/abs/1904.10509v1",
+        "DOI": "10.48550/arXiv.1904.10509"
+      },
+      "candidates": [
+        {
+          "csl": {
+            "type": "article",
+            "title": "Generating Long Sequences with Sparse Transformers",
+            "author": [
+              {
+                "given": "Rewon",
+                "family": "Child"
+              },
+              {
+                "given": "Scott",
+                "family": "Gray"
+              },
+              {
+                "given": "Alec",
+                "family": "Radford"
+              },
+              {
+                "given": "Ilya",
+                "family": "Sutskever"
+              }
+            ],
+            "issued": {
+              "date-parts": [
+                [
+                  2019
+                ]
+              ]
+            },
+            "publisher": "arXiv",
+            "URL": "https://arxiv.org/abs/1904.10509v1",
+            "DOI": "10.48550/arXiv.1904.10509"
+          },
+          "arxiv_id": "1904.10509v1",
+          "version": "v1; preprint, original submission year; not merged with a proceedings edition",
+          "source": {
+            "provider": "arXiv primary page via agent web retrieval (saved snapshot)",
+            "url": "https://arxiv.org/abs/1904.10509",
+            "retrieved_at": "2026-09-29T00:24:27.314Z",
+            "retrieval_method": "Live primary arXiv page read using web tool; structured fields extracted from returned page text."
+          }
+        }
+      ],
+      "selected": 0,
+      "identity": {
+        "status": "evidence_matched",
+        "reason": "Source title, full author order, arXiv ID, and original year were read from the primary page. This run replays that evidence; it is not a fresh API lookup."
+      },
+      "integrity": {
+        "status": "not_checked",
+        "scope": "No comprehensive retraction/correction search in this acceptance dataset. Inspect publisher and arXiv notices."
+      },
+      "claims": [],
+      "extra_sources": [],
+      "duplicate_of": [],
+      "errors": [],
+      "human": {
+        "decision": "pending"
+      },
+      "metadata_diff": [
+        {
+          "field": "type",
+          "input": "article",
+          "source": "article",
+          "status": "matches"
+        },
+        {
+          "field": "title",
+          "input": "Generating Infinite Sequences with Sparse Transformers",
+          "source": "Generating Long Sequences with Sparse Transformers",
+          "status": "differs"
+        },
+        {
+          "field": "author",
+          "input": [
+            {
+              "given": "Rewon",
+              "family": "Child"
+            },
+            {
+              "given": "Scott",
+              "family": "Gray"
+            },
+            {
+              "given": "Alec",
+              "family": "Radford"
+            },
+            {
+              "given": "Ilya",
+              "family": "Sutskever"
+            }
+          ],
+          "source": [
+            {
+              "given": "Rewon",
+              "family": "Child"
+            },
+            {
+              "given": "Scott",
+              "family": "Gray"
+            },
+            {
+              "given": "Alec",
+              "family": "Radford"
+            },
+            {
+              "given": "Ilya",
+              "family": "Sutskever"
+            }
+          ],
+          "status": "matches"
+        },
+        {
+          "field": "issued",
+          "input": {
+            "date-parts": [
+              [
+                2019
+              ]
+            ]
+          },
+          "source": {
+            "date-parts": [
+              [
+                2019
+              ]
+            ]
+          },
+          "status": "matches"
+        },
+        {
+          "field": "DOI",
+          "input": "10.48550/arXiv.1904.10509",
+          "source": "10.48550/arXiv.1904.10509",
+          "status": "matches"
+        },
+        {
+          "field": "publisher",
+          "input": "arXiv",
+          "source": "arXiv",
+          "status": "matches"
+        }
+      ],
+      "formatting": {
+        "status": "not_rendered",
+        "missing_core_fields": [],
+        "note": "Field presence only. CSL rendering and venue-specific requirements are separate."
+      },
+      "evidence_hash": "6e91097be01f31321ef54df6f674aa00faf0c09dd98d1a7fc119bad2b5ab1f6b",
+      "discovery": {
+        "relevance": "Controlled demonstration input; not an actual user bibliography or an observed AI mistake.",
+        "summary_basis": "agent selection note from title/abstract; not full-text claim verification",
+        "name_segmentation": "Given/family split inferred from source full names; human review required."
+      }
+    },
+    {
+      "id": "kivi-missing-author",
+      "original": {
+        "id": "kivi-missing-author",
+        "type": "article",
+        "title": "KIVI: A Tuning-Free Asymmetric 2bit Quantization for KV Cache",
+        "issued": {
+          "date-parts": [
+            [
+              2024
+            ]
+          ]
+        },
+        "publisher": "arXiv",
+        "URL": "https://arxiv.org/abs/2402.02750v2",
+        "DOI": "10.48550/arXiv.2402.02750"
+      },
+      "candidates": [
+        {
+          "csl": {
+            "type": "article",
+            "title": "KIVI: A Tuning-Free Asymmetric 2bit Quantization for KV Cache",
+            "author": [
+              {
+                "given": "Zirui",
+                "family": "Liu"
+              },
+              {
+                "given": "Jiayi",
+                "family": "Yuan"
+              },
+              {
+                "given": "Hongye",
+                "family": "Jin"
+              },
+              {
+                "given": "Shaochen",
+                "family": "Zhong"
+              },
+              {
+                "given": "Zhaozhuo",
+                "family": "Xu"
+              },
+              {
+                "given": "Vladimir",
+                "family": "Braverman"
+              },
+              {
+                "given": "Beidi",
+                "family": "Chen"
+              },
+              {
+                "given": "Xia",
+                "family": "Hu"
+              }
+            ],
+            "issued": {
+              "date-parts": [
+                [
+                  2024
+                ]
+              ]
+            },
+            "publisher": "arXiv",
+            "URL": "https://arxiv.org/abs/2402.02750v2",
+            "DOI": "10.48550/arXiv.2402.02750"
+          },
+          "arxiv_id": "2402.02750v2",
+          "version": "v2; preprint, original submission year; not merged with a proceedings edition",
+          "source": {
+            "provider": "arXiv primary page via agent web retrieval (saved snapshot)",
+            "url": "https://arxiv.org/abs/2402.02750",
+            "retrieved_at": "2026-09-29T00:24:27.321Z",
+            "retrieval_method": "Live primary arXiv page read using web tool; structured fields extracted from returned page text."
+          }
+        }
+      ],
+      "selected": 0,
+      "identity": {
+        "status": "evidence_matched",
+        "reason": "Source title, full author order, arXiv ID, and original year were read from the primary page. This run replays that evidence; it is not a fresh API lookup."
+      },
+      "integrity": {
+        "status": "not_checked",
+        "scope": "No comprehensive retraction/correction search in this acceptance dataset. Inspect publisher and arXiv notices."
+      },
+      "claims": [],
+      "extra_sources": [],
+      "duplicate_of": [],
+      "errors": [],
+      "human": {
+        "decision": "pending"
+      },
+      "metadata_diff": [
+        {
+          "field": "type",
+          "input": "article",
+          "source": "article",
+          "status": "matches"
+        },
+        {
+          "field": "title",
+          "input": "KIVI: A Tuning-Free Asymmetric 2bit Quantization for KV Cache",
+          "source": "KIVI: A Tuning-Free Asymmetric 2bit Quantization for KV Cache",
+          "status": "matches"
+        },
+        {
+          "field": "author",
+          "input": null,
+          "source": [
+            {
+              "given": "Zirui",
+              "family": "Liu"
+            },
+            {
+              "given": "Jiayi",
+              "family": "Yuan"
+            },
+            {
+              "given": "Hongye",
+              "family": "Jin"
+            },
+            {
+              "given": "Shaochen",
+              "family": "Zhong"
+            },
+            {
+              "given": "Zhaozhuo",
+              "family": "Xu"
+            },
+            {
+              "given": "Vladimir",
+              "family": "Braverman"
+            },
+            {
+              "given": "Beidi",
+              "family": "Chen"
+            },
+            {
+              "given": "Xia",
+              "family": "Hu"
+            }
+          ],
+          "status": "missing_in_input"
+        },
+        {
+          "field": "issued",
+          "input": {
+            "date-parts": [
+              [
+                2024
+              ]
+            ]
+          },
+          "source": {
+            "date-parts": [
+              [
+                2024
+              ]
+            ]
+          },
+          "status": "matches"
+        },
+        {
+          "field": "DOI",
+          "input": "10.48550/arXiv.2402.02750",
+          "source": "10.48550/arXiv.2402.02750",
+          "status": "matches"
+        },
+        {
+          "field": "publisher",
+          "input": "arXiv",
+          "source": "arXiv",
+          "status": "matches"
+        }
+      ],
+      "formatting": {
+        "status": "not_rendered",
+        "missing_core_fields": [],
+        "note": "Field presence only. CSL rendering and venue-specific requirements are separate."
+      },
+      "evidence_hash": "686842cc0e6e2a4030fee32f47613e8a3985d31a2f3f405e72fe67eb47c1f993",
+      "discovery": {
+        "relevance": "Controlled demonstration input; not an actual user bibliography or an observed AI mistake.",
+        "summary_basis": "agent selection note from title/abstract; not full-text claim verification",
+        "name_segmentation": "Given/family split inferred from source full names; human review required."
+      }
+    },
+    {
+      "id": "kivi-duplicate",
+      "original": {
+        "id": "kivi-duplicate",
+        "type": "article",
+        "title": "KIVI: A Tuning-Free Asymmetric 2bit Quantization for KV Cache",
+        "author": [
+          {
+            "given": "Zirui",
+            "family": "Liu"
+          },
+          {
+            "given": "Jiayi",
+            "family": "Yuan"
+          },
+          {
+            "given": "Hongye",
+            "family": "Jin"
+          },
+          {
+            "given": "Shaochen",
+            "family": "Zhong"
+          },
+          {
+            "given": "Zhaozhuo",
+            "family": "Xu"
+          },
+          {
+            "given": "Vladimir",
+            "family": "Braverman"
+          },
+          {
+            "given": "Beidi",
+            "family": "Chen"
+          },
+          {
+            "given": "Xia",
+            "family": "Hu"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2024
+            ]
+          ]
+        },
+        "publisher": "arXiv",
+        "URL": "https://arxiv.org/abs/2402.02750v2",
+        "DOI": "10.48550/arXiv.2402.02750"
+      },
+      "candidates": [
+        {
+          "csl": {
+            "type": "article",
+            "title": "KIVI: A Tuning-Free Asymmetric 2bit Quantization for KV Cache",
+            "author": [
+              {
+                "given": "Zirui",
+                "family": "Liu"
+              },
+              {
+                "given": "Jiayi",
+                "family": "Yuan"
+              },
+              {
+                "given": "Hongye",
+                "family": "Jin"
+              },
+              {
+                "given": "Shaochen",
+                "family": "Zhong"
+              },
+              {
+                "given": "Zhaozhuo",
+                "family": "Xu"
+              },
+              {
+                "given": "Vladimir",
+                "family": "Braverman"
+              },
+              {
+                "given": "Beidi",
+                "family": "Chen"
+              },
+              {
+                "given": "Xia",
+                "family": "Hu"
+              }
+            ],
+            "issued": {
+              "date-parts": [
+                [
+                  2024
+                ]
+              ]
+            },
+            "publisher": "arXiv",
+            "URL": "https://arxiv.org/abs/2402.02750v2",
+            "DOI": "10.48550/arXiv.2402.02750"
+          },
+          "arxiv_id": "2402.02750v2",
+          "version": "v2; preprint, original submission year; not merged with a proceedings edition",
+          "source": {
+            "provider": "arXiv primary page via agent web retrieval (saved snapshot)",
+            "url": "https://arxiv.org/abs/2402.02750",
+            "retrieved_at": "2026-09-29T00:24:27.321Z",
+            "retrieval_method": "Live primary arXiv page read using web tool; structured fields extracted from returned page text."
+          }
+        }
+      ],
+      "selected": 0,
+      "identity": {
+        "status": "evidence_matched",
+        "reason": "Source title, full author order, arXiv ID, and original year were read from the primary page. This run replays that evidence; it is not a fresh API lookup."
+      },
+      "integrity": {
+        "status": "not_checked",
+        "scope": "No comprehensive retraction/correction search in this acceptance dataset. Inspect publisher and arXiv notices."
+      },
+      "claims": [],
+      "extra_sources": [],
+      "duplicate_of": [
+        {
+          "id": "kivi-missing-author",
+          "basis": "same DOI"
+        }
+      ],
+      "errors": [],
+      "human": {
+        "decision": "pending"
+      },
+      "metadata_diff": [
+        {
+          "field": "type",
+          "input": "article",
+          "source": "article",
+          "status": "matches"
+        },
+        {
+          "field": "title",
+          "input": "KIVI: A Tuning-Free Asymmetric 2bit Quantization for KV Cache",
+          "source": "KIVI: A Tuning-Free Asymmetric 2bit Quantization for KV Cache",
+          "status": "matches"
+        },
+        {
+          "field": "author",
+          "input": [
+            {
+              "given": "Zirui",
+              "family": "Liu"
+            },
+            {
+              "given": "Jiayi",
+              "family": "Yuan"
+            },
+            {
+              "given": "Hongye",
+              "family": "Jin"
+            },
+            {
+              "given": "Shaochen",
+              "family": "Zhong"
+            },
+            {
+              "given": "Zhaozhuo",
+              "family": "Xu"
+            },
+            {
+              "given": "Vladimir",
+              "family": "Braverman"
+            },
+            {
+              "given": "Beidi",
+              "family": "Chen"
+            },
+            {
+              "given": "Xia",
+              "family": "Hu"
+            }
+          ],
+          "source": [
+            {
+              "given": "Zirui",
+              "family": "Liu"
+            },
+            {
+              "given": "Jiayi",
+              "family": "Yuan"
+            },
+            {
+              "given": "Hongye",
+              "family": "Jin"
+            },
+            {
+              "given": "Shaochen",
+              "family": "Zhong"
+            },
+            {
+              "given": "Zhaozhuo",
+              "family": "Xu"
+            },
+            {
+              "given": "Vladimir",
+              "family": "Braverman"
+            },
+            {
+              "given": "Beidi",
+              "family": "Chen"
+            },
+            {
+              "given": "Xia",
+              "family": "Hu"
+            }
+          ],
+          "status": "matches"
+        },
+        {
+          "field": "issued",
+          "input": {
+            "date-parts": [
+              [
+                2024
+              ]
+            ]
+          },
+          "source": {
+            "date-parts": [
+              [
+                2024
+              ]
+            ]
+          },
+          "status": "matches"
+        },
+        {
+          "field": "DOI",
+          "input": "10.48550/arXiv.2402.02750",
+          "source": "10.48550/arXiv.2402.02750",
+          "status": "matches"
+        },
+        {
+          "field": "publisher",
+          "input": "arXiv",
+          "source": "arXiv",
+          "status": "matches"
+        }
+      ],
+      "formatting": {
+        "status": "not_rendered",
+        "missing_core_fields": [],
+        "note": "Field presence only. CSL rendering and venue-specific requirements are separate."
+      },
+      "evidence_hash": "5e252c690d7d8c7ab9701b855e986d4be29b6cf77b91127f499ebb193cfe0be5",
+      "discovery": {
+        "relevance": "Controlled demonstration input; not an actual user bibliography or an observed AI mistake.",
+        "summary_basis": "agent selection note from title/abstract; not full-text claim verification",
+        "name_segmentation": "Given/family split inferred from source full names; human review required."
+      }
+    },
+    {
+      "id": "longformer-clean",
+      "original": {
+        "id": "longformer-clean",
+        "type": "article",
+        "title": "Longformer: The Long-Document Transformer",
+        "author": [
+          {
+            "given": "Iz",
+            "family": "Beltagy"
+          },
+          {
+            "given": "Matthew E.",
+            "family": "Peters"
+          },
+          {
+            "given": "Arman",
+            "family": "Cohan"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2020
+            ]
+          ]
+        },
+        "publisher": "arXiv",
+        "URL": "https://arxiv.org/abs/2004.05150v2",
+        "DOI": "10.48550/arXiv.2004.05150"
+      },
+      "candidates": [
+        {
+          "csl": {
+            "type": "article",
+            "title": "Longformer: The Long-Document Transformer",
+            "author": [
+              {
+                "given": "Iz",
+                "family": "Beltagy"
+              },
+              {
+                "given": "Matthew E.",
+                "family": "Peters"
+              },
+              {
+                "given": "Arman",
+                "family": "Cohan"
+              }
+            ],
+            "issued": {
+              "date-parts": [
+                [
+                  2020
+                ]
+              ]
+            },
+            "publisher": "arXiv",
+            "URL": "https://arxiv.org/abs/2004.05150v2",
+            "DOI": "10.48550/arXiv.2004.05150"
+          },
+          "arxiv_id": "2004.05150v2",
+          "version": "v2; preprint, original submission year; not merged with a proceedings edition",
+          "source": {
+            "provider": "arXiv primary page via agent web retrieval (saved snapshot)",
+            "url": "https://arxiv.org/abs/2004.05150",
+            "retrieved_at": "2026-09-29T00:24:27.320Z",
+            "retrieval_method": "Live primary arXiv page read using web tool; structured fields extracted from returned page text."
+          }
+        }
+      ],
+      "selected": 0,
+      "identity": {
+        "status": "evidence_matched",
+        "reason": "Source title, full author order, arXiv ID, and original year were read from the primary page. This run replays that evidence; it is not a fresh API lookup."
+      },
+      "integrity": {
+        "status": "not_checked",
+        "scope": "No comprehensive retraction/correction search in this acceptance dataset. Inspect publisher and arXiv notices."
+      },
+      "claims": [],
+      "extra_sources": [],
+      "duplicate_of": [],
+      "errors": [],
+      "human": {
+        "decision": "pending"
+      },
+      "metadata_diff": [
+        {
+          "field": "type",
+          "input": "article",
+          "source": "article",
+          "status": "matches"
+        },
+        {
+          "field": "title",
+          "input": "Longformer: The Long-Document Transformer",
+          "source": "Longformer: The Long-Document Transformer",
+          "status": "matches"
+        },
+        {
+          "field": "author",
+          "input": [
+            {
+              "given": "Iz",
+              "family": "Beltagy"
+            },
+            {
+              "given": "Matthew E.",
+              "family": "Peters"
+            },
+            {
+              "given": "Arman",
+              "family": "Cohan"
+            }
+          ],
+          "source": [
+            {
+              "given": "Iz",
+              "family": "Beltagy"
+            },
+            {
+              "given": "Matthew E.",
+              "family": "Peters"
+            },
+            {
+              "given": "Arman",
+              "family": "Cohan"
+            }
+          ],
+          "status": "matches"
+        },
+        {
+          "field": "issued",
+          "input": {
+            "date-parts": [
+              [
+                2020
+              ]
+            ]
+          },
+          "source": {
+            "date-parts": [
+              [
+                2020
+              ]
+            ]
+          },
+          "status": "matches"
+        },
+        {
+          "field": "DOI",
+          "input": "10.48550/arXiv.2004.05150",
+          "source": "10.48550/arXiv.2004.05150",
+          "status": "matches"
+        },
+        {
+          "field": "publisher",
+          "input": "arXiv",
+          "source": "arXiv",
+          "status": "matches"
+        }
+      ],
+      "formatting": {
+        "status": "not_rendered",
+        "missing_core_fields": [],
+        "note": "Field presence only. CSL rendering and venue-specific requirements are separate."
+      },
+      "evidence_hash": "cbe403e997c468cefad2d857a0936cfc6868c1dcea428efd0e06d73fa9eb3795",
+      "discovery": {
+        "relevance": "Controlled demonstration input; not an actual user bibliography or an observed AI mistake.",
+        "summary_basis": "agent selection note from title/abstract; not full-text claim verification",
+        "name_segmentation": "Given/family split inferred from source full names; human review required."
+      }
+    }
+  ],
+  "notice": "Machine evidence is provisional. Only explicit human decisions can enter the reviewed export. Integrity coverage is limited."
+}

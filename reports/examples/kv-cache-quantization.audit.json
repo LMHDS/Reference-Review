@@ -1,0 +1,2263 @@
+{
+  "schema_version": 1,
+  "run_id": "fdd44beb-c346-41a9-886d-f52b83a20d16",
+  "created_at": "2026-09-29T00:33:35+00:00",
+  "mode": "acceptance-replay",
+  "entries": [
+    {
+      "id": "kv-cache-quantization-1",
+      "original": {
+        "id": "kv-cache-quantization-1",
+        "type": "article",
+        "title": "KIVI: A Tuning-Free Asymmetric 2bit Quantization for KV Cache",
+        "author": [
+          {
+            "given": "Zirui",
+            "family": "Liu"
+          },
+          {
+            "given": "Jiayi",
+            "family": "Yuan"
+          },
+          {
+            "given": "Hongye",
+            "family": "Jin"
+          },
+          {
+            "given": "Shaochen",
+            "family": "Zhong"
+          },
+          {
+            "given": "Zhaozhuo",
+            "family": "Xu"
+          },
+          {
+            "given": "Vladimir",
+            "family": "Braverman"
+          },
+          {
+            "given": "Beidi",
+            "family": "Chen"
+          },
+          {
+            "given": "Xia",
+            "family": "Hu"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2024
+            ]
+          ]
+        },
+        "publisher": "arXiv",
+        "URL": "https://arxiv.org/abs/2402.02750v2",
+        "DOI": "10.48550/arXiv.2402.02750"
+      },
+      "candidates": [
+        {
+          "csl": {
+            "type": "article",
+            "title": "KIVI: A Tuning-Free Asymmetric 2bit Quantization for KV Cache",
+            "author": [
+              {
+                "given": "Zirui",
+                "family": "Liu"
+              },
+              {
+                "given": "Jiayi",
+                "family": "Yuan"
+              },
+              {
+                "given": "Hongye",
+                "family": "Jin"
+              },
+              {
+                "given": "Shaochen",
+                "family": "Zhong"
+              },
+              {
+                "given": "Zhaozhuo",
+                "family": "Xu"
+              },
+              {
+                "given": "Vladimir",
+                "family": "Braverman"
+              },
+              {
+                "given": "Beidi",
+                "family": "Chen"
+              },
+              {
+                "given": "Xia",
+                "family": "Hu"
+              }
+            ],
+            "issued": {
+              "date-parts": [
+                [
+                  2024
+                ]
+              ]
+            },
+            "publisher": "arXiv",
+            "URL": "https://arxiv.org/abs/2402.02750v2",
+            "DOI": "10.48550/arXiv.2402.02750"
+          },
+          "arxiv_id": "2402.02750v2",
+          "version": "v2; preprint, original submission year; not merged with a proceedings edition",
+          "source": {
+            "provider": "arXiv primary page via agent web retrieval (saved snapshot)",
+            "url": "https://arxiv.org/abs/2402.02750",
+            "retrieved_at": "2026-09-29T00:24:27.321Z",
+            "retrieval_method": "Live primary arXiv page read using web tool; structured fields extracted from returned page text."
+          }
+        }
+      ],
+      "selected": 0,
+      "identity": {
+        "status": "evidence_matched",
+        "reason": "Source title, full author order, arXiv ID, and original year were read from the primary page. This run replays that evidence; it is not a fresh API lookup."
+      },
+      "integrity": {
+        "status": "not_checked",
+        "scope": "No comprehensive retraction/correction search in this acceptance dataset. Inspect publisher and arXiv notices."
+      },
+      "claims": [],
+      "extra_sources": [],
+      "duplicate_of": [],
+      "errors": [],
+      "human": {
+        "decision": "pending"
+      },
+      "metadata_diff": [
+        {
+          "field": "type",
+          "input": "article",
+          "source": "article",
+          "status": "matches"
+        },
+        {
+          "field": "title",
+          "input": "KIVI: A Tuning-Free Asymmetric 2bit Quantization for KV Cache",
+          "source": "KIVI: A Tuning-Free Asymmetric 2bit Quantization for KV Cache",
+          "status": "matches"
+        },
+        {
+          "field": "author",
+          "input": [
+            {
+              "given": "Zirui",
+              "family": "Liu"
+            },
+            {
+              "given": "Jiayi",
+              "family": "Yuan"
+            },
+            {
+              "given": "Hongye",
+              "family": "Jin"
+            },
+            {
+              "given": "Shaochen",
+              "family": "Zhong"
+            },
+            {
+              "given": "Zhaozhuo",
+              "family": "Xu"
+            },
+            {
+              "given": "Vladimir",
+              "family": "Braverman"
+            },
+            {
+              "given": "Beidi",
+              "family": "Chen"
+            },
+            {
+              "given": "Xia",
+              "family": "Hu"
+            }
+          ],
+          "source": [
+            {
+              "given": "Zirui",
+              "family": "Liu"
+            },
+            {
+              "given": "Jiayi",
+              "family": "Yuan"
+            },
+            {
+              "given": "Hongye",
+              "family": "Jin"
+            },
+            {
+              "given": "Shaochen",
+              "family": "Zhong"
+            },
+            {
+              "given": "Zhaozhuo",
+              "family": "Xu"
+            },
+            {
+              "given": "Vladimir",
+              "family": "Braverman"
+            },
+            {
+              "given": "Beidi",
+              "family": "Chen"
+            },
+            {
+              "given": "Xia",
+              "family": "Hu"
+            }
+          ],
+          "status": "matches"
+        },
+        {
+          "field": "issued",
+          "input": {
+            "date-parts": [
+              [
+                2024
+              ]
+            ]
+          },
+          "source": {
+            "date-parts": [
+              [
+                2024
+              ]
+            ]
+          },
+          "status": "matches"
+        },
+        {
+          "field": "DOI",
+          "input": "10.48550/arXiv.2402.02750",
+          "source": "10.48550/arXiv.2402.02750",
+          "status": "matches"
+        },
+        {
+          "field": "publisher",
+          "input": "arXiv",
+          "source": "arXiv",
+          "status": "matches"
+        }
+      ],
+      "formatting": {
+        "status": "not_rendered",
+        "missing_core_fields": [],
+        "note": "Field presence only. CSL rendering and venue-specific requirements are separate."
+      },
+      "evidence_hash": "f9d2af7ed43f795d6e8de28cf312b840eac515d1b8ae94c754c9e543776f321a",
+      "discovery": {
+        "relevance": "Asymmetric low-bit quantization treats keys and values differently.",
+        "summary_basis": "agent selection note from title/abstract; not full-text claim verification",
+        "name_segmentation": "Given/family split inferred from source full names; human review required."
+      }
+    },
+    {
+      "id": "kv-cache-quantization-2",
+      "original": {
+        "id": "kv-cache-quantization-2",
+        "type": "article",
+        "title": "KVQuant: Towards 10 Million Context Length LLM Inference with KV Cache Quantization",
+        "author": [
+          {
+            "given": "Coleman",
+            "family": "Hooper"
+          },
+          {
+            "given": "Sehoon",
+            "family": "Kim"
+          },
+          {
+            "given": "Hiva",
+            "family": "Mohammadzadeh"
+          },
+          {
+            "given": "Michael W.",
+            "family": "Mahoney"
+          },
+          {
+            "given": "Yakun Sophia",
+            "family": "Shao"
+          },
+          {
+            "given": "Kurt",
+            "family": "Keutzer"
+          },
+          {
+            "given": "Amir",
+            "family": "Gholami"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2024
+            ]
+          ]
+        },
+        "publisher": "arXiv",
+        "URL": "https://arxiv.org/abs/2401.18079v6",
+        "DOI": "10.48550/arXiv.2401.18079"
+      },
+      "candidates": [
+        {
+          "csl": {
+            "type": "article",
+            "title": "KVQuant: Towards 10 Million Context Length LLM Inference with KV Cache Quantization",
+            "author": [
+              {
+                "given": "Coleman",
+                "family": "Hooper"
+              },
+              {
+                "given": "Sehoon",
+                "family": "Kim"
+              },
+              {
+                "given": "Hiva",
+                "family": "Mohammadzadeh"
+              },
+              {
+                "given": "Michael W.",
+                "family": "Mahoney"
+              },
+              {
+                "given": "Yakun Sophia",
+                "family": "Shao"
+              },
+              {
+                "given": "Kurt",
+                "family": "Keutzer"
+              },
+              {
+                "given": "Amir",
+                "family": "Gholami"
+              }
+            ],
+            "issued": {
+              "date-parts": [
+                [
+                  2024
+                ]
+              ]
+            },
+            "publisher": "arXiv",
+            "URL": "https://arxiv.org/abs/2401.18079v6",
+            "DOI": "10.48550/arXiv.2401.18079"
+          },
+          "arxiv_id": "2401.18079v6",
+          "version": "v6; preprint, original submission year; not merged with a proceedings edition",
+          "source": {
+            "provider": "arXiv primary page via agent web retrieval (saved snapshot)",
+            "url": "https://arxiv.org/abs/2401.18079",
+            "retrieved_at": "2026-09-29T00:24:27.321Z",
+            "retrieval_method": "Live primary arXiv page read using web tool; structured fields extracted from returned page text."
+          }
+        }
+      ],
+      "selected": 0,
+      "identity": {
+        "status": "evidence_matched",
+        "reason": "Source title, full author order, arXiv ID, and original year were read from the primary page. This run replays that evidence; it is not a fresh API lookup."
+      },
+      "integrity": {
+        "status": "not_checked",
+        "scope": "No comprehensive retraction/correction search in this acceptance dataset. Inspect publisher and arXiv notices."
+      },
+      "claims": [],
+      "extra_sources": [],
+      "duplicate_of": [],
+      "errors": [],
+      "human": {
+        "decision": "pending"
+      },
+      "metadata_diff": [
+        {
+          "field": "type",
+          "input": "article",
+          "source": "article",
+          "status": "matches"
+        },
+        {
+          "field": "title",
+          "input": "KVQuant: Towards 10 Million Context Length LLM Inference with KV Cache Quantization",
+          "source": "KVQuant: Towards 10 Million Context Length LLM Inference with KV Cache Quantization",
+          "status": "matches"
+        },
+        {
+          "field": "author",
+          "input": [
+            {
+              "given": "Coleman",
+              "family": "Hooper"
+            },
+            {
+              "given": "Sehoon",
+              "family": "Kim"
+            },
+            {
+              "given": "Hiva",
+              "family": "Mohammadzadeh"
+            },
+            {
+              "given": "Michael W.",
+              "family": "Mahoney"
+            },
+            {
+              "given": "Yakun Sophia",
+              "family": "Shao"
+            },
+            {
+              "given": "Kurt",
+              "family": "Keutzer"
+            },
+            {
+              "given": "Amir",
+              "family": "Gholami"
+            }
+          ],
+          "source": [
+            {
+              "given": "Coleman",
+              "family": "Hooper"
+            },
+            {
+              "given": "Sehoon",
+              "family": "Kim"
+            },
+            {
+              "given": "Hiva",
+              "family": "Mohammadzadeh"
+            },
+            {
+              "given": "Michael W.",
+              "family": "Mahoney"
+            },
+            {
+              "given": "Yakun Sophia",
+              "family": "Shao"
+            },
+            {
+              "given": "Kurt",
+              "family": "Keutzer"
+            },
+            {
+              "given": "Amir",
+              "family": "Gholami"
+            }
+          ],
+          "status": "matches"
+        },
+        {
+          "field": "issued",
+          "input": {
+            "date-parts": [
+              [
+                2024
+              ]
+            ]
+          },
+          "source": {
+            "date-parts": [
+              [
+                2024
+              ]
+            ]
+          },
+          "status": "matches"
+        },
+        {
+          "field": "DOI",
+          "input": "10.48550/arXiv.2401.18079",
+          "source": "10.48550/arXiv.2401.18079",
+          "status": "matches"
+        },
+        {
+          "field": "publisher",
+          "input": "arXiv",
+          "source": "arXiv",
+          "status": "matches"
+        }
+      ],
+      "formatting": {
+        "status": "not_rendered",
+        "missing_core_fields": [],
+        "note": "Field presence only. CSL rendering and venue-specific requirements are separate."
+      },
+      "evidence_hash": "9b98c07133f4be5209e1b3024888618ca32a15fc6765a90dd502b9756e3acaba",
+      "discovery": {
+        "relevance": "KV-cache quantization for very long-context inference.",
+        "summary_basis": "agent selection note from title/abstract; not full-text claim verification",
+        "name_segmentation": "Given/family split inferred from source full names; human review required."
+      }
+    },
+    {
+      "id": "kv-cache-quantization-3",
+      "original": {
+        "id": "kv-cache-quantization-3",
+        "type": "article",
+        "title": "GEAR: An Efficient KV Cache Compression Recipe for Near-Lossless Generative Inference of LLM",
+        "author": [
+          {
+            "given": "Hao",
+            "family": "Kang"
+          },
+          {
+            "given": "Qingru",
+            "family": "Zhang"
+          },
+          {
+            "given": "Souvik",
+            "family": "Kundu"
+          },
+          {
+            "given": "Geonhwa",
+            "family": "Jeong"
+          },
+          {
+            "given": "Zaoxing",
+            "family": "Liu"
+          },
+          {
+            "given": "Tushar",
+            "family": "Krishna"
+          },
+          {
+            "given": "Tuo",
+            "family": "Zhao"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2024
+            ]
+          ]
+        },
+        "publisher": "arXiv",
+        "URL": "https://arxiv.org/abs/2403.05527v4",
+        "DOI": "10.48550/arXiv.2403.05527"
+      },
+      "candidates": [
+        {
+          "csl": {
+            "type": "article",
+            "title": "GEAR: An Efficient KV Cache Compression Recipe for Near-Lossless Generative Inference of LLM",
+            "author": [
+              {
+                "given": "Hao",
+                "family": "Kang"
+              },
+              {
+                "given": "Qingru",
+                "family": "Zhang"
+              },
+              {
+                "given": "Souvik",
+                "family": "Kundu"
+              },
+              {
+                "given": "Geonhwa",
+                "family": "Jeong"
+              },
+              {
+                "given": "Zaoxing",
+                "family": "Liu"
+              },
+              {
+                "given": "Tushar",
+                "family": "Krishna"
+              },
+              {
+                "given": "Tuo",
+                "family": "Zhao"
+              }
+            ],
+            "issued": {
+              "date-parts": [
+                [
+                  2024
+                ]
+              ]
+            },
+            "publisher": "arXiv",
+            "URL": "https://arxiv.org/abs/2403.05527v4",
+            "DOI": "10.48550/arXiv.2403.05527"
+          },
+          "arxiv_id": "2403.05527v4",
+          "version": "v4; preprint, original submission year; not merged with a proceedings edition",
+          "source": {
+            "provider": "arXiv primary page via agent web retrieval (saved snapshot)",
+            "url": "https://arxiv.org/abs/2403.05527",
+            "retrieved_at": "2026-09-29T00:24:27.321Z",
+            "retrieval_method": "Live primary arXiv page read using web tool; structured fields extracted from returned page text."
+          }
+        }
+      ],
+      "selected": 0,
+      "identity": {
+        "status": "evidence_matched",
+        "reason": "Source title, full author order, arXiv ID, and original year were read from the primary page. This run replays that evidence; it is not a fresh API lookup."
+      },
+      "integrity": {
+        "status": "not_checked",
+        "scope": "No comprehensive retraction/correction search in this acceptance dataset. Inspect publisher and arXiv notices."
+      },
+      "claims": [],
+      "extra_sources": [],
+      "duplicate_of": [],
+      "errors": [],
+      "human": {
+        "decision": "pending"
+      },
+      "metadata_diff": [
+        {
+          "field": "type",
+          "input": "article",
+          "source": "article",
+          "status": "matches"
+        },
+        {
+          "field": "title",
+          "input": "GEAR: An Efficient KV Cache Compression Recipe for Near-Lossless Generative Inference of LLM",
+          "source": "GEAR: An Efficient KV Cache Compression Recipe for Near-Lossless Generative Inference of LLM",
+          "status": "matches"
+        },
+        {
+          "field": "author",
+          "input": [
+            {
+              "given": "Hao",
+              "family": "Kang"
+            },
+            {
+              "given": "Qingru",
+              "family": "Zhang"
+            },
+            {
+              "given": "Souvik",
+              "family": "Kundu"
+            },
+            {
+              "given": "Geonhwa",
+              "family": "Jeong"
+            },
+            {
+              "given": "Zaoxing",
+              "family": "Liu"
+            },
+            {
+              "given": "Tushar",
+              "family": "Krishna"
+            },
+            {
+              "given": "Tuo",
+              "family": "Zhao"
+            }
+          ],
+          "source": [
+            {
+              "given": "Hao",
+              "family": "Kang"
+            },
+            {
+              "given": "Qingru",
+              "family": "Zhang"
+            },
+            {
+              "given": "Souvik",
+              "family": "Kundu"
+            },
+            {
+              "given": "Geonhwa",
+              "family": "Jeong"
+            },
+            {
+              "given": "Zaoxing",
+              "family": "Liu"
+            },
+            {
+              "given": "Tushar",
+              "family": "Krishna"
+            },
+            {
+              "given": "Tuo",
+              "family": "Zhao"
+            }
+          ],
+          "status": "matches"
+        },
+        {
+          "field": "issued",
+          "input": {
+            "date-parts": [
+              [
+                2024
+              ]
+            ]
+          },
+          "source": {
+            "date-parts": [
+              [
+                2024
+              ]
+            ]
+          },
+          "status": "matches"
+        },
+        {
+          "field": "DOI",
+          "input": "10.48550/arXiv.2403.05527",
+          "source": "10.48550/arXiv.2403.05527",
+          "status": "matches"
+        },
+        {
+          "field": "publisher",
+          "input": "arXiv",
+          "source": "arXiv",
+          "status": "matches"
+        }
+      ],
+      "formatting": {
+        "status": "not_rendered",
+        "missing_core_fields": [],
+        "note": "Field presence only. CSL rendering and venue-specific requirements are separate."
+      },
+      "evidence_hash": "031530548d76fe3d42915121a5ac4fd170b955a653ac66677ce7c67731814f56",
+      "discovery": {
+        "relevance": "Combines KV-cache compression techniques to reduce quantization error.",
+        "summary_basis": "agent selection note from title/abstract; not full-text claim verification",
+        "name_segmentation": "Given/family split inferred from source full names; human review required."
+      }
+    },
+    {
+      "id": "kv-cache-quantization-4",
+      "original": {
+        "id": "kv-cache-quantization-4",
+        "type": "article",
+        "title": "No Token Left Behind: Reliable KV Cache Compression via Importance-Aware Mixed Precision Quantization",
+        "author": [
+          {
+            "given": "June Yong",
+            "family": "Yang"
+          },
+          {
+            "given": "Byeongwook",
+            "family": "Kim"
+          },
+          {
+            "given": "Jeongin",
+            "family": "Bae"
+          },
+          {
+            "given": "Beomseok",
+            "family": "Kwon"
+          },
+          {
+            "given": "Gunho",
+            "family": "Park"
+          },
+          {
+            "given": "Eunho",
+            "family": "Yang"
+          },
+          {
+            "given": "Se Jung",
+            "family": "Kwon"
+          },
+          {
+            "given": "Dongsoo",
+            "family": "Lee"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2024
+            ]
+          ]
+        },
+        "publisher": "arXiv",
+        "URL": "https://arxiv.org/abs/2402.18096v1"
+      },
+      "candidates": [
+        {
+          "csl": {
+            "type": "article",
+            "title": "No Token Left Behind: Reliable KV Cache Compression via Importance-Aware Mixed Precision Quantization",
+            "author": [
+              {
+                "given": "June Yong",
+                "family": "Yang"
+              },
+              {
+                "given": "Byeongwook",
+                "family": "Kim"
+              },
+              {
+                "given": "Jeongin",
+                "family": "Bae"
+              },
+              {
+                "given": "Beomseok",
+                "family": "Kwon"
+              },
+              {
+                "given": "Gunho",
+                "family": "Park"
+              },
+              {
+                "given": "Eunho",
+                "family": "Yang"
+              },
+              {
+                "given": "Se Jung",
+                "family": "Kwon"
+              },
+              {
+                "given": "Dongsoo",
+                "family": "Lee"
+              }
+            ],
+            "issued": {
+              "date-parts": [
+                [
+                  2024
+                ]
+              ]
+            },
+            "publisher": "arXiv",
+            "URL": "https://arxiv.org/abs/2402.18096v1"
+          },
+          "arxiv_id": "2402.18096v1",
+          "version": "v1; preprint, original submission year; not merged with a proceedings edition",
+          "source": {
+            "provider": "arXiv primary page via agent web retrieval (saved snapshot)",
+            "url": "https://arxiv.org/abs/2402.18096",
+            "retrieved_at": "2026-09-29T00:24:27.321Z",
+            "retrieval_method": "Live primary arXiv page read using web tool; structured fields extracted from returned page text."
+          }
+        }
+      ],
+      "selected": 0,
+      "identity": {
+        "status": "evidence_matched",
+        "reason": "Source title, full author order, arXiv ID, and original year were read from the primary page. This run replays that evidence; it is not a fresh API lookup."
+      },
+      "integrity": {
+        "status": "not_checked",
+        "scope": "No comprehensive retraction/correction search in this acceptance dataset. Inspect publisher and arXiv notices."
+      },
+      "claims": [],
+      "extra_sources": [],
+      "duplicate_of": [],
+      "errors": [],
+      "human": {
+        "decision": "pending"
+      },
+      "metadata_diff": [
+        {
+          "field": "type",
+          "input": "article",
+          "source": "article",
+          "status": "matches"
+        },
+        {
+          "field": "title",
+          "input": "No Token Left Behind: Reliable KV Cache Compression via Importance-Aware Mixed Precision Quantization",
+          "source": "No Token Left Behind: Reliable KV Cache Compression via Importance-Aware Mixed Precision Quantization",
+          "status": "matches"
+        },
+        {
+          "field": "author",
+          "input": [
+            {
+              "given": "June Yong",
+              "family": "Yang"
+            },
+            {
+              "given": "Byeongwook",
+              "family": "Kim"
+            },
+            {
+              "given": "Jeongin",
+              "family": "Bae"
+            },
+            {
+              "given": "Beomseok",
+              "family": "Kwon"
+            },
+            {
+              "given": "Gunho",
+              "family": "Park"
+            },
+            {
+              "given": "Eunho",
+              "family": "Yang"
+            },
+            {
+              "given": "Se Jung",
+              "family": "Kwon"
+            },
+            {
+              "given": "Dongsoo",
+              "family": "Lee"
+            }
+          ],
+          "source": [
+            {
+              "given": "June Yong",
+              "family": "Yang"
+            },
+            {
+              "given": "Byeongwook",
+              "family": "Kim"
+            },
+            {
+              "given": "Jeongin",
+              "family": "Bae"
+            },
+            {
+              "given": "Beomseok",
+              "family": "Kwon"
+            },
+            {
+              "given": "Gunho",
+              "family": "Park"
+            },
+            {
+              "given": "Eunho",
+              "family": "Yang"
+            },
+            {
+              "given": "Se Jung",
+              "family": "Kwon"
+            },
+            {
+              "given": "Dongsoo",
+              "family": "Lee"
+            }
+          ],
+          "status": "matches"
+        },
+        {
+          "field": "issued",
+          "input": {
+            "date-parts": [
+              [
+                2024
+              ]
+            ]
+          },
+          "source": {
+            "date-parts": [
+              [
+                2024
+              ]
+            ]
+          },
+          "status": "matches"
+        },
+        {
+          "field": "publisher",
+          "input": "arXiv",
+          "source": "arXiv",
+          "status": "matches"
+        }
+      ],
+      "formatting": {
+        "status": "not_rendered",
+        "missing_core_fields": [],
+        "note": "Field presence only. CSL rendering and venue-specific requirements are separate."
+      },
+      "evidence_hash": "d883010b53a9b5d6a54dedc92ea9534a0dd80e6fce35b1a5a9ecd7f0efcb4721",
+      "discovery": {
+        "relevance": "Importance-aware mixed precision aims to retain information from all tokens.",
+        "summary_basis": "agent selection note from title/abstract; not full-text claim verification",
+        "name_segmentation": "Given/family split inferred from source full names; human review required."
+      }
+    },
+    {
+      "id": "kv-cache-quantization-5",
+      "original": {
+        "id": "kv-cache-quantization-5",
+        "type": "article",
+        "title": "QServe: W4A8KV4 Quantization and System Co-design for Efficient LLM Serving",
+        "author": [
+          {
+            "given": "Yujun",
+            "family": "Lin"
+          },
+          {
+            "given": "Haotian",
+            "family": "Tang"
+          },
+          {
+            "given": "Shang",
+            "family": "Yang"
+          },
+          {
+            "given": "Zhekai",
+            "family": "Zhang"
+          },
+          {
+            "given": "Guangxuan",
+            "family": "Xiao"
+          },
+          {
+            "given": "Chuang",
+            "family": "Gan"
+          },
+          {
+            "given": "Song",
+            "family": "Han"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2024
+            ]
+          ]
+        },
+        "publisher": "arXiv",
+        "URL": "https://arxiv.org/abs/2405.04532v3",
+        "DOI": "10.48550/arXiv.2405.04532"
+      },
+      "candidates": [
+        {
+          "csl": {
+            "type": "article",
+            "title": "QServe: W4A8KV4 Quantization and System Co-design for Efficient LLM Serving",
+            "author": [
+              {
+                "given": "Yujun",
+                "family": "Lin"
+              },
+              {
+                "given": "Haotian",
+                "family": "Tang"
+              },
+              {
+                "given": "Shang",
+                "family": "Yang"
+              },
+              {
+                "given": "Zhekai",
+                "family": "Zhang"
+              },
+              {
+                "given": "Guangxuan",
+                "family": "Xiao"
+              },
+              {
+                "given": "Chuang",
+                "family": "Gan"
+              },
+              {
+                "given": "Song",
+                "family": "Han"
+              }
+            ],
+            "issued": {
+              "date-parts": [
+                [
+                  2024
+                ]
+              ]
+            },
+            "publisher": "arXiv",
+            "URL": "https://arxiv.org/abs/2405.04532v3",
+            "DOI": "10.48550/arXiv.2405.04532"
+          },
+          "arxiv_id": "2405.04532v3",
+          "version": "v3; preprint, original submission year; not merged with a proceedings edition",
+          "source": {
+            "provider": "arXiv primary page via agent web retrieval (saved snapshot)",
+            "url": "https://arxiv.org/abs/2405.04532",
+            "retrieved_at": "2026-09-29T00:24:27.321Z",
+            "retrieval_method": "Live primary arXiv page read using web tool; structured fields extracted from returned page text."
+          }
+        }
+      ],
+      "selected": 0,
+      "identity": {
+        "status": "evidence_matched",
+        "reason": "Source title, full author order, arXiv ID, and original year were read from the primary page. This run replays that evidence; it is not a fresh API lookup."
+      },
+      "integrity": {
+        "status": "not_checked",
+        "scope": "No comprehensive retraction/correction search in this acceptance dataset. Inspect publisher and arXiv notices."
+      },
+      "claims": [],
+      "extra_sources": [],
+      "duplicate_of": [],
+      "errors": [],
+      "human": {
+        "decision": "pending"
+      },
+      "metadata_diff": [
+        {
+          "field": "type",
+          "input": "article",
+          "source": "article",
+          "status": "matches"
+        },
+        {
+          "field": "title",
+          "input": "QServe: W4A8KV4 Quantization and System Co-design for Efficient LLM Serving",
+          "source": "QServe: W4A8KV4 Quantization and System Co-design for Efficient LLM Serving",
+          "status": "matches"
+        },
+        {
+          "field": "author",
+          "input": [
+            {
+              "given": "Yujun",
+              "family": "Lin"
+            },
+            {
+              "given": "Haotian",
+              "family": "Tang"
+            },
+            {
+              "given": "Shang",
+              "family": "Yang"
+            },
+            {
+              "given": "Zhekai",
+              "family": "Zhang"
+            },
+            {
+              "given": "Guangxuan",
+              "family": "Xiao"
+            },
+            {
+              "given": "Chuang",
+              "family": "Gan"
+            },
+            {
+              "given": "Song",
+              "family": "Han"
+            }
+          ],
+          "source": [
+            {
+              "given": "Yujun",
+              "family": "Lin"
+            },
+            {
+              "given": "Haotian",
+              "family": "Tang"
+            },
+            {
+              "given": "Shang",
+              "family": "Yang"
+            },
+            {
+              "given": "Zhekai",
+              "family": "Zhang"
+            },
+            {
+              "given": "Guangxuan",
+              "family": "Xiao"
+            },
+            {
+              "given": "Chuang",
+              "family": "Gan"
+            },
+            {
+              "given": "Song",
+              "family": "Han"
+            }
+          ],
+          "status": "matches"
+        },
+        {
+          "field": "issued",
+          "input": {
+            "date-parts": [
+              [
+                2024
+              ]
+            ]
+          },
+          "source": {
+            "date-parts": [
+              [
+                2024
+              ]
+            ]
+          },
+          "status": "matches"
+        },
+        {
+          "field": "DOI",
+          "input": "10.48550/arXiv.2405.04532",
+          "source": "10.48550/arXiv.2405.04532",
+          "status": "matches"
+        },
+        {
+          "field": "publisher",
+          "input": "arXiv",
+          "source": "arXiv",
+          "status": "matches"
+        }
+      ],
+      "formatting": {
+        "status": "not_rendered",
+        "missing_core_fields": [],
+        "note": "Field presence only. CSL rendering and venue-specific requirements are separate."
+      },
+      "evidence_hash": "b68bcefdd2f24174a4ccd45faa1e98e12d501e5c165e1da6a25a01faee4376c3",
+      "discovery": {
+        "relevance": "A serving system that co-designs weight, activation, and KV-cache quantization.",
+        "summary_basis": "agent selection note from title/abstract; not full-text claim verification",
+        "name_segmentation": "Given/family split inferred from source full names; human review required."
+      }
+    },
+    {
+      "id": "kv-cache-quantization-6",
+      "original": {
+        "id": "kv-cache-quantization-6",
+        "type": "article",
+        "title": "SKVQ: Sliding-window Key and Value Cache Quantization for Large Language Models",
+        "author": [
+          {
+            "given": "Haojie",
+            "family": "Duanmu"
+          },
+          {
+            "given": "Zhihang",
+            "family": "Yuan"
+          },
+          {
+            "given": "Xiuhong",
+            "family": "Li"
+          },
+          {
+            "given": "Jiangfei",
+            "family": "Duan"
+          },
+          {
+            "given": "Xingcheng",
+            "family": "Zhang"
+          },
+          {
+            "given": "Dahua",
+            "family": "Lin"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2024
+            ]
+          ]
+        },
+        "publisher": "arXiv",
+        "URL": "https://arxiv.org/abs/2405.06219v3",
+        "DOI": "10.48550/arXiv.2405.06219"
+      },
+      "candidates": [
+        {
+          "csl": {
+            "type": "article",
+            "title": "SKVQ: Sliding-window Key and Value Cache Quantization for Large Language Models",
+            "author": [
+              {
+                "given": "Haojie",
+                "family": "Duanmu"
+              },
+              {
+                "given": "Zhihang",
+                "family": "Yuan"
+              },
+              {
+                "given": "Xiuhong",
+                "family": "Li"
+              },
+              {
+                "given": "Jiangfei",
+                "family": "Duan"
+              },
+              {
+                "given": "Xingcheng",
+                "family": "Zhang"
+              },
+              {
+                "given": "Dahua",
+                "family": "Lin"
+              }
+            ],
+            "issued": {
+              "date-parts": [
+                [
+                  2024
+                ]
+              ]
+            },
+            "publisher": "arXiv",
+            "URL": "https://arxiv.org/abs/2405.06219v3",
+            "DOI": "10.48550/arXiv.2405.06219"
+          },
+          "arxiv_id": "2405.06219v3",
+          "version": "v3; preprint, original submission year; not merged with a proceedings edition",
+          "source": {
+            "provider": "arXiv primary page via agent web retrieval (saved snapshot)",
+            "url": "https://arxiv.org/abs/2405.06219",
+            "retrieved_at": "2026-09-29T00:24:27.321Z",
+            "retrieval_method": "Live primary arXiv page read using web tool; structured fields extracted from returned page text."
+          }
+        }
+      ],
+      "selected": 0,
+      "identity": {
+        "status": "evidence_matched",
+        "reason": "Source title, full author order, arXiv ID, and original year were read from the primary page. This run replays that evidence; it is not a fresh API lookup."
+      },
+      "integrity": {
+        "status": "not_checked",
+        "scope": "No comprehensive retraction/correction search in this acceptance dataset. Inspect publisher and arXiv notices."
+      },
+      "claims": [],
+      "extra_sources": [],
+      "duplicate_of": [],
+      "errors": [],
+      "human": {
+        "decision": "pending"
+      },
+      "metadata_diff": [
+        {
+          "field": "type",
+          "input": "article",
+          "source": "article",
+          "status": "matches"
+        },
+        {
+          "field": "title",
+          "input": "SKVQ: Sliding-window Key and Value Cache Quantization for Large Language Models",
+          "source": "SKVQ: Sliding-window Key and Value Cache Quantization for Large Language Models",
+          "status": "matches"
+        },
+        {
+          "field": "author",
+          "input": [
+            {
+              "given": "Haojie",
+              "family": "Duanmu"
+            },
+            {
+              "given": "Zhihang",
+              "family": "Yuan"
+            },
+            {
+              "given": "Xiuhong",
+              "family": "Li"
+            },
+            {
+              "given": "Jiangfei",
+              "family": "Duan"
+            },
+            {
+              "given": "Xingcheng",
+              "family": "Zhang"
+            },
+            {
+              "given": "Dahua",
+              "family": "Lin"
+            }
+          ],
+          "source": [
+            {
+              "given": "Haojie",
+              "family": "Duanmu"
+            },
+            {
+              "given": "Zhihang",
+              "family": "Yuan"
+            },
+            {
+              "given": "Xiuhong",
+              "family": "Li"
+            },
+            {
+              "given": "Jiangfei",
+              "family": "Duan"
+            },
+            {
+              "given": "Xingcheng",
+              "family": "Zhang"
+            },
+            {
+              "given": "Dahua",
+              "family": "Lin"
+            }
+          ],
+          "status": "matches"
+        },
+        {
+          "field": "issued",
+          "input": {
+            "date-parts": [
+              [
+                2024
+              ]
+            ]
+          },
+          "source": {
+            "date-parts": [
+              [
+                2024
+              ]
+            ]
+          },
+          "status": "matches"
+        },
+        {
+          "field": "DOI",
+          "input": "10.48550/arXiv.2405.06219",
+          "source": "10.48550/arXiv.2405.06219",
+          "status": "matches"
+        },
+        {
+          "field": "publisher",
+          "input": "arXiv",
+          "source": "arXiv",
+          "status": "matches"
+        }
+      ],
+      "formatting": {
+        "status": "not_rendered",
+        "missing_core_fields": [],
+        "note": "Field presence only. CSL rendering and venue-specific requirements are separate."
+      },
+      "evidence_hash": "32bbf735d85f682944cc542e5d68edd27de4716e45776e060a53fab27f479bf3",
+      "discovery": {
+        "relevance": "Sliding-window KV-cache quantization balances recent tokens and compressed history.",
+        "summary_basis": "agent selection note from title/abstract; not full-text claim verification",
+        "name_segmentation": "Given/family split inferred from source full names; human review required."
+      }
+    },
+    {
+      "id": "kv-cache-quantization-7",
+      "original": {
+        "id": "kv-cache-quantization-7",
+        "type": "article",
+        "title": "RotateKV: Accurate and Robust 2-Bit KV Cache Quantization for LLMs via Outlier-Aware Adaptive Rotations",
+        "author": [
+          {
+            "given": "Zunhai",
+            "family": "Su"
+          },
+          {
+            "given": "Zhe",
+            "family": "Chen"
+          },
+          {
+            "given": "Wang",
+            "family": "Shen"
+          },
+          {
+            "given": "Hanyu",
+            "family": "Wei"
+          },
+          {
+            "given": "Linge",
+            "family": "Li"
+          },
+          {
+            "given": "Huangqi",
+            "family": "Yu"
+          },
+          {
+            "given": "Kehong",
+            "family": "Yuan"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2025
+            ]
+          ]
+        },
+        "publisher": "arXiv",
+        "URL": "https://arxiv.org/abs/2501.16383v2",
+        "DOI": "10.48550/arXiv.2501.16383"
+      },
+      "candidates": [
+        {
+          "csl": {
+            "type": "article",
+            "title": "RotateKV: Accurate and Robust 2-Bit KV Cache Quantization for LLMs via Outlier-Aware Adaptive Rotations",
+            "author": [
+              {
+                "given": "Zunhai",
+                "family": "Su"
+              },
+              {
+                "given": "Zhe",
+                "family": "Chen"
+              },
+              {
+                "given": "Wang",
+                "family": "Shen"
+              },
+              {
+                "given": "Hanyu",
+                "family": "Wei"
+              },
+              {
+                "given": "Linge",
+                "family": "Li"
+              },
+              {
+                "given": "Huangqi",
+                "family": "Yu"
+              },
+              {
+                "given": "Kehong",
+                "family": "Yuan"
+              }
+            ],
+            "issued": {
+              "date-parts": [
+                [
+                  2025
+                ]
+              ]
+            },
+            "publisher": "arXiv",
+            "URL": "https://arxiv.org/abs/2501.16383v2",
+            "DOI": "10.48550/arXiv.2501.16383"
+          },
+          "arxiv_id": "2501.16383v2",
+          "version": "v2; preprint, original submission year; not merged with a proceedings edition",
+          "source": {
+            "provider": "arXiv primary page via agent web retrieval (saved snapshot)",
+            "url": "https://arxiv.org/abs/2501.16383",
+            "retrieved_at": "2026-09-29T00:24:27.323Z",
+            "retrieval_method": "Live primary arXiv page read using web tool; structured fields extracted from returned page text."
+          }
+        }
+      ],
+      "selected": 0,
+      "identity": {
+        "status": "evidence_matched",
+        "reason": "Source title, full author order, arXiv ID, and original year were read from the primary page. This run replays that evidence; it is not a fresh API lookup."
+      },
+      "integrity": {
+        "status": "not_checked",
+        "scope": "No comprehensive retraction/correction search in this acceptance dataset. Inspect publisher and arXiv notices."
+      },
+      "claims": [],
+      "extra_sources": [],
+      "duplicate_of": [],
+      "errors": [],
+      "human": {
+        "decision": "pending"
+      },
+      "metadata_diff": [
+        {
+          "field": "type",
+          "input": "article",
+          "source": "article",
+          "status": "matches"
+        },
+        {
+          "field": "title",
+          "input": "RotateKV: Accurate and Robust 2-Bit KV Cache Quantization for LLMs via Outlier-Aware Adaptive Rotations",
+          "source": "RotateKV: Accurate and Robust 2-Bit KV Cache Quantization for LLMs via Outlier-Aware Adaptive Rotations",
+          "status": "matches"
+        },
+        {
+          "field": "author",
+          "input": [
+            {
+              "given": "Zunhai",
+              "family": "Su"
+            },
+            {
+              "given": "Zhe",
+              "family": "Chen"
+            },
+            {
+              "given": "Wang",
+              "family": "Shen"
+            },
+            {
+              "given": "Hanyu",
+              "family": "Wei"
+            },
+            {
+              "given": "Linge",
+              "family": "Li"
+            },
+            {
+              "given": "Huangqi",
+              "family": "Yu"
+            },
+            {
+              "given": "Kehong",
+              "family": "Yuan"
+            }
+          ],
+          "source": [
+            {
+              "given": "Zunhai",
+              "family": "Su"
+            },
+            {
+              "given": "Zhe",
+              "family": "Chen"
+            },
+            {
+              "given": "Wang",
+              "family": "Shen"
+            },
+            {
+              "given": "Hanyu",
+              "family": "Wei"
+            },
+            {
+              "given": "Linge",
+              "family": "Li"
+            },
+            {
+              "given": "Huangqi",
+              "family": "Yu"
+            },
+            {
+              "given": "Kehong",
+              "family": "Yuan"
+            }
+          ],
+          "status": "matches"
+        },
+        {
+          "field": "issued",
+          "input": {
+            "date-parts": [
+              [
+                2025
+              ]
+            ]
+          },
+          "source": {
+            "date-parts": [
+              [
+                2025
+              ]
+            ]
+          },
+          "status": "matches"
+        },
+        {
+          "field": "DOI",
+          "input": "10.48550/arXiv.2501.16383",
+          "source": "10.48550/arXiv.2501.16383",
+          "status": "matches"
+        },
+        {
+          "field": "publisher",
+          "input": "arXiv",
+          "source": "arXiv",
+          "status": "matches"
+        }
+      ],
+      "formatting": {
+        "status": "not_rendered",
+        "missing_core_fields": [],
+        "note": "Field presence only. CSL rendering and venue-specific requirements are separate."
+      },
+      "evidence_hash": "e8f4a832b6609471094559a1d83a83c2f5263324a7b214dfa3cfc49c92c9c52e",
+      "discovery": {
+        "relevance": "Rotations address outliers in low-bit KV-cache quantization.",
+        "summary_basis": "agent selection note from title/abstract; not full-text claim verification",
+        "name_segmentation": "Given/family split inferred from source full names; human review required."
+      }
+    },
+    {
+      "id": "kv-cache-quantization-8",
+      "original": {
+        "id": "kv-cache-quantization-8",
+        "type": "article",
+        "title": "AsymKV: Enabling 1-Bit Quantization of KV Cache with Layer-Wise Asymmetric Quantization Configurations",
+        "author": [
+          {
+            "given": "Qian",
+            "family": "Tao"
+          },
+          {
+            "given": "Wenyuan",
+            "family": "Yu"
+          },
+          {
+            "given": "Jingren",
+            "family": "Zhou"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2024
+            ]
+          ]
+        },
+        "publisher": "arXiv",
+        "URL": "https://arxiv.org/abs/2410.13212v1",
+        "DOI": "10.48550/arXiv.2410.13212"
+      },
+      "candidates": [
+        {
+          "csl": {
+            "type": "article",
+            "title": "AsymKV: Enabling 1-Bit Quantization of KV Cache with Layer-Wise Asymmetric Quantization Configurations",
+            "author": [
+              {
+                "given": "Qian",
+                "family": "Tao"
+              },
+              {
+                "given": "Wenyuan",
+                "family": "Yu"
+              },
+              {
+                "given": "Jingren",
+                "family": "Zhou"
+              }
+            ],
+            "issued": {
+              "date-parts": [
+                [
+                  2024
+                ]
+              ]
+            },
+            "publisher": "arXiv",
+            "URL": "https://arxiv.org/abs/2410.13212v1",
+            "DOI": "10.48550/arXiv.2410.13212"
+          },
+          "arxiv_id": "2410.13212v1",
+          "version": "v1; preprint, original submission year; not merged with a proceedings edition",
+          "source": {
+            "provider": "arXiv primary page via agent web retrieval (saved snapshot)",
+            "url": "https://arxiv.org/abs/2410.13212",
+            "retrieved_at": "2026-09-29T00:24:27.323Z",
+            "retrieval_method": "Live primary arXiv page read using web tool; structured fields extracted from returned page text."
+          }
+        }
+      ],
+      "selected": 0,
+      "identity": {
+        "status": "evidence_matched",
+        "reason": "Source title, full author order, arXiv ID, and original year were read from the primary page. This run replays that evidence; it is not a fresh API lookup."
+      },
+      "integrity": {
+        "status": "not_checked",
+        "scope": "No comprehensive retraction/correction search in this acceptance dataset. Inspect publisher and arXiv notices."
+      },
+      "claims": [],
+      "extra_sources": [],
+      "duplicate_of": [],
+      "errors": [],
+      "human": {
+        "decision": "pending"
+      },
+      "metadata_diff": [
+        {
+          "field": "type",
+          "input": "article",
+          "source": "article",
+          "status": "matches"
+        },
+        {
+          "field": "title",
+          "input": "AsymKV: Enabling 1-Bit Quantization of KV Cache with Layer-Wise Asymmetric Quantization Configurations",
+          "source": "AsymKV: Enabling 1-Bit Quantization of KV Cache with Layer-Wise Asymmetric Quantization Configurations",
+          "status": "matches"
+        },
+        {
+          "field": "author",
+          "input": [
+            {
+              "given": "Qian",
+              "family": "Tao"
+            },
+            {
+              "given": "Wenyuan",
+              "family": "Yu"
+            },
+            {
+              "given": "Jingren",
+              "family": "Zhou"
+            }
+          ],
+          "source": [
+            {
+              "given": "Qian",
+              "family": "Tao"
+            },
+            {
+              "given": "Wenyuan",
+              "family": "Yu"
+            },
+            {
+              "given": "Jingren",
+              "family": "Zhou"
+            }
+          ],
+          "status": "matches"
+        },
+        {
+          "field": "issued",
+          "input": {
+            "date-parts": [
+              [
+                2024
+              ]
+            ]
+          },
+          "source": {
+            "date-parts": [
+              [
+                2024
+              ]
+            ]
+          },
+          "status": "matches"
+        },
+        {
+          "field": "DOI",
+          "input": "10.48550/arXiv.2410.13212",
+          "source": "10.48550/arXiv.2410.13212",
+          "status": "matches"
+        },
+        {
+          "field": "publisher",
+          "input": "arXiv",
+          "source": "arXiv",
+          "status": "matches"
+        }
+      ],
+      "formatting": {
+        "status": "not_rendered",
+        "missing_core_fields": [],
+        "note": "Field presence only. CSL rendering and venue-specific requirements are separate."
+      },
+      "evidence_hash": "ea51a56e1767fc6556c764d501377360d6ac46e3cfee389c9dbb7f1affe05ce0",
+      "discovery": {
+        "relevance": "Layer-wise asymmetric configurations explore very low-bit KV-cache storage.",
+        "summary_basis": "agent selection note from title/abstract; not full-text claim verification",
+        "name_segmentation": "Given/family split inferred from source full names; human review required."
+      }
+    },
+    {
+      "id": "kv-cache-quantization-9",
+      "original": {
+        "id": "kv-cache-quantization-9",
+        "type": "article",
+        "title": "TurboQuant: Online Vector Quantization with Near-optimal Distortion Rate",
+        "author": [
+          {
+            "given": "Amir",
+            "family": "Zandieh"
+          },
+          {
+            "given": "Majid",
+            "family": "Daliri"
+          },
+          {
+            "given": "Majid",
+            "family": "Hadian"
+          },
+          {
+            "given": "Vahab",
+            "family": "Mirrokni"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2025
+            ]
+          ]
+        },
+        "publisher": "arXiv",
+        "URL": "https://arxiv.org/abs/2504.19874v1",
+        "DOI": "10.48550/arXiv.2504.19874"
+      },
+      "candidates": [
+        {
+          "csl": {
+            "type": "article",
+            "title": "TurboQuant: Online Vector Quantization with Near-optimal Distortion Rate",
+            "author": [
+              {
+                "given": "Amir",
+                "family": "Zandieh"
+              },
+              {
+                "given": "Majid",
+                "family": "Daliri"
+              },
+              {
+                "given": "Majid",
+                "family": "Hadian"
+              },
+              {
+                "given": "Vahab",
+                "family": "Mirrokni"
+              }
+            ],
+            "issued": {
+              "date-parts": [
+                [
+                  2025
+                ]
+              ]
+            },
+            "publisher": "arXiv",
+            "URL": "https://arxiv.org/abs/2504.19874v1",
+            "DOI": "10.48550/arXiv.2504.19874"
+          },
+          "arxiv_id": "2504.19874v1",
+          "version": "v1; preprint, original submission year; not merged with a proceedings edition",
+          "source": {
+            "provider": "arXiv primary page via agent web retrieval (saved snapshot)",
+            "url": "https://arxiv.org/abs/2504.19874",
+            "retrieved_at": "2026-09-29T00:24:27.323Z",
+            "retrieval_method": "Live primary arXiv page read using web tool; structured fields extracted from returned page text."
+          }
+        }
+      ],
+      "selected": 0,
+      "identity": {
+        "status": "evidence_matched",
+        "reason": "Source title, full author order, arXiv ID, and original year were read from the primary page. This run replays that evidence; it is not a fresh API lookup."
+      },
+      "integrity": {
+        "status": "not_checked",
+        "scope": "No comprehensive retraction/correction search in this acceptance dataset. Inspect publisher and arXiv notices."
+      },
+      "claims": [],
+      "extra_sources": [],
+      "duplicate_of": [],
+      "errors": [],
+      "human": {
+        "decision": "pending"
+      },
+      "metadata_diff": [
+        {
+          "field": "type",
+          "input": "article",
+          "source": "article",
+          "status": "matches"
+        },
+        {
+          "field": "title",
+          "input": "TurboQuant: Online Vector Quantization with Near-optimal Distortion Rate",
+          "source": "TurboQuant: Online Vector Quantization with Near-optimal Distortion Rate",
+          "status": "matches"
+        },
+        {
+          "field": "author",
+          "input": [
+            {
+              "given": "Amir",
+              "family": "Zandieh"
+            },
+            {
+              "given": "Majid",
+              "family": "Daliri"
+            },
+            {
+              "given": "Majid",
+              "family": "Hadian"
+            },
+            {
+              "given": "Vahab",
+              "family": "Mirrokni"
+            }
+          ],
+          "source": [
+            {
+              "given": "Amir",
+              "family": "Zandieh"
+            },
+            {
+              "given": "Majid",
+              "family": "Daliri"
+            },
+            {
+              "given": "Majid",
+              "family": "Hadian"
+            },
+            {
+              "given": "Vahab",
+              "family": "Mirrokni"
+            }
+          ],
+          "status": "matches"
+        },
+        {
+          "field": "issued",
+          "input": {
+            "date-parts": [
+              [
+                2025
+              ]
+            ]
+          },
+          "source": {
+            "date-parts": [
+              [
+                2025
+              ]
+            ]
+          },
+          "status": "matches"
+        },
+        {
+          "field": "DOI",
+          "input": "10.48550/arXiv.2504.19874",
+          "source": "10.48550/arXiv.2504.19874",
+          "status": "matches"
+        },
+        {
+          "field": "publisher",
+          "input": "arXiv",
+          "source": "arXiv",
+          "status": "matches"
+        }
+      ],
+      "formatting": {
+        "status": "not_rendered",
+        "missing_core_fields": [],
+        "note": "Field presence only. CSL rendering and venue-specific requirements are separate."
+      },
+      "evidence_hash": "42d34353ef2239d093f6c1f5d125b8536da4ab698ee12ddfeea990d2b4cdc994",
+      "discovery": {
+        "relevance": "Online vector quantization is relevant to KV-cache compression; broader than KV-only methods.",
+        "summary_basis": "agent selection note from title/abstract; not full-text claim verification",
+        "name_segmentation": "Given/family split inferred from source full names; human review required."
+      }
+    },
+    {
+      "id": "kv-cache-quantization-10",
+      "original": {
+        "id": "kv-cache-quantization-10",
+        "type": "article",
+        "title": "MiniKV: Pushing the Limits of LLM Inference via 2-Bit Layer-Discriminative KV Cache",
+        "author": [
+          {
+            "given": "Akshat",
+            "family": "Sharma"
+          },
+          {
+            "given": "Hangliang",
+            "family": "Ding"
+          },
+          {
+            "given": "Jianping",
+            "family": "Li"
+          },
+          {
+            "given": "Neel",
+            "family": "Dani"
+          },
+          {
+            "given": "Minjia",
+            "family": "Zhang"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2024
+            ]
+          ]
+        },
+        "publisher": "arXiv",
+        "URL": "https://arxiv.org/abs/2411.18077v3",
+        "DOI": "10.48550/arXiv.2411.18077"
+      },
+      "candidates": [
+        {
+          "csl": {
+            "type": "article",
+            "title": "MiniKV: Pushing the Limits of LLM Inference via 2-Bit Layer-Discriminative KV Cache",
+            "author": [
+              {
+                "given": "Akshat",
+                "family": "Sharma"
+              },
+              {
+                "given": "Hangliang",
+                "family": "Ding"
+              },
+              {
+                "given": "Jianping",
+                "family": "Li"
+              },
+              {
+                "given": "Neel",
+                "family": "Dani"
+              },
+              {
+                "given": "Minjia",
+                "family": "Zhang"
+              }
+            ],
+            "issued": {
+              "date-parts": [
+                [
+                  2024
+                ]
+              ]
+            },
+            "publisher": "arXiv",
+            "URL": "https://arxiv.org/abs/2411.18077v3",
+            "DOI": "10.48550/arXiv.2411.18077"
+          },
+          "arxiv_id": "2411.18077v3",
+          "version": "v3; preprint, original submission year; not merged with a proceedings edition",
+          "source": {
+            "provider": "arXiv primary page via agent web retrieval (saved snapshot)",
+            "url": "https://arxiv.org/abs/2411.18077",
+            "retrieved_at": "2026-09-29T00:24:27.321Z",
+            "retrieval_method": "Live primary arXiv page read using web tool; structured fields extracted from returned page text."
+          }
+        }
+      ],
+      "selected": 0,
+      "identity": {
+        "status": "evidence_matched",
+        "reason": "Source title, full author order, arXiv ID, and original year were read from the primary page. This run replays that evidence; it is not a fresh API lookup."
+      },
+      "integrity": {
+        "status": "not_checked",
+        "scope": "No comprehensive retraction/correction search in this acceptance dataset. Inspect publisher and arXiv notices."
+      },
+      "claims": [],
+      "extra_sources": [],
+      "duplicate_of": [],
+      "errors": [],
+      "human": {
+        "decision": "pending"
+      },
+      "metadata_diff": [
+        {
+          "field": "type",
+          "input": "article",
+          "source": "article",
+          "status": "matches"
+        },
+        {
+          "field": "title",
+          "input": "MiniKV: Pushing the Limits of LLM Inference via 2-Bit Layer-Discriminative KV Cache",
+          "source": "MiniKV: Pushing the Limits of LLM Inference via 2-Bit Layer-Discriminative KV Cache",
+          "status": "matches"
+        },
+        {
+          "field": "author",
+          "input": [
+            {
+              "given": "Akshat",
+              "family": "Sharma"
+            },
+            {
+              "given": "Hangliang",
+              "family": "Ding"
+            },
+            {
+              "given": "Jianping",
+              "family": "Li"
+            },
+            {
+              "given": "Neel",
+              "family": "Dani"
+            },
+            {
+              "given": "Minjia",
+              "family": "Zhang"
+            }
+          ],
+          "source": [
+            {
+              "given": "Akshat",
+              "family": "Sharma"
+            },
+            {
+              "given": "Hangliang",
+              "family": "Ding"
+            },
+            {
+              "given": "Jianping",
+              "family": "Li"
+            },
+            {
+              "given": "Neel",
+              "family": "Dani"
+            },
+            {
+              "given": "Minjia",
+              "family": "Zhang"
+            }
+          ],
+          "status": "matches"
+        },
+        {
+          "field": "issued",
+          "input": {
+            "date-parts": [
+              [
+                2024
+              ]
+            ]
+          },
+          "source": {
+            "date-parts": [
+              [
+                2024
+              ]
+            ]
+          },
+          "status": "matches"
+        },
+        {
+          "field": "DOI",
+          "input": "10.48550/arXiv.2411.18077",
+          "source": "10.48550/arXiv.2411.18077",
+          "status": "matches"
+        },
+        {
+          "field": "publisher",
+          "input": "arXiv",
+          "source": "arXiv",
+          "status": "matches"
+        }
+      ],
+      "formatting": {
+        "status": "not_rendered",
+        "missing_core_fields": [],
+        "note": "Field presence only. CSL rendering and venue-specific requirements are separate."
+      },
+      "evidence_hash": "3e911ab37dd76edbf8a2271ca007ee98844ef2871e95ff7761c86038286fa76c",
+      "discovery": {
+        "relevance": "Layer-discriminative two-bit KV-cache compression explores memory reduction.",
+        "summary_basis": "agent selection note from title/abstract; not full-text claim verification",
+        "name_segmentation": "Given/family split inferred from source full names; human review required."
+      }
+    }
+  ],
+  "notice": "Machine evidence is provisional. Only explicit human decisions can enter the reviewed export. Integrity coverage is limited."
+}

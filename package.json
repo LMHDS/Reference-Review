@@ -1,0 +1,19 @@
+{
+  "name": "reference-verification-skill",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Evidence-backed reference audit and local human review",
+  "dependencies": {
+    "@citation-js/core": "0.7.21",
+    "@citation-js/plugin-bibtex": "0.7.21",
+    "@citation-js/plugin-csl": "0.7.22",
+    "@citation-js/plugin-ris": "0.7.21"
+  },
+  "license": "MIT",
+  "scripts": {
+    "test": "python3 -m unittest discover -s scripts -p \"test_*.py\" -v"
+  },
+  "devDependencies": {
+    "jsdom": "26.1.0"
+  }
+}
